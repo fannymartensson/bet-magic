@@ -15,7 +15,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: seashell;
+  background-color: rgb(224, 121, 47);
 }
 
 #nav {
