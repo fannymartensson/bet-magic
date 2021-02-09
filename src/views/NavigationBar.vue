@@ -1,5 +1,5 @@
 <template>
-  <div class="background-img">
+  <div class="background-nav">
     <logo-icon class="logo-btn" :logoIcon="true" />
     <nav>
       <ul class="menu">
@@ -27,21 +27,13 @@
   }
 </script>
 
-<style>
-  .background-img {
-    background-image: url('../assets/Backgrund.svg');
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+<style scoped>
+  .background-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-attachment: fixed;
   }
-  .logo-icon {
-    display: flex;
-    justify-content: center;
-  }
+
   .menu {
     padding: 2rem;
     text-align: center;

@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view />
+    <div class="background-img">
+      <router-view />
+    </div>
   </div>
 </template>
 <script>
@@ -17,5 +19,12 @@
   #app {
     box-sizing: border-box;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
+  }
+  .background-img {
+    background-image: url('./assets/Backgrund.svg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
 </style>
