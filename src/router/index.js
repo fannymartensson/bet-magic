@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import About from '@/views/About.vue'
+import OurGames from '@/views/OurGames.vue'
 import NavigationBar from '@/views/NavigationBar.vue'
 
 Vue.use(VueRouter)
@@ -12,9 +12,9 @@ const routes = [
     component: NavigationBar
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About
+    path: '/our-games',
+    name: 'OurGames',
+    component: OurGames
   }
 ]
 
