@@ -1,7 +1,8 @@
 <template>
-  <button class="menu-btn" v-if="menuBtn">
-    <router-link class="menu-link" to="/">MENU </router-link>
-  </button>
+  <a href=""
+    ><router-link class="menu-link" to="/"
+      ><img src="../assets/menu-btn.svg"/></router-link
+  ></a>
 </template>
 <script>
   export default {
@@ -25,12 +26,6 @@
     margin-left: -2rem;
   }
   .menu-btn {
-    background: transparent;
-
-    border: 1px solid white;
-    padding: 9px 11px;
-    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
-    font-size: 2rem;
     cursor: pointer;
     height: 4rem;
     margin-top: 6rem;
