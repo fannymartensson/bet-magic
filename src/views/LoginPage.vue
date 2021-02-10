@@ -5,13 +5,25 @@
       <menu-btn class="menu-btn" :menuBtn="true" />
     </header>
     <main>
-      <form class="login-form">
+      <form @submit.prevent="loginUser" class="login-form">
         <h1 class="login-title">Login</h1>
         <div class="textbox">
-          <input type="email" class="email" placeholder="username or Email" />
+          <input
+            type="email"
+            class="email"
+            placeholder="email (magic@yahoo.se)"
+            v-model="username"
+            required
+          />
         </div>
         <div class="textbox">
-          <input type="password" class="Password" placeholder="password" />
+          <input
+            type="password"
+            class="Password"
+            placeholder="password (123)"
+            v-model="password"
+            required
+          />
         </div>
         <div class="check-box">
           <input class="check-box" type="checkbox" name="remember" />
@@ -25,6 +37,9 @@
             ><input class="form-btn" type="submit" value="SIGN UP"
           /></router-link>
         </div>
+        <p id="error-message" v-show="showError">
+          Incorrect username or password. Please try again!
+        </p>
       </form>
     </main>
   </div>
@@ -34,7 +49,32 @@
   import LogoIcon from '@/components/LogoIcon.vue'
   export default {
     components: { MenuBtn, LogoIcon },
-    name: 'LoginPage'
+    name: 'LoginPage',
+    data() {
+      return {
+        username: '',
+        password: '',
+        showError: false,
+        rememberMe: false
+      }
+    },
+    methods: {
+      loginUser() {
+        if (this.username === 'magic@yahoo.se' && this.password === '123') {
+          localStorage.setItem('auth', this.username)
+          this.showError = false
+          this.$router.replace({ path: '/profile' })
+          this.$store.state.login = false
+        } else {
+          this.showError = true
+        }
+      }
+    },
+    watch: {
+      username(newValue, oldValue) {
+        console.log(`username has changed from ${oldValue} to ${newValue}`)
+      }
+    }
   }
 </script>
 <style scoped>
