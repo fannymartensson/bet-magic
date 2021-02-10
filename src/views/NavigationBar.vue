@@ -7,7 +7,7 @@
           <router-link class="nav-link" to="/login">LOGIN</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/about">OUR GAMES</router-link>
+          <router-link class="nav-link" to="/our-games">OUR GAMES</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/">FAQ</router-link>
@@ -31,12 +31,16 @@
   .background-nav {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
-
+  .logo-btn {
+    size: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .menu {
     padding: 2rem;
     text-align: center;
+    list-style-type: none;
   }
   .nav-link {
     text-decoration: none;
