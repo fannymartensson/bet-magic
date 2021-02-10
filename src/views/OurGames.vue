@@ -6,6 +6,11 @@
     </header>
 
     <h1>Games</h1>
+    <ul class="menu">
+        <li class="nav-item">
+          <router-link class="nav-link" to="/tictac">Tictac</router-link>
+        </li>
+        </ul>
     <gameList />
   </div>
 </template>
@@ -48,5 +53,16 @@
     position: relative;
     padding: 20px 0;
     overflow: hidden;
+  }
+  .nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+  }
+
+  .menu {
+    padding: 2rem;
+    text-align: center;
+    list-style-type: none;
   }
 </style>
