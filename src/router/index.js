@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import About from '@/views/About.vue'
+import OurGames from '@/views/OurGames.vue'
 import NavigationBar from '@/views/NavigationBar.vue'
 import SignUp from '@/components/SignUp.vue'
 
