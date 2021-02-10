@@ -22,7 +22,7 @@
   }
   .background-img {
     background-image: url('./assets/Backgrund.svg');
-    height: 100vh;
+    height: 150vh;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

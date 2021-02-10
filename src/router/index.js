@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import About from '@/views/About.vue'
+import OurGames from '@/views/OurGames.vue'
 import NavigationBar from '@/views/NavigationBar.vue'
 import LoginPage from '@/views/LoginPage.vue'
 
@@ -13,9 +13,9 @@ const routes = [
     component: NavigationBar
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About
+    path: '/our-games',
+    name: 'OurGames',
+    component: OurGames
   },
   {
     path: '/login',

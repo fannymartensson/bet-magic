@@ -7,7 +7,7 @@
           <router-link class="nav-link" to="/login">LOGIN</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/about">OUR GAMES</router-link>
+          <router-link class="nav-link" to="/our-games">OUR GAMES</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/">FAQ</router-link>
