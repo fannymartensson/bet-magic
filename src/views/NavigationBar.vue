@@ -37,6 +37,7 @@
   .menu {
     padding: 2rem;
     text-align: center;
+    list-style-type: none;
   }
   .nav-link {
     text-decoration: none;

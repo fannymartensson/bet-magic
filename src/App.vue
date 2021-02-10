@@ -17,14 +17,15 @@
     src: url('./assets/fonts/ARCADECLASSIC.TTF') format('truetype');
   }
   #app {
+    background-color: black;
     box-sizing: border-box;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
   .background-img {
     background-image: url('./assets/Backgrund.svg');
-    height: 150vh;
+    height: 200vh;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-attachment: fixed;
   }
 </style>

@@ -1,21 +1,23 @@
 <template>
   <div class="body">
-    <button>
-      <img
-        class="logo-img"
-        src="../assets/logo-text.svg"
-        alt="bet-magic-logo"
-      />
-    </button>
+    <header>
+      <logo-icon class="logo-btn" :logoIcon="true" />
+      <menu-btn class="menu-btn" :menuBtn="true" />
+    </header>
+
     <h1>Games</h1>
     <gameList />
   </div>
 </template>
 <script>
+  import MenuBtn from '@/components/MenuBtn.vue'
+  import LogoIcon from '@/components/LogoIcon.vue'
   import gameList from '@/components/gameList.vue'
   export default {
     components: {
-      gameList
+      gameList,
+      MenuBtn,
+      LogoIcon
     }
   }
 </script>
