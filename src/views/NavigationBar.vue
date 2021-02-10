@@ -31,9 +31,12 @@
   .background-nav {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
-
+  .logo-btn {
+    size: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .menu {
     padding: 2rem;
     text-align: center;

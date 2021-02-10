@@ -13,25 +13,34 @@
         open: false
       }
     },
-    props: ['item', 'active']
+    props: ['item', 'active'],
+    computed: {
+      backgroundImage() {
+        return {
+          'background-image':
+            'url(' + require('../assets' + this.item.img) + ')'
+        }
+      }
+    }
   }
 </script>
 
 <style lang="scss" scoped>
   .card {
+    margin-top: 40px;
     position: relative;
     width: 100%;
-    height: 600px;
-    background-color: #efefef;
+    height: 400px;
+    background-color: rgb(73, 70, 67);
     overflow: hidden;
     transition: all 0.5s ease;
     &.open {
       height: auto;
-      transform: translateY(-50px);
+      transform: translateY(-20px);
     }
     .img {
       width: 100%;
-      height: 600px;
+      height: 400px;
       background-position: center;
       background-size: cover;
     }
@@ -49,7 +58,7 @@
     .description {
       padding: 20px;
       text-align: center;
-      color: black;
+      color: white;
     }
   }
 </style>

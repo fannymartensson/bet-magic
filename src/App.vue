@@ -17,6 +17,7 @@
     src: url('./assets/fonts/ARCADECLASSIC.TTF') format('truetype');
   }
   #app {
+    position: relative;
     background-color: black;
     box-sizing: border-box;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
