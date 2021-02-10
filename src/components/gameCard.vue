@@ -31,7 +31,7 @@
     position: relative;
     width: 100%;
     height: 400px;
-    background-color: rgb(73, 70, 67);
+    border: 1px solid white;
     overflow: hidden;
     transition: all 0.5s ease;
     &.open {
@@ -47,17 +47,17 @@
     .title {
       text-align: center;
       position: relative;
-      bottom: 50px;
-      padding: 15px 10px;
+      bottom: 70px;
+      padding: 10px;
       width: calc(100% - 20px);
-      height: 40px;
+      height: 30px;
       font-size: 1.6rem;
-      color: #fff;
-      background-color: rgba($color: #000000, $alpha: 0.5);
+      color: black;
+      background-color: rgba($color: #ffffff, $alpha: 0.8);
     }
     .description {
-      padding: 20px;
-      text-align: center;
+      padding: 25px;
+      text-align: left;
       color: white;
     }
   }
