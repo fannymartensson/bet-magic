@@ -13,8 +13,8 @@ const routes = [
     component: NavigationBar
   },
   {
-    path: '/ourgames',
-    name: 'ourgames',
+    path: '/our-games',
+    name: 'OurGames',
     component: OurGames
   },
 
