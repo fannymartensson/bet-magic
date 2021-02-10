@@ -22,19 +22,13 @@
   }
 </script>
 <style lang="scss">
-  button {
-    background: transparent;
-    border: none;
-    margin: 2rem;
-    cursor: pointer;
-  }
   h1 {
     color: white;
     text-align: center;
   }
 
   .logo-img {
-    max-width: 6rem;
+    width: 6rem;
   }
 
   * {
@@ -49,8 +43,6 @@
     width: 100%;
     margin: 0;
     padding: 0;
-
-    color: #fff;
   }
   #app {
     position: relative;

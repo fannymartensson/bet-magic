@@ -1,12 +1,12 @@
 <template>
-  <button>
+  <a>
     <img
       v-if="logoIcon"
       class="logo-img"
       src="../assets/logo-text.svg"
       alt="bet-magic-logo"
     />
-  </button>
+  </a>
 </template>
 
 <script>
@@ -21,13 +21,14 @@
 </script>
 
 <style scoped>
-  button {
+  a {
+    margin: 2rem;
     background: transparent;
     border: none;
-    margin: 2rem;
     cursor: pointer;
   }
   .logo-img {
     max-width: 20rem;
+    margin-top: 0px;
   }
 </style>

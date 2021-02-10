@@ -24,11 +24,12 @@
   .logo-img {
     width: 139px;
     margin-left: -2rem;
+    margin-top: 2rem;
   }
   .menu-btn {
     cursor: pointer;
     height: 4rem;
-    margin-top: 6rem;
+    margin-top: 2rem;
     border-radius: 6px;
   }
   .menu-link {
