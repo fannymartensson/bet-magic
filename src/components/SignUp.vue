@@ -1,6 +1,10 @@
   
 <template>
   <div class="Signup">
+    <header>
+      <logo-icon class="logo-btn" :logoIcon="true" />
+      <menu-btn class="menu-btn" :menuBtn="true" />
+    </header>
    
     <main>
       <form class="signup-form">
@@ -33,7 +37,12 @@
   </div>
 </template>
 <script>
-
+import MenuBtn from '@/components/MenuBtn.vue'
+  import LogoIcon from '@/components/LogoIcon.vue'
+  export default {
+    components: { MenuBtn, LogoIcon },
+    
+  }
 </script>
 <style scoped>
   main {
@@ -70,6 +79,7 @@
     padding-left: 6px;
   }
   
+  
   .form-btn {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     min-width: 100%;
@@ -77,7 +87,7 @@
     border: 1px solid white;
     color: white;
     padding: 9px 11px;
-    font-size: 24px;
+    font-size: 22px;
     cursor: pointer;
     margin: 0;
     height: 2.5em;
