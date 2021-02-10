@@ -4,7 +4,7 @@
     <nav>
       <ul class="menu">
         <li class="nav-item">
-          <router-link class="nav-link" to="/">LOGIN</router-link>
+          <router-link class="nav-link" to="/login">LOGIN</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/our-games">OUR GAMES</router-link>
