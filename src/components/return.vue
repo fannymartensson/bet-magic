@@ -22,5 +22,6 @@
     margin-top: 0.9em;
     border-radius: 0;
     background-color: black;
+    color: white;
   }
 </style>
