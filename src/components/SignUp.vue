@@ -46,7 +46,13 @@
         </div>
         <input class="form-btn" @click="first" type="button" value="Sign Up" />
         <div>
+<<<<<<< HEAD
           Already have an account?<router-link to="*">Login here?</router-link>
+=======
+          Already have an account?<router-link to="/login"
+            >Login here?</router-link
+          >
+>>>>>>> 9bbad1ca56eee8e63014bb60d1bc8b92b9ce7f7c
         </div>
       </form>
     </main>
