@@ -21,26 +21,33 @@ export default new Vuex.Store({
     players: null,
     gameHistory: [],
     positions: emptyPositions(),
+    scoreX: 0,
+    scoreO: 0,
+
     /* HÄR SLUTAR TIC TAC */
     currentIndex: 0,
+
     cards: [
       {
         title: 'Space Invadors',
         description:
           'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
-        img: '/space-invadors.png'
+        img: '/space-invadors.png',
+        routerlink: 'tictac'
       },
       {
         title: 'Pac Man',
         description:
           'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
-        img: '/pacman.png'
+        img: '/pacman.png',
+        routerlink: 'tictac'
       },
       {
         title: 'Donky Kong',
         description:
           'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
-        img: '/donkykong.png'
+        img: '/donkykong.png',
+        routerlink: 'tictac'
       }
     ]
   },
@@ -108,6 +115,12 @@ export default new Vuex.Store({
           positions[6] === player)
       ) {
         state.winner = player
+        if (state.winner == 'X') {
+          state.scoreX++
+        } else {
+          state.scoreO++
+        }
+        console.log(state.players)
         state.gameHistory.push(
           Object.freeze({
             winner: state.winner,

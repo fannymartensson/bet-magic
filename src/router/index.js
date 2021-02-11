@@ -8,7 +8,6 @@ import ProfilePage from '@/components/ProfilePage.vue'
 import TicTac from '@/views/TicTac.vue'
 
 Vue.use(VueRouter)
-
 const routes = [
   {
     path: '/',

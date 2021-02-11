@@ -63,7 +63,7 @@
   .textgroup input {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     background: transparent;
-    color: white;
+    color: #fff;
     font-size: 17px;
     border-radius: 6px;
     max-width: 15rem;
@@ -76,7 +76,7 @@
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     min-width: 100%;
     background: none;
-    border: 1px solid white;
+    border: 1px solid #fff;
     color: white;
     padding: 9px 11px;
     font-size: 22px;

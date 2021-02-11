@@ -64,6 +64,9 @@
 </script>
 
 <style lang="scss" scoped>
+  .card-list-desktop {
+    display: none;
+  }
   .card-list {
     margin: 0 30px;
     ul {
