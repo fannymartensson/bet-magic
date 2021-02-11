@@ -1,5 +1,6 @@
 <template>
   <div class="profile-page">
+    <menu-btn class="menu-btn" :menuBtn="true" />
     <header>
       <h1>Your Profile</h1>
     </header>
@@ -20,12 +21,15 @@
       </div>
       <div class="settings-btns">
         TF13879
-        <span class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-secondary">
-            <input type="radio" autocomplete="off" />
-            Change
-          </label>
-        </span>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-toggle="button"
+          aria-pressed="false"
+          autocomplete="off"
+        >
+          Change
+        </button>
         <span class="btn-group btn-group-toggle" data-toggle="buttons">
           <label class="btn btn-secondary active">
             <input type="radio" autocomplete="off" />
@@ -50,9 +54,11 @@
   </div>
 </template>
 <script>
+  import MenuBtn from '@/components/MenuBtn.vue'
+
   export default {
     name: 'ProfilePage',
-    components: {}
+    components: { MenuBtn }
   }
 </script>
 
@@ -70,6 +76,8 @@
     padding-left: 0.8em;
     padding-right: 0.8em;
     margin-top: 0.9em;
+    color: white;
+    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
 
   header {

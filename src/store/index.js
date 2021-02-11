@@ -21,6 +21,9 @@ export default new Vuex.Store({
     players: null,
     gameHistory: [],
     positions: emptyPositions(),
+    scoreX: 0,
+    scoreO: 0,
+
     /* HÄR SLUTAR TIC TAC */
     currentIndex: 0,
     /* HÄR BÖRJAR GAMING CARDSEN */
@@ -115,6 +118,12 @@ export default new Vuex.Store({
           positions[6] === player)
       ) {
         state.winner = player
+        if (state.winner == 'X') {
+          state.scoreX++
+        } else {
+          state.scoreO++
+        }
+        console.log(state.players)
         state.gameHistory.push(
           Object.freeze({
             winner: state.winner,
