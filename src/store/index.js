@@ -23,20 +23,20 @@ export default new Vuex.Store({
     positions: emptyPositions(),
     /* HÄR SLUTAR TIC TAC */
     currentIndex: 0,
-
+    /* HÄR BÖRJAR GAMING CARDSEN */
     cards: [
+      {
+        title: 'Tic tac toe',
+        description:
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
+        img: '/tictactoe.png',
+        routerlink: 'tictac'
+      },
       {
         title: 'Space Invadors',
         description:
           'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
         img: '/space-invadors.png',
-        routerlink: 'tictac'
-      },
-      {
-        title: 'Pac Man',
-        description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
-        img: '/pacman.png',
         routerlink: 'tictac'
       },
       {
@@ -47,6 +47,7 @@ export default new Vuex.Store({
         routerlink: 'tictac'
       }
     ]
+    /* HÄR SLUTAR GAMING CARDSEN */
   },
   getters: {
     /* Här startar tictac*/
@@ -61,6 +62,7 @@ export default new Vuex.Store({
       return state.gameHistory.filter(game => game.isGoldenWin).length > 0
     },
     /* Här slutar tictac */
+    /* HÄR BÖRJAR GAMING CARDSEN */
     currentIndex: state => {
       return state.currentIndex
     },
@@ -68,6 +70,7 @@ export default new Vuex.Store({
       return state.cards
     }
   },
+  /* HÄR SLUTAR GAMING CARDSEN */
   mutations: {
     /* Här startar tictac */
     setPlayers(state, payload) {
@@ -130,6 +133,7 @@ export default new Vuex.Store({
       state.winner = null
     },
     /* Här slutar tictac */
+    /* HÄR BÖRJAR GAMING CARDSEN */
     nextIndex: state => {
       if (state.currentIndex < state.cards.length - 1) state.currentIndex++
     },
@@ -137,6 +141,7 @@ export default new Vuex.Store({
       if (state.currentIndex > 0) state.currentIndex--
     }
   },
+  /* HÄR SLUTAR GAMING CARDSEN */
   actions: {
     /* Här startar tictac */
     addMarker({ commit }, payload) {

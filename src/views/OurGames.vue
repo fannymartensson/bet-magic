@@ -6,11 +6,6 @@
     </header>
 
     <h1>Games</h1>
-    <ul class="menu">
-      <li class="nav-item">
-        <router-link class="nav-link" to="/tictac">Tictac</router-link>
-      </li>
-    </ul>
     <gameList />
   </div>
 </template>
@@ -18,6 +13,7 @@
   import MenuBtn from '@/components/MenuBtn.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
   import gameList from '@/components/gameList.vue'
+
   export default {
     components: {
       gameList,

@@ -1,10 +1,20 @@
 <template>
-  <div class="card-list">
-    <ul :style="listLength">
-      <li v-for="(card, index) in cards" :key="index" :style="listPosition">
-        <gameCard :item="card" :active="index == currentIndex" />
-      </li>
-    </ul>
+  <div>
+    <div class="card-list">
+      <ul :style="listLength">
+        <li v-for="(card, index) in cards" :key="index" :style="listPosition">
+          <gameCard :item="card" :active="index == currentIndex" />
+        </li>
+      </ul>
+    </div>
+
+    <div class="card-list-desktop">
+      <ul :style="listLength">
+        <li v-for="(card, index) in cards" :key="index">
+          <gameCard :item="card" active="index == currentIndex" />
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -64,18 +74,40 @@
 </script>
 
 <style lang="scss" scoped>
-  .card-list-desktop {
-    display: none;
-  }
-  .card-list {
-    margin: 0 30px;
-    ul {
-      display: flex;
-      list-style: none;
+  @media screen and (max-width: 759px) {
+    .card-list-desktop {
+      display: none;
     }
-    li {
+    .card-list {
+      margin: 0 30px;
+      ul {
+        display: flex;
+        list-style: none;
+      }
+      li {
+        padding: 10px;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+  @media screen and (min-width: 760px) {
+    .card-list {
+      display: none;
+    }
+
+    .card-list-desktop {
       padding: 10px;
-      transition: all 0.5s ease;
+      display: flex;
+      flex-grow: 1;
+      margin: 0 auto;
+      ul {
+        display: flex;
+        list-style: none;
+      }
+      li {
+        padding: 10px;
+        transition: all 0.5s ease;
+      }
     }
   }
 </style>
