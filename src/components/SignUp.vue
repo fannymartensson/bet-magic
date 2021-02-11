@@ -76,7 +76,7 @@
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     min-width: 100%;
     background: none;
-    border: 1px solid white;
+    border: 1px solid #fff;
     color: white;
     padding: 9px 11px;
     font-size: 22px;
