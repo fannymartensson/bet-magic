@@ -9,23 +9,25 @@
       <form class="signup-form">
         <h1 class="signup-title">Sign Up</h1>
         <div class="textgroup">
-          <input id="firstname" type="text" placeholder="First Name" />
+          <input id="firstname" type="text" placeholder="First Name" v-model="firstname"
+            required/>
         </div>
         <div class="textgroup">
-          <input id="lastname" type="text" placeholder="Last Name" />
+          <input id="lastname" type="text" placeholder="Last Name" v-model="lastname"
+            required/>
         </div>
         <div class="textgroup">
-          <input id="emailid" type="text" placeholder="Email Id" />
+          <input id="emailid" type="text" placeholder="Email Id" v-model="emailid"
+            required />
         </div>
         <div class="textgroup">
-          <input id="password" type="text" placeholder="Password" />
+          <input id="password" type="text" placeholder="Password" v-model="password"
+            required/>
         </div>
 
-        <div class="submit-btn">
-          <input class="form-btn" type="submit" value="SIGN UP" />
-          Already have an account?
-          <router-link to="*">Login here?</router-link>
-        </div>
+        <button class="form-btn" v-on:click="first">Sign Up</button>
+          Already have an account?<router-link to="*">Login here?</router-link>
+        
       </form>
     </main>
   </div>
@@ -33,9 +35,31 @@
 <script>
   import MenuBtn from '@/components/MenuBtn.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
-  export default {
-    components: { MenuBtn, LogoIcon }
+
+export default {
+    name: "Signup",
+    components: { MenuBtn, LogoIcon },
+   
+  data: function() {
+    return {
+      firstname: "",
+      lastname: "",
+      emailid: "",  
+      password: "",
+      confirmpassword: ""
+    }
+    },
+    methods:{
+    first() {
+       
+      alert(
+        'Thank you for registering with BetMagic'
+      );
+    },
+
   }
+}
+  
 </script>
 <style scoped>
   main {
@@ -78,7 +102,7 @@
     background: none;
     border: 1px solid #fff;
     color: white;
-    padding: 9px 11px;
+    padding: 9px 10px;
     font-size: 22px;
     cursor: pointer;
     margin: 0;
