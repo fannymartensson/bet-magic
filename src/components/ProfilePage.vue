@@ -21,12 +21,15 @@
       </div>
       <div class="settings-btns">
         TF13879
-        <span class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-secondary">
-            <input type="radio" autocomplete="off" />
-            Change
-          </label>
-        </span>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-toggle="button"
+          aria-pressed="false"
+          autocomplete="off"
+        >
+          Change
+        </button>
         <span class="btn-group btn-group-toggle" data-toggle="buttons">
           <label class="btn btn-secondary active">
             <input type="radio" autocomplete="off" />
