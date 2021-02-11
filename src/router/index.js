@@ -4,8 +4,9 @@ import OurGames from '@/views/OurGames.vue'
 import NavigationBar from '@/views/NavigationBar.vue'
 import SignUp from '@/components/SignUp.vue'
 import LoginPage from '@/views/LoginPage.vue'
-import TicTac from '@/views/TicTac.vue'
 import ProfilePage from '@/components/ProfilePage.vue'
+import TicTac from '@/views/TicTac.vue'
+
 Vue.use(VueRouter)
 const routes = [
   {
@@ -24,7 +25,7 @@ const routes = [
     component: TicTac
   },
   {
-    path: '/login',
+    path: '*',
     name: 'LoginPage',
     component: LoginPage
   },
@@ -36,11 +37,25 @@ const routes = [
   {
     path: '/profile',
     name: 'ProfilePage',
-    component: ProfilePage
+    component: ProfilePage,
+    meta: {
+      requiresAuth: true
+    }
   }
 ]
 const router = new VueRouter({
   routes
+})
+//NAVIGATION GUARD
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(routes => routes.meta.requiresAuth)) {
+    if (localStorage.getItem('auth') === 'magic@yahoo.se') {
+      next()
+    } else {
+      next({ path: '*' })
+    }
+  }
+  next()
 })
 
 export default router
