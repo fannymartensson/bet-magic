@@ -7,10 +7,10 @@
 
     <h1>Games</h1>
     <ul class="menu">
-        <li class="nav-item">
-          <router-link class="nav-link" to="/tictac">Tictac</router-link>
-        </li>
-        </ul>
+      <li class="nav-item">
+        <router-link class="nav-link" to="/tictac">Tictac</router-link>
+      </li>
+    </ul>
     <gameList />
   </div>
 </template>
@@ -59,7 +59,6 @@
     color: #fff;
     font-size: 30px;
   }
-
   .menu {
     padding: 2rem;
     text-align: center;

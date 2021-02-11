@@ -29,7 +29,7 @@
   .card {
     margin-top: 40px;
     position: relative;
-    width: 100%;
+    max-width: 390px;
     height: 400px;
     border: 1px solid white;
     overflow: hidden;

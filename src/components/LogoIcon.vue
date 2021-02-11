@@ -1,9 +1,9 @@
 <template>
-  <a>
+  <a href="">
     <img
       v-if="logoIcon"
       class="logo-img"
-      src="../assets/logo-text.svg"
+      src="../assets/logo-dark.svg"
       alt="bet-magic-logo"
     />
   </a>
@@ -22,13 +22,17 @@
 
 <style scoped>
   a {
-    margin: 2rem;
     background: transparent;
     border: none;
     cursor: pointer;
+    margin: 0px auto;
   }
-  .logo-img {
-    max-width: 20rem;
-    margin-top: 0px;
+  img {
+    margin: 20px auto;
+    display: inline;
+    max-width: 100%;
+    height: auto;
+    min-height: 110px;
+    min-width: 140px;
   }
 </style>

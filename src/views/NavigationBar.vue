@@ -31,9 +31,9 @@
   .background-nav {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
   }
   .logo-btn {
-    size: auto;
     margin-left: auto;
     margin-right: auto;
   }
