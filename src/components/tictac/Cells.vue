@@ -35,8 +35,8 @@
 
 <style scoped>
   .cells {
-    width: 450px;
-    height: 450px;
+    width: 90%;
+    height: 45vh;
     display: flex;
     flex-wrap: wrap;
     margin-left: auto;
@@ -44,5 +44,12 @@
     margin-bottom: 10px;
     text-align: center;
     border: 1px solid lightslategray;
+  }
+
+  @media screen and (min-width: 600px) {
+    .cells {
+      height: 400px;
+      width: 400px;
+    }
   }
 </style>

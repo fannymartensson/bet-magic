@@ -2,6 +2,11 @@
   <div class="card" :class="{ open: open && active }" @click="open = !open">
     <div class="img" :style="backgroundImage" />
     <div class="title">{{ item.title }}</div>
+    <div class="submit-btn">
+      <router-link :to="item.routerlink">
+        <input class="button" type="Button" value="PLAY GAME"
+      /></router-link>
+    </div>
     <div class="description">{{ item.description }}</div>
   </div>
 </template>
@@ -29,7 +34,7 @@
   .card {
     margin-top: 40px;
     position: relative;
-    max-width: 390px;
+    max-width: auto;
     height: 400px;
     border: 1px solid white;
     overflow: hidden;
@@ -55,7 +60,31 @@
       color: black;
       background-color: rgba($color: #ffffff, $alpha: 0.8);
     }
+    .submit-btn {
+      margin-top: 20px;
+      text-align: center;
+      position: relative;
+      bottom: 40px;
+    }
+    .button {
+      background-color: transparent;
+      padding: 10px;
+      font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
+      color: white;
+      border: 1px solid white;
+      width: 100px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 6px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
     .description {
+      bottom: 40px;
+      position: relative;
       padding: 25px;
       text-align: left;
       color: white;

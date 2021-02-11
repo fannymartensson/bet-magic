@@ -31,6 +31,7 @@
     height: 4rem;
     margin-top: 2rem;
     border-radius: 6px;
+    margin-right: 10px;
   }
   .menu-link {
     color: white;
