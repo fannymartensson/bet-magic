@@ -44,7 +44,7 @@
         />
       </div>
       <button class="form-btn" v-on:click="first">Sign Up</button>
-      Already have an account?<router-link to="*">Login here</router-link>
+      Already have an account?<router-link to="/login">Login here</router-link>
       <input />
     </main>
   </div>
