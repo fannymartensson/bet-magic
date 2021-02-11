@@ -6,9 +6,11 @@ import SignUp from '@/components/SignUp.vue'
 import LoginPage from '@/views/LoginPage.vue'
 import TicTac from '@/views/TicTac.vue'
 import ProfilePage from '@/components/ProfilePage.vue'
-
 Vue.use(VueRouter)
+<<<<<<< HEAD
 
+=======
+>>>>>>> c286c82049928c45fe45b99fb22f7ec5aa4a0658
 const routes = [
   {
     path: '/',
@@ -26,7 +28,11 @@ const routes = [
     component: TicTac
   },
   {
+<<<<<<< HEAD
     path: '/login',
+=======
+    path: '*',
+>>>>>>> c286c82049928c45fe45b99fb22f7ec5aa4a0658
     name: 'LoginPage',
     component: LoginPage
   },
@@ -38,12 +44,31 @@ const routes = [
   {
     path: '/profile',
     name: 'ProfilePage',
+<<<<<<< HEAD
     component: ProfilePage
+=======
+    component: ProfilePage,
+    meta: {
+      requiresAuth: true
+    }
+>>>>>>> c286c82049928c45fe45b99fb22f7ec5aa4a0658
   }
 ]
-
 const router = new VueRouter({
   routes
+<<<<<<< HEAD
+=======
+})
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(route => route.meta.requiresAuth)) {
+    if (localStorage.getItem('auth') === 'magic@yahoo.se') {
+      next()
+    } else {
+      next({ path: '*' })
+    }
+  }
+  next()
+>>>>>>> c286c82049928c45fe45b99fb22f7ec5aa4a0658
 })
 
 export default router
