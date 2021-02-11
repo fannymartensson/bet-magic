@@ -25,7 +25,7 @@ const routes = [{
         component: TicTac
     },
     {
-        path: '/login',
+        path: '*',
         name: 'LoginPage',
         component: LoginPage
     },
@@ -37,12 +37,28 @@ const routes = [{
     {
         path: '/profile',
         name: 'ProfilePage',
-        component: ProfilePage
+        component: ProfilePage,
+        meta: {
+            requiresAuth: true
+        }
     }
 ]
 
 const router = new VueRouter({
     routes
 })
+
+//NAVIGATION GUARD
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(route => route.meta.requiresAuth)) {
+      if (localStorage.getItem('auth') === 'magic@yahoo.se') {
+        next();
+      } else {
+        next({ path: '*' });
+      }
+    }
+    next();
+  })
 
 export default router

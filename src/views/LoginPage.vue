@@ -5,7 +5,7 @@
       <menu-btn class="menu-btn" :menuBtn="true" />
     </header>
     <main>
-      <form @submit.prevent="loginUser" class="login-form">
+      <form @submit.prevent class="login-form">
         <h1 class="login-title">Login</h1>
         <div class="textbox">
           <input
@@ -30,7 +30,12 @@
           <label for="remember">REMEMBER ME</label>
         </div>
         <div class="submit-btn">
-          <input class="form-btn" type="submit" value="LOG IN" />
+          <input
+            @click="loginUser()"
+            class="form-btn"
+            type="submit"
+            value="LOG IN"
+          />
         </div>
         <div class="submit-btn">
           <router-link to="/signup"
