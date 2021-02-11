@@ -14,26 +14,15 @@
     <section class="settings">
       <div class="settings-text">
         <p>Username</p>
-        <p>
-          Password
-        </p>
-        <p>
-          Sound
-        </p>
-        <p>
-          Background
-        </p>
+        <p>Password</p>
+        <p>Sound</p>
+        <p>Background</p>
       </div>
       <div class="settings-btns">
         TF13879
         <span class="btn-group btn-group-toggle" data-toggle="buttons">
           <label class="btn btn-secondary">
-            <input
-              type="radio"
-              name="options"
-              id="option3"
-              autocomplete="off"
-            />
+            <input type="radio" autocomplete="off" />
             Change
           </label>
         </span>
