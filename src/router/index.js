@@ -24,7 +24,7 @@ const routes = [{
         component: TicTac
     },
     {
-        path: '/login',
+        path: '*',
         name: 'LoginPage',
         component: LoginPage
     },

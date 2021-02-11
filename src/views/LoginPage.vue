@@ -64,7 +64,6 @@
           localStorage.setItem('auth', this.username)
           this.showError = false
           this.$router.replace({ path: '/profile' })
-          this.$store.state.login = false
         } else {
           this.showError = true
         }
