@@ -1,6 +1,6 @@
 <template>
   <span>
-    <button class="btn-return" @click="backa">Tillbaka</button>
+    <button class="btn-return" @click="backa">Back</button>
   </span>
 </template>
 
@@ -22,6 +22,8 @@
     margin-top: 0.9em;
     border-radius: 0;
     background-color: black;
+    border-color: white;
     color: white;
+    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
 </style>

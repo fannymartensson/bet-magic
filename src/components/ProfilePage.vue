@@ -73,6 +73,8 @@
     padding-left: 0.8em;
     padding-right: 0.8em;
     margin-top: 0.9em;
+    color: white;
+    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
 
   header {
