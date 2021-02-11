@@ -12,23 +12,22 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
-import Game from "./Game";
-import Players from "./Players";
+  import { mapState, mapGetters } from 'vuex'
+  import Game from './Game'
+  import Players from './Players'
 
-export default {
-  name: "TicTacVue",
-  components: {
-    Players,
-    Game,
-  },
+  export default {
+    name: 'TicTacVue',
+    components: {
+      Players,
+      Game
+    },
 
-  computed: {
-    ...mapState(["gameHistory"]),
-    ...mapGetters(["hasPlayers"]),
-  },
-};
+    computed: {
+      ...mapState(['gameHistory']),
+      ...mapGetters(['hasPlayers'])
+    }
+  }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

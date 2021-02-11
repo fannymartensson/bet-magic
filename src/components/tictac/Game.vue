@@ -1,4 +1,4 @@
-<template >
+<template>
   <div class="page-game">
     <Cells
       style="background-color: green; font-size: 46px"
@@ -25,6 +25,7 @@
               @click="$store.dispatch('newGame')"
             >
               <span>Play again</span>
+              <h2>{{ $store.state.gameHistory }}</h2>
             </button>
           </transition>
         </div>
@@ -34,37 +35,38 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+  import { mapState, mapGetters } from 'vuex'
 
-import Cells from "./Cells";
+  import Cells from './Cells'
 
-export default {
-  name: "Game",
-  components: {
-    Cells,
-  },
+  export default {
+    name: 'Game',
+    components: {
+      Cells
+    },
 
-  computed: {
-    ...mapState(["player", "winner", "positions"]),
+    computed: {
+      ...mapState(['player', 'winner', 'positions']),
 
-    ...mapGetters(["getPlayerName", "getWinnerName", "hasEmptyCells"]),
-  },
+      ...mapGetters(['getPlayerName', 'getWinnerName', 'hasEmptyCells'])
+    },
 
-  beforeCreate() {
-    document.title = "Game";
-  },
-};
+    beforeCreate() {
+      document.title = 'Game'
+    }
+  }
 </script>
 
 <style scoped>
-.page-game {
-  background-color: rgb(0, 0, 0);
-  width: 100%;
-  color: whitesmoke;
-  font-size: 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+  .page-game {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    color: whitesmoke;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 400%;
+  }
 </style>

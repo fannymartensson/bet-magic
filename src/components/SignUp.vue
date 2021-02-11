@@ -1,47 +1,40 @@
-  
 <template>
   <div class="Signup">
     <header>
       <logo-icon class="logo-btn" :logoIcon="true" />
       <menu-btn class="menu-btn" :menuBtn="true" />
     </header>
-   
+
     <main>
       <form class="signup-form">
         <h1 class="signup-title">Sign Up</h1>
         <div class="textgroup">
-          <input id="firstname" type="text" placeholder="First Name" /> 
+          <input id="firstname" type="text" placeholder="First Name" />
         </div>
         <div class="textgroup">
- <input id="lastname" type="text" placeholder="Last Name"  />
+          <input id="lastname" type="text" placeholder="Last Name" />
         </div>
-         <div class="textgroup">
- <input id="emailid" type="text" placeholder="Email Id"  />
+        <div class="textgroup">
+          <input id="emailid" type="text" placeholder="Email Id" />
         </div>
-         <div class="textgroup">
- <input id="password" type="text" placeholder="Password"  />
-        </div>
-        
-       
-        <div class="submit-btn">
-        
-            <input class="form-btn" type="submit" value="SIGN UP"
-          />
-          Already have an account? 
-                <router-link :to="{name: 'LoginPage'}">Login here?</router-link>
-            
+        <div class="textgroup">
+          <input id="password" type="text" placeholder="Password" />
         </div>
 
+        <div class="submit-btn">
+          <input class="form-btn" type="submit" value="SIGN UP" />
+          Already have an account?
+          <router-link :to="{ name: 'LoginPage' }">Login here?</router-link>
+        </div>
       </form>
     </main>
   </div>
 </template>
 <script>
-import MenuBtn from '@/components/MenuBtn.vue'
+  import MenuBtn from '@/components/MenuBtn.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
   export default {
-    components: { MenuBtn, LogoIcon },
-    
+    components: { MenuBtn, LogoIcon }
   }
 </script>
 <style scoped>
@@ -78,8 +71,7 @@ import MenuBtn from '@/components/MenuBtn.vue'
     outline: none;
     padding-left: 6px;
   }
-  
-  
+
   .form-btn {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     min-width: 100%;

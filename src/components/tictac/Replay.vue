@@ -20,46 +20,46 @@
 </template>
 
 <script>
-import Cells from "./Cells";
-import Footer from "./Footer";
+  import Cells from './Cells'
+  import Footer from './Footer'
 
-export default {
-  name: "Replay",
-  components: {
-    Cells,
-    Footer,
-  },
-
-  props: {
-    active: {
-      type: Boolean,
-      required: false,
-      default: false,
+  export default {
+    name: 'Replay',
+    components: {
+      Cells,
+      Footer
     },
-    game: {
-      type: Object,
-      required: true,
-    },
-  },
 
-  methods: {
-    _keyPressListener(e) {
-      if (e.keyCode === 27) {
-        this.$emit("close-replay");
+    props: {
+      active: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      game: {
+        type: Object,
+        required: true
       }
     },
-  },
 
-  mounted() {
-    document
-      .querySelector("body")
-      .addEventListener("keydown", this._keyPressListener);
-  },
+    methods: {
+      _keyPressListener(e) {
+        if (e.keyCode === 27) {
+          this.$emit('close-replay')
+        }
+      }
+    },
 
-  destroyed() {
-    document
-      .querySelector("body")
-      .removeEventListener("keydown", this._keyPressListener);
-  },
-};
+    mounted() {
+      document
+        .querySelector('body')
+        .addEventListener('keydown', this._keyPressListener)
+    },
+
+    destroyed() {
+      document
+        .querySelector('body')
+        .removeEventListener('keydown', this._keyPressListener)
+    }
+  }
 </script>
