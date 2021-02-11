@@ -4,39 +4,48 @@
       <logo-icon class="logo-btn" :logoIcon="true" />
       <menu-btn class="menu-btn" :menuBtn="true" />
     </header>
-
     <main>
-      <form class="signup-form">
-        <h1 class="signup-title">Sign Up</h1>
-        <div class="textgroup">
-          <input id="firstname" type="text" placeholder="First Name" v-model="firstname"
-            required/>
-        </div>
-        <div class="textgroup">
-          <input id="lastname" type="text" placeholder="Last Name" v-model="lastname"
-            required/>
-        </div>
-        <div class="textgroup">
-          <input id="emailid" type="text" placeholder="Email Id" v-model="emailid"
-            required />
-        </div>
-        <div class="textgroup">
-          <input id="password" type="text" placeholder="Password" v-model="password"
-            required/>
-        </div>
-
-<<<<<<< HEAD
-        <button class="form-btn" v-on:click="first">Sign Up</button>
-          Already have an account?<router-link to="*">Login here?</router-link>
-        
-=======
-        <div class="submit-btn">
-          <input class="form-btn" type="submit" value="SIGN UP" />
-          Already have an account?
-          <router-link to="/login">Login here?</router-link>
-        </div>
->>>>>>> 9132287a1cc6e9730436a405955ebe4f907260b4
-      </form>
+      <input class="signup-form" />
+      <h1 class="signup-title">Sign Up</h1>
+      <div class="textgroup">
+        <input
+          id="firstname"
+          type="text"
+          placeholder="First Name"
+          v-model="firstname"
+          required
+        />
+      </div>
+      <div class="textgroup">
+        <input
+          id="lastname"
+          type="text"
+          placeholder="Last Name"
+          v-model="lastname"
+          required
+        />
+      </div>
+      <div class="textgroup">
+        <input
+          id="emailid"
+          type="text"
+          placeholder="Email Id"
+          v-model="emailid"
+          required
+        />
+      </div>
+      <div class="textgroup">
+        <input
+          id="password"
+          type="text"
+          placeholder="Password"
+          v-model="password"
+          required
+        />
+      </div>
+      <button class="form-btn" v-on:click="first">Sign Up</button>
+      Already have an account?<router-link to="*">Login here</router-link>
+      <input />
     </main>
   </div>
 </template>
@@ -44,30 +53,25 @@
   import MenuBtn from '@/components/MenuBtn.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
 
-export default {
-    name: "Signup",
+  export default {
+    name: 'Signup',
     components: { MenuBtn, LogoIcon },
-   
-  data: function() {
-    return {
-      firstname: "",
-      lastname: "",
-      emailid: "",  
-      password: "",
-      confirmpassword: ""
-    }
-    },
-    methods:{
-    first() {
-       
-      alert(
-        'Thank you for registering with BetMagic'
-      );
-    },
 
+    data: function() {
+      return {
+        firstname: '',
+        lastname: '',
+        emailid: '',
+        password: '',
+        confirmpassword: ''
+      }
+    },
+    methods: {
+      first() {
+        alert('Thank you for registering with BetMagic')
+      }
+    }
   }
-}
-  
 </script>
 <style scoped>
   main {
