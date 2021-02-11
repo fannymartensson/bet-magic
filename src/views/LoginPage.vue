@@ -59,8 +59,7 @@
       return {
         username: '',
         password: '',
-        showError: false,
-        rememberMe: false
+        showError: false
       }
     },
     methods: {
