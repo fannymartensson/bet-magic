@@ -31,11 +31,6 @@
     color: white;
     text-align: center;
   }
-
-  .logo-img {
-    width: 6rem;
-  }
-
   * {
     font-size: 1rem;
     margin: 0;

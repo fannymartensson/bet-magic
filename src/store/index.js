@@ -23,24 +23,28 @@ export default new Vuex.Store({
     positions: emptyPositions(),
     /* HÄR SLUTAR TIC TAC */
     currentIndex: 0,
+
     cards: [
       {
         title: 'Space Invadors',
         description:
           'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
-        img: '/space-invadors.png'
+        img: '/space-invadors.png',
+        routerlink: 'tictac'
       },
       {
         title: 'Pac Man',
         description:
           'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
-        img: '/pacman.png'
+        img: '/pacman.png',
+        routerlink: 'tictac'
       },
       {
         title: 'Donky Kong',
         description:
           'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
-        img: '/donkykong.png'
+        img: '/donkykong.png',
+        routerlink: 'tictac'
       }
     ]
   },
