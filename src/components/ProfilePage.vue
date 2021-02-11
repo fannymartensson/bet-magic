@@ -1,5 +1,6 @@
 <template>
   <div class="profile-page">
+    <menu-btn class="menu-btn" :menuBtn="true" />
     <header>
       <h1>Your Profile</h1>
     </header>
@@ -50,9 +51,11 @@
   </div>
 </template>
 <script>
+  import MenuBtn from '@/components/MenuBtn.vue'
+
   export default {
     name: 'ProfilePage',
-    components: {}
+    components: { MenuBtn }
   }
 </script>
 
