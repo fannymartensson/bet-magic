@@ -7,6 +7,7 @@
       <span v-if="position" :class="['cell--toggle', activeToggleClass]">{{
         position
       }}</span>
+      
     </transition>
   </div>
 </template>
@@ -85,6 +86,7 @@ export default {
   border: 1px solid;
   background-color: "gray";
 
+
   &--toggle {
     width: 100%;
     height: 100%;
@@ -92,6 +94,9 @@ export default {
     display: block;
     font-size: 50px;
     user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &-one {
       color: "blue";

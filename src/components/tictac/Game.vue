@@ -25,6 +25,7 @@
               @click="$store.dispatch('newGame')"
             >
               <span>Play again</span>
+              <h2> {{$store.state.gameHistory}} </h2>
             </button>
           </transition>
         </div>
@@ -66,5 +67,7 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-size: 400%;
 }
+
 </style>
