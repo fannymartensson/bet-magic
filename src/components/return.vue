@@ -1,6 +1,6 @@
 <template>
   <span>
-    <button @click="backa">Tillbaka</button>
+    <button class="btn-return" @click="backa">Tillbaka</button>
   </span>
 </template>
 
@@ -13,3 +13,14 @@
     }
   }
 </script>
+
+<style>
+  .btn-return {
+    padding: 0em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    margin-top: 0.9em;
+    border-radius: 0;
+    background-color: black;
+  }
+</style>
