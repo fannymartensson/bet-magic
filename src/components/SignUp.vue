@@ -25,9 +25,17 @@
             required/>
         </div>
 
+<<<<<<< HEAD
         <button class="form-btn" v-on:click="first">Sign Up</button>
           Already have an account?<router-link to="*">Login here?</router-link>
         
+=======
+        <div class="submit-btn">
+          <input class="form-btn" type="submit" value="SIGN UP" />
+          Already have an account?
+          <router-link to="/login">Login here?</router-link>
+        </div>
+>>>>>>> 9132287a1cc6e9730436a405955ebe4f907260b4
       </form>
     </main>
   </div>

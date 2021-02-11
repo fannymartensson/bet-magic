@@ -52,7 +52,7 @@ router.beforeEach((to, from, next) => {
     if (localStorage.getItem('auth') === 'magic@yahoo.se') {
       next()
     } else {
-      next({ path: '*' })
+      next({ path: '/login' })
     }
   }
   next()
