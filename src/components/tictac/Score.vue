@@ -17,23 +17,23 @@
 </template>
 
 <script>
-export default {
-  name: "Score",
-  props: {
-    game: {
-      type: Object,
-      required: true,
+  export default {
+    name: 'Score',
+    props: {
+      game: {
+        type: Object,
+        required: true
+      },
+      openReplay: {
+        type: Function,
+        required: true
+      }
     },
-    openReplay: {
-      type: Function,
-      required: true,
-    },
-  },
 
-  computed: {
-    isGoldenWin() {
-      return this.game.isGoldenWin;
-    },
-  },
-};
+    computed: {
+      isGoldenWin() {
+        return this.game.isGoldenWin
+      }
+    }
+  }
 </script>
