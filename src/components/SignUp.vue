@@ -24,7 +24,7 @@
         <div class="submit-btn">
           <input class="form-btn" type="submit" value="SIGN UP" />
           Already have an account?
-          <router-link to="*">Login here?</router-link>
+          <router-link to="/login">Login here?</router-link>
         </div>
       </form>
     </main>
