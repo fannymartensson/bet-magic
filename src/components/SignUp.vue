@@ -1,33 +1,60 @@
 <template>
   <div class="Signup">
     <header>
-      <logo-icon class="logo-btn" :logoIcon="true" />
-      <menu-btn class="menu-btn" :menuBtn="true" />
+      <logo-icon class="logo-btn" :LogoIcon="true" />
+      <menu-btn class="menu-btn" :MenuBtn="true" />
     </header>
     <main>
-      <form class="signup-form">
+      <form @submit.prevent class="signup-form">
         <h1 class="signup-title">Sign Up</h1>
         <div class="textgroup">
-          <input id="firstname" type="text" placeholder="First Name" v-model="firstname"
-            required/>
+          <input
+            id="firstname"
+            type="text"
+            placeholder="First Name"
+            v-model="firstname"
+            required
+          />
         </div>
         <div class="textgroup">
-          <input id="lastname" type="text" placeholder="Last Name" v-model="lastname"
-            required/>
+          <input
+            id="lastname"
+            type="text"
+            placeholder="Last Name"
+            v-model="lastname"
+            required
+          />
         </div>
         <div class="textgroup">
-          <input id="emailid" type="text" placeholder="Email Id" v-model="emailid"
-            required />
+          <input
+            id="emailid"
+            type="text"
+            placeholder="Email Id"
+            v-model="emailid"
+            required
+          />
         </div>
         <div class="textgroup">
-          <input id="password" type="text" placeholder="Password" v-model="password"
-            required/>
-        </div>         
-         <div>
-           <input class="form-btn" @click="first" type="button" value="Sign Up" />       
-         Already have an account?<router-link to="/login">Login here?</router-link>
-         </div>
-        </form>
+          <input
+            id="password"
+            type="text"
+            placeholder="Password"
+            v-model="password"
+            required
+          />
+        </div>
+        <div>
+          <input
+            class="form-btn"
+            @click="first"
+            type="button"
+            value="Sign Up"
+          />
+          Already have an account?<router-link to="/login"
+            >Login here?</router-link
+          >
+        </div>
+      </form>
     </main>
   </div>
 </template>
@@ -35,27 +62,25 @@
   import MenuBtn from '@/components/MenuBtn.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
 
-export default {
-    name: "Signup",
+  export default {
+    name: 'Signup',
     components: { MenuBtn, LogoIcon },
-   
-  data: function() {
-    return {
-      firstname: '',
-      lastname: '',
-      emailid: '',  
-      password: '',
-      confirmpassword: ''
-    }
+
+    data: function() {
+      return {
+        firstname: '',
+        lastname: '',
+        emailid: '',
+        password: '',
+        confirmpassword: ''
+      }
     },
-    methods:{
-    first() {       
-      alert(
-        'Thank you for registering with BetMagic'
-      )
+    methods: {
+      first() {
+        alert('Thank you for registering with BetMagic')
+      }
     }
   }
-}
 </script>
 <style scoped>
   main {
