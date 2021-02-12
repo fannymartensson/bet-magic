@@ -24,8 +24,12 @@
             required/>
         </div>
          <input class="form-btn" @click="first" type="button" value="Sign Up" />       
+<<<<<<< HEAD
          <div > Already have an account?<router-link to="/login">Login here?</router-link>
          </div>
+=======
+         Already have an account?<router-link to="/login">Login here?</router-link>
+>>>>>>> 9c3c9b5ba19e729008dc6d3741e0352363c62913
         </form>
     </main>
   </div>
@@ -55,7 +59,6 @@ export default {
     }
   }
 }
-  
 </script>
 <style scoped>
   main {

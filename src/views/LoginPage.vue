@@ -111,7 +111,7 @@
     color: white;
     font-size: 17px;
     border-radius: 6px;
-    max-width: 15rem;
+    min-width: 15rem;
     height: 2.5em;
     outline: none;
     padding-left: 6px;
@@ -130,5 +130,20 @@
     cursor: pointer;
     margin: 0;
     border-radius: 6px;
+  }
+  @media (min-width: 700px) {
+    header {
+      justify-content: space-evenly;
+    }
+    .login-form {
+      width: 36rem;
+      height: 33rem;
+    }
+    .login-title {
+      margin: 3rem;
+    }
+    .textbox input {
+      min-width: 34rem;
+    }
   }
 </style>

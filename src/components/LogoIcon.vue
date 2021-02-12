@@ -25,7 +25,6 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    margin: 0px auto;
   }
   img {
     margin: 20px auto;
