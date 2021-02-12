@@ -22,9 +22,10 @@
         <div class="textgroup">
           <input id="password" type="text" placeholder="Password" v-model="password"
             required/>
-        </div>
-         <input class="form-btn" @click="first" type="button" value="Sign Up" />       
-         <div > Already have an account?<router-link to="/login">Login here?</router-link>
+        </div>         
+         <div>
+           <input class="form-btn" @click="first" type="button" value="Sign Up" />       
+         Already have an account?<router-link to="/login">Login here?</router-link>
          </div>
         </form>
     </main>
