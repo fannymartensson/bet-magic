@@ -4,7 +4,6 @@
       <logo-icon class="logo-btn" :logoIcon="true" />
       <menu-btn class="menu-btn" :menuBtn="true" />
     </header>
-
     <main>
       <form class="signup-form">
         <h1 class="signup-title">Sign Up</h1>
@@ -25,7 +24,7 @@
             required/>
         </div>
          <input class="form-btn" @click="first" type="button" value="Sign Up" />       
-         <div > Already have an account?<router-link to="*">Login here?</router-link>
+         <div > Already have an account?<router-link to="/login">Login here?</router-link>
          </div>
         </form>
     </main>
@@ -92,7 +91,6 @@ export default {
     outline: none;
     padding-left: 6px;
   }
-
   .form-btn {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     min-width: 100%;
