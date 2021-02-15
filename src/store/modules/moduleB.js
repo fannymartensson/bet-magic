@@ -119,12 +119,11 @@ export default {
       })
     },
 
-   updateDeck({ dispatch,commit }) {
-     commit('UPDATE_GAME_LOAD', true)
+  async updateDeck({ dispatch,commit }) {
+    await dispatch('setDeck')
+   await dispatch('shuffleCards')
+    commit('UPDATE_GAME_LOAD', true)
       setTimeout(function () {
-
-         dispatch('setDeck')
-         dispatch('shuffleCards')
          commit('UPDATE_GAME_LOAD', false)
       }, 1500)
 
