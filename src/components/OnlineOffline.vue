@@ -43,38 +43,38 @@
 </template>
 
 <script>
-export default {
-  props: {
-    status: {
-      type: Boolean,
-      required: true
-    }
-  },
-  data() {
-    return {
-      online: navigator.onLine,
-      hover: true
-    };
-  },
-  mounted() {
-    window.addEventListener("online", this.onchange);
-    window.addEventListener("offline", this.onchange);
-    this.onchange();
-  },
-  methods: {
-    onchange() {
-      this.online = navigator.onLine;
-      this.$emit(this.online ? "online" : "offline");
+  export default {
+    props: {
+      status: {
+        type: Boolean,
+        required: true
+      }
+    },
+    data() {
+      return {
+        online: navigator.onLine,
+        hover: true
+      }
+    },
+    mounted() {
+      window.addEventListener('online', this.onchange)
+      window.addEventListener('offline', this.onchange)
+      this.onchange()
+    },
+    methods: {
+      onchange() {
+        this.online = navigator.onLine
+        this.$emit(this.online ? 'online' : 'offline')
+      }
     }
   }
-};
 </script>
 
 <style scoped>
 
-.online-offline {
-  display: flex;
-  justify-content: center;
-  color: white
-}
+  .online-offline {
+    display: flex;
+    justify-content: center;
+    color: white;
+  }
 </style>
