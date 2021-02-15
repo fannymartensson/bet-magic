@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <div class="background-img">
-       <online-offline :status="true" />
+      <online-offline :status="true" />
       <router-view />
     </div>
   </div>
 </template>
 <script>
- import OnlineOffline from '@/components/OnlineOffline.vue'
+  import OnlineOffline from '@/components/OnlineOffline.vue'
 
   export default {
     name: 'App',
