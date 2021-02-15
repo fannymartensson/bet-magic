@@ -4,7 +4,6 @@
       <logo-icon class="logo-btn" :logoIcon="true" />
       <menu-btn class="menu-btn" :menuBtn="true" />
     </header>
-
     <h1>Games</h1>
     <gameList />
   </div>
