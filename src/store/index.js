@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import moduleB from './modules/moduleB'
 
 Vue.use(Vuex)
 const emptyPositions = () => [
@@ -15,6 +16,9 @@ const emptyPositions = () => [
 ]
 
 export default new Vuex.Store({
+  modules: {
+    b: moduleB
+  },
   state: /* HÄR STARTAR TIC TAC */ {
     player: 'X',
     winner: null,

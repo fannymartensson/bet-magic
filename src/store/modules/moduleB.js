@@ -1,0 +1,120 @@
+import axios from 'axios'
+
+export default {
+  namespaced: true,
+  state: {
+    cardsList: [],
+    cardNumOne: null,
+    cardNumTwo: null,
+    status: 'SUIT',
+    gameLoad: false
+  },
+  getters: {
+    getCards(state) {
+      return state.cardsList
+    },
+    getCardNumOne(state) {
+      return state.cardNumOne
+    },
+    getCardNumTwo(state) {
+      return state.cardNumTwo
+    }
+  },
+  mutations: {
+    UPDATE_CARDS: (state, cardsList) => {
+      state.cardsList = cardsList
+    },
+    UPDATE_CARD_NUM_ONE(state, payload) {
+      state.cardNumOne = payload
+    },
+    UPDATE_CARD_NUM_TWO(state, payload) {
+      state.cardNumTwo = payload
+    },
+    UPDATE_STATUS(state, payload) {
+      state.status = payload
+    }
+  },
+  actions: {
+    checkCards({ commit, getters, state }) {
+      const { cardsList, cardNumOne, cardNumTwo } = state
+
+      commit('UPDATE_STATUS', 'COMPARE')
+
+      if (cardNumOne.name === cardNumTwo.name) {
+        // Update cards
+        const copy = [...cardsList]
+        const firstIndex = cardsList.findIndex(
+          card => card.id === cardNumOne.id
+        )
+        const secondIndex = cardsList.findIndex(
+          card => card.id === cardNumTwo.id
+        )
+
+        copy[firstIndex].isMatched = true
+        copy[secondIndex].isMatched = true
+
+        commit('UPDATE_CARDS', copy)
+      }
+      // Reset selected cards
+      commit('UPDATE_CARD_NUM_ONE', null)
+      commit('UPDATE_CARD_NUM_TWO', null)
+
+      if (getters.getUnMatchedCards && getters.getUnMatchedCards.length === 0) {
+        commit('UPDATE_STATUS', 'WON')
+      }
+    },
+
+    async updateDeck({ dispatch }) {
+      await dispatch('setDeck')
+      await dispatch('shuffleCards')
+    },
+    setDeck(context) {
+      //TO SHUFFLE WE NEED THE PROMISE
+      return new Promise((resolve, reject) => {
+        axios
+          .get('data.json')
+          .then(res => {
+            context.commit('UPDATE_CARDS', res.data)
+            resolve(res.data)
+          })
+          .catch(err => {
+            return reject(err)
+          })
+      })
+    },
+    showCard({ commit, dispatch, state }, card) {
+      if (state.cardNumOne && state.cardNumTwo) {
+        return
+      }
+
+      if (!state.cardNumOne) {
+        commit('UPDATE_CARD_NUM_ONE', card)
+      } else if (state.cardNumOne && !state.cardNumTwo) {
+        if (state.cardNumOne.id === card.id) {
+          return
+        }
+
+        commit('UPDATE_CARD_NUM_TWO', card)
+
+        setTimeout(() => {
+          dispatch('checkCards')
+        }, 600)
+      }
+    },
+    shuffleCards({ commit, state }) {
+      // WE USE THE PROMISE TO SEE THE 24 CARDS
+      return new Promise((resolve, reject) => {
+        if (!state.cardsList) {
+          reject()
+          return
+        }
+        const copyCards = [...state.cardsList]
+
+        copyCards.sort(() => Math.random() - 0.4)
+
+        commit('UPDATE_CARDS', copyCards)
+        resolve(copyCards)
+      })
+    }
+  }
+}

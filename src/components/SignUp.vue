@@ -1,51 +1,60 @@
 <template>
   <div class="Signup">
     <header>
-      <logo-icon class="logo-btn" :logoIcon="true" />
-      <menu-btn class="menu-btn" :menuBtn="true" />
+      <logo-icon class="logo-btn" :LogoIcon="true" />
+      <menu-btn class="menu-btn" :MenuBtn="true" />
     </header>
     <main>
-      <input class="signup-form" />
-      <h1 class="signup-title">Sign Up</h1>
-      <div class="textgroup">
-        <input
-          id="firstname"
-          type="text"
-          placeholder="First Name"
-          v-model="firstname"
-          required
-        />
-      </div>
-      <div class="textgroup">
-        <input
-          id="lastname"
-          type="text"
-          placeholder="Last Name"
-          v-model="lastname"
-          required
-        />
-      </div>
-      <div class="textgroup">
-        <input
-          id="emailid"
-          type="text"
-          placeholder="Email Id"
-          v-model="emailid"
-          required
-        />
-      </div>
-      <div class="textgroup">
-        <input
-          id="password"
-          type="text"
-          placeholder="Password"
-          v-model="password"
-          required
-        />
-      </div>
-      <button class="form-btn" v-on:click="first">Sign Up</button>
-      Already have an account?<router-link to="/login">Login here</router-link>
-      <input />
+      <form @submit.prevent class="signup-form">
+        <h1 class="signup-title">Sign Up</h1>
+        <div class="textgroup">
+          <input
+            id="firstname"
+            type="text"
+            placeholder="First Name"
+            v-model="firstname"
+            required
+          />
+        </div>
+        <div class="textgroup">
+          <input
+            id="lastname"
+            type="text"
+            placeholder="Last Name"
+            v-model="lastname"
+            required
+          />
+        </div>
+        <div class="textgroup">
+          <input
+            id="emailid"
+            type="text"
+            placeholder="Email Id"
+            v-model="emailid"
+            required
+          />
+        </div>
+        <div class="textgroup">
+          <input
+            id="password"
+            type="text"
+            placeholder="Password"
+            v-model="password"
+            required
+          />
+        </div>
+        <div>
+          <input
+            class="form-btn"
+            @click="first"
+            type="button"
+            value="Sign Up"
+          />
+          Already have an account?<router-link to="/login"
+            >Login here?</router-link
+          >
+        </div>
+      </form>
     </main>
   </div>
 </template>
@@ -107,7 +116,6 @@
     outline: none;
     padding-left: 6px;
   }
-
   .form-btn {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     min-width: 100%;

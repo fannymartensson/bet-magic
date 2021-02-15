@@ -13,7 +13,6 @@
             class="email"
             placeholder="email (magic@yahoo.se)"
             v-model="username"
-            required
           />
         </div>
         <div class="textbox">
@@ -22,7 +21,6 @@
             class="Password"
             placeholder="password (123)"
             v-model="password"
-            required
           />
         </div>
         <div class="check-box">
@@ -111,7 +109,7 @@
     color: white;
     font-size: 17px;
     border-radius: 6px;
-    min-width: 15rem;
+    max-width: 15.2rem;
     height: 2.5em;
     outline: none;
     padding-left: 6px;
