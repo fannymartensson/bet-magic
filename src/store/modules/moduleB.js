@@ -19,7 +19,7 @@ export default {
     getCardNumTwo(state) {
       return state.cardNumTwo
     },
-    getGameLoadStatus (state) {
+    getGameLoadStatus(state) {
       return state.gameLoadStatus
     }
   },
@@ -119,15 +119,13 @@ export default {
       })
     },
 
-  async updateDeck({ dispatch,commit }) {
-    await dispatch('setDeck')
-   await dispatch('shuffleCards')
-    commit('UPDATE_GAME_LOAD', true)
-      setTimeout(function () {
-         commit('UPDATE_GAME_LOAD', false)
+    async updateDeck({ dispatch, commit }) {
+      await dispatch('setDeck')
+      await dispatch('shuffleCards')
+      commit('UPDATE_GAME_LOAD', true)
+      setTimeout(function() {
+        commit('UPDATE_GAME_LOAD', false)
       }, 1500)
-
     }
-
   }
 }
