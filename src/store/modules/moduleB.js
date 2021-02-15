@@ -7,7 +7,7 @@ export default {
     cardNumOne: null,
     cardNumTwo: null,
     status: 'SUIT',
-    gameLoad: false
+    gameLoadStatus: false
   },
   getters: {
     getCards(state) {
@@ -18,6 +18,9 @@ export default {
     },
     getCardNumTwo(state) {
       return state.cardNumTwo
+    },
+    getGameLoadStatus (state) {
+      return state.gameLoadStatus
     }
   },
   mutations: {
@@ -32,6 +35,9 @@ export default {
     },
     UPDATE_STATUS(state, payload) {
       state.status = payload
+    },
+    UPDATE_GAME_LOAD(state, payload) {
+      state.gameLoadStatus = payload
     }
   },
   actions: {
@@ -64,10 +70,6 @@ export default {
       }
     },
 
-    async updateDeck({ dispatch }) {
-      await dispatch('setDeck')
-      await dispatch('shuffleCards')
-    },
     setDeck(context) {
       //TO SHUFFLE WE NEED THE PROMISE
       return new Promise((resolve, reject) => {
@@ -115,6 +117,18 @@ export default {
         commit('UPDATE_CARDS', copyCards)
         resolve(copyCards)
       })
+    },
+
+   updateDeck({ dispatch,commit }) {
+     commit('UPDATE_GAME_LOAD', true)
+      setTimeout(function () {
+
+         dispatch('setDeck')
+         dispatch('shuffleCards')
+         commit('UPDATE_GAME_LOAD', false)
+      }, 1500)
+
     }
+
   }
 }

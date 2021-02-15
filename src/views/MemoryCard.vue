@@ -1,6 +1,6 @@
 <template>
   <main class="main-deck">
-    <game-load />
+    <game-load v-if="gameLoadStatus" />
     <div v-for="card in cardsList" :key="card.id">
       <Card-list
         :cardName="card.name"
@@ -17,16 +17,18 @@
 </template>
 <script>
   import CardList from '@/components/memory/CardList.vue'
+  import GameLoad from '@/components/memory/GameLoad.vue'
   import { mapGetters } from 'vuex'
 
   export default {
     name: 'MemoryCard',
-    components: { CardList },
+    components: { CardList, GameLoad },
     computed: {
       ...mapGetters({
         cardsList: 'b/getCards',
         cardNumOne: 'b/getCardNumOne',
-        cardNumTwo: 'b/getCardNumTwo'
+        cardNumTwo: 'b/getCardNumTwo',
+        gameLoadStatus: 'b/getGameLoadStatus'
       })
     },
     created() {
