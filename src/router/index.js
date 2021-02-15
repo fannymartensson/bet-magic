@@ -6,6 +6,7 @@ import SignUp from '@/components/SignUp.vue'
 import LoginPage from '@/views/LoginPage.vue'
 import ProfilePage from '@/components/ProfilePage.vue'
 import TicTac from '@/views/TicTac.vue'
+import SpaceInvaders from '@/views/SpaceInvadersPage.vue'
 
 Vue.use(VueRouter)
 const routes = [
@@ -23,6 +24,11 @@ const routes = [
     path: '/tictac',
     name: 'TicTac',
     component: TicTac
+  },
+  {
+    path: '/space-invaders',
+    name: 'SpaceInvadoers',
+    component: SpaceInvaders
   },
   {
     path: '*',

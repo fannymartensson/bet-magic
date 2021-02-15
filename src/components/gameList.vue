@@ -96,7 +96,7 @@
     }
 
     .card-list-desktop {
-      padding: 10px;
+      padding: 20px;
       display: flex;
       flex-grow: 1;
       margin: 0 auto;

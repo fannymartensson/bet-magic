@@ -35,6 +35,7 @@
   h1 {
     font-size: 2rem;
   }
+
   body {
     width: 100%;
     margin: 0;
@@ -54,5 +55,10 @@
     padding: 2rem;
     text-align: center;
     list-style-type: none;
+  }
+  @media screen and (min-width: 759px) {
+    logo-btn {
+      margin-left: 0px;
+    }
   }
 </style>
