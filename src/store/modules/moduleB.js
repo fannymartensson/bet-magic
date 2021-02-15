@@ -125,7 +125,7 @@ export default {
       commit('UPDATE_GAME_LOAD', true)
       setTimeout(function() {
         commit('UPDATE_GAME_LOAD', false)
-      }, 1500)
+      }, 1600)
     }
   }
 }

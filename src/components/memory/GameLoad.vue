@@ -1,9 +1,9 @@
 <template>
-  <div class="game-load">
-    <span class="game-text">LOADING GAME</span>
-    <span class="game-load-text">.</span>
-    <span class="game-load-text">.</span>
-    <span class="game-load-text">.</span>
+  <div class="game-setup">
+    <span class="game__text">LOADING GAME</span>
+    <span class="game__load">.</span>
+    <span class="game__load">.</span>
+    <span class="game__load">.</span>
   </div>
 </template>
 <script>
@@ -11,25 +11,81 @@
     name: 'GameLoad'
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
+  $background: #131212;
+  $font: rgb(252, 242, 242);
   .background-image {
     background-attachment: unset;
   }
-  .game-load {
+  .game-setup {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #131212;
+    background: $background;
     z-index: 9999;
     height: 100%;
     width: 100%;
     position: absolute;
     top: -28%;
     background-attachment: fixed;
+    color: $font;
+    span {
+      font-size: 2.2rem;
+    }
+
+    .game__load:nth-child(2) {
+      opacity: 0;
+      animation: loadFade1 1.5s infinite;
+    }
+    .game__load:nth-child(3) {
+      opacity: 0;
+      animation: loadFade2 1.5s infinite;
+    }
+    .game__load:nth-child(4) {
+      opacity: 0;
+      animation: loadFade3 1.5s infinite;
+    }
   }
-  .game-text,
-  .game-load-text {
-    color: white;
-    font-size: 2.2rem;
+  @keyframes loadFade1 {
+    24% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    99% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes loadFade2 {
+    49% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    99% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes loadFade3 {
+    74% {
+      opacity: 0;
+    }
+    75% {
+      opacity: 1;
+    }
+    99% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 </style>
