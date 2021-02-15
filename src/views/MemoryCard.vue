@@ -1,31 +1,40 @@
 <template>
-  <main class="main-deck">
+  <main>
     <game-load v-if="gameLoadStatus" />
-    <div v-for="card in cardsList" :key="card.id">
-      <Card-list
-        :cardName="card.name"
-        :pic="cardImg(card.name)"
-        :is-matched="card.isMatched"
-        :first-id="cardNumOne && cardNumOne.id"
-        :second-id="cardNumTwo && cardNumTwo.id"
-        :id="card.id"
-        :show-all="showAll"
-        @reveal-card="$store.dispatch('b/showCard', card)"
-      />
+    <game-finish
+      class="finish"
+      v-if="status === 'WON'"
+      @play-again="$store.dispatch('b/updateDeck')"
+    />
+    <div v-else-if="status === 'SUIT'" class="main-deck">
+      <div v-for="card in cardsList" :key="card.id">
+        <Card-list
+          :cardName="card.name"
+          :pic="cardImg(card.name)"
+          :is-matched="card.isMatched"
+          :first-id="cardNumOne && cardNumOne.id"
+          :second-id="cardNumTwo && cardNumTwo.id"
+          :id="card.id"
+          :show-all="showAll"
+          @reveal-card="$store.dispatch('b/showCard', card)"
+        />
+      </div>
     </div>
   </main>
 </template>
 <script>
   import CardList from '@/components/memory/CardList.vue'
   import GameLoad from '@/components/memory/GameLoad.vue'
+  import GameFinish from '@/components/memory/GameFinish.vue'
   import { mapGetters } from 'vuex'
 
   export default {
     name: 'MemoryCard',
-    components: { CardList, GameLoad },
+    components: { CardList, GameLoad, GameFinish },
     computed: {
       ...mapGetters({
         cardsList: 'b/getCards',
+        status: 'b/getStatus',
         cardNumOne: 'b/getCardNumOne',
         cardNumTwo: 'b/getCardNumTwo',
         gameLoadStatus: 'b/getGameLoadStatus'
@@ -61,6 +70,9 @@
     height: 100vh;
     box-sizing: border-box;
     padding-top: 6rem;
+  }
+  .finish {
+    cursor: pointer;
   }
   @media screen and (min-width: 547px) and (max-width: 626px) {
     .main-deck {
