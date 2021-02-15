@@ -50,7 +50,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   #Return {
     border: solid white 2px;
   }

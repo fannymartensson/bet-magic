@@ -133,7 +133,7 @@ export default {
       await dispatch('shuffleCards')
       commit('UPDATE_STATUS', 'SUIT')
       commit('UPDATE_GAME_LOAD', true)
-      setTimeout(function() {
+      setTimeout(() => {
         commit('UPDATE_GAME_LOAD', false)
       }, 1600)
     }
