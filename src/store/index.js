@@ -17,10 +17,9 @@ const emptyPositions = () => [
 
 export default new Vuex.Store({
   modules: {
-   b: moduleB
+    b: moduleB
   },
   state: /* HÄR STARTAR TIC TAC */ {
-
     player: 'X',
     winner: null,
     players: null,
@@ -167,7 +166,6 @@ export default new Vuex.Store({
       commit('flushWinner')
     }
     /* Här slutar tictac */
-
   }
   /* Är det någon som skrivit in detta? =>  > 3 be76e02624a460027ebe33e6091e25432444289 */
 })
