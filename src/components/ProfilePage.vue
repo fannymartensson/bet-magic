@@ -80,6 +80,7 @@
     padding: 0.2em;
     border-radius: 0;
     background-color: black;
+    cursor: pointer;
   }
   #share-btn {
     margin-top: 0.7em;
