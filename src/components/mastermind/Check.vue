@@ -18,9 +18,12 @@
 
 <style lang="scss">
   #check {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
     @media only screen and (max-width: 767px) {
-      padding-left: 48 / 4;
-      padding-right: 48 / 4;
+      padding-left: 15px;
+      padding-right: 15px;
     }
     height: 48px;
     line-height: 48px;
@@ -40,7 +43,6 @@
     margin: 10px;
     opacity: 1;
     transition: transform 0.4s ease, opacity 0.4s ease;
-    /* Hur ändrar jag "&" till att fungera utan scss?? */
     &:before {
       @media only screen and (max-width: 767px) {
         content: '✓';
@@ -50,7 +52,7 @@
 
     &:disabled {
       cursor: not-allowed;
-      opacity: 0.2;
+      opacity: 0.5;
     }
   }
 </style>

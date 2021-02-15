@@ -23,10 +23,6 @@ const emptyPositions = () => [
   null
 ]
 
-/* Här startar Mastermind */
-
-/* Här slutar Mastermind */
-
 export default new Vuex.Store({
   modules: {
     b: moduleB

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mastermind">
     <Mastermind />
   </div>
 </template>
@@ -14,3 +14,5 @@
     }
   }
 </script>
+
+<style scoped lang="scss"></style>
