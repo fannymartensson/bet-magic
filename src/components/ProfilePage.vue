@@ -32,7 +32,7 @@
             <div class="radio container">
               <label class="switch">
                 <input type="checkbox" class="switch-input" />
-                <span class="switch-label" data-on="On" data-off="Off" />
+                <span class="switch-label" data-on="Off" data-off="On" />
               </label>
             </div>
           </div>
