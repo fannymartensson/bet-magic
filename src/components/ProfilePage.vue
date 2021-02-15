@@ -55,6 +55,8 @@
 </script>
 
 <style scoped>
+  /* I'll make this cleaner when we decide on a complete layout and merge our styles */
+
   * {
     margin: 0;
   }
@@ -120,6 +122,9 @@
   p {
     margin-top: 0.4em;
   }
+
+  /* toggle button all the way */
+
   .container > .switch {
     display: block;
     margin: 2px auto;
