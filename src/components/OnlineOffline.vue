@@ -1,8 +1,8 @@
 <template>
   <div class="online-offline">
-    <slot v-if="online" name="online"/>
+    <slot v-if="online" name="online" />
     <slot v-else name="offline">
-      <!-- We could find another svg for this (when network is off) 
+      <!-- We could find another svg for this (when network is off)
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -71,7 +71,6 @@
 </script>
 
 <style scoped>
-
   .online-offline {
     display: flex;
     justify-content: center;
