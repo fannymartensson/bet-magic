@@ -102,7 +102,6 @@
         if (this.isTargetNewHead()) {
           this.snake.unshift(this.targetCell)
           this.targetCell = null
-          console.log(this)
           this.addScores()
         } else {
           this.snake.unshift(newHeadCell)
@@ -185,9 +184,26 @@
   }
 </script>
 <style scoped>
-  #snake-canvas {
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    h1 {
+      font-size: 20px
+    }
+#snake-canvas {
     border: 10px solid rgb(81, 57, 136);
     height: 50vh;
     margin: 30px 0;
   }
+}
+
+@media screen 
+  and (min-device-width: 800px) {
+#snake-canvas {
+    border: 10px solid rgb(81, 57, 136);
+    height: 60vh;
+    margin: 30px 0;
+  }
+}
 </style>

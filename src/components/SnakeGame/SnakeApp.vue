@@ -7,7 +7,7 @@
     <h1>Snake Game</h1>
     <div class="column">
       Clarity
-      <input type="number" min="10" v-model.number="cellSize" />
+      <input type="number" min="25" v-model.number="cellSize" />
     </div>
     <div class="column">
       Size
@@ -47,7 +47,7 @@
 
     data () {
       return {
-        cellSize: 10,
+        cellSize: 25,
         boardSize: 20,
         speed: 10,
         isPlaying: false
