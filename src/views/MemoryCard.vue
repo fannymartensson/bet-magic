@@ -1,5 +1,7 @@
 <template>
   <main>
+    <h1 class="heading">Memory Card</h1>
+    <return class="btn-back" />
     <game-load v-if="gameLoadStatus" />
     <game-finish
       class="finish"
@@ -26,11 +28,13 @@
   import CardList from '@/components/memory/CardList.vue'
   import GameLoad from '@/components/memory/GameLoad.vue'
   import GameFinish from '@/components/memory/GameFinish.vue'
+  //import Return from '@/components/return.vue'
   import { mapGetters } from 'vuex'
+  import Return from '@/components/return.vue'
 
   export default {
     name: 'MemoryCard',
-    components: { CardList, GameLoad, GameFinish },
+    components: { CardList, GameLoad, GameFinish, Return },
     computed: {
       ...mapGetters({
         cardsList: 'b/getCards',
@@ -60,6 +64,20 @@
   }
 </script>
 <style scoped>
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .heading {
+    color: white;
+    margin-top: 2rem;
+    font-size: 3rem;
+  }
+  .btn-back {
+    margin-top: 2rem;
+  }
   .main-deck {
     display: grid;
     grid-template-columns: repeat(3, 3fr);
@@ -85,6 +103,9 @@
     }
   }
   @media (min-width: 808px) {
+    .heading {
+      font-size: 4rem;
+    }
     .main-deck {
       grid-template-columns: repeat(6, 150px);
     }
