@@ -86,7 +86,8 @@
     justify-content: center;
     text-align: center;
     box-sizing: border-box;
-    padding-top: 0;
+    padding-top: 01rem;
+    padding-bottom: 3rem;
   }
   .finish {
     cursor: pointer;
@@ -107,7 +108,7 @@
     }
     .main-deck {
       grid-template-columns: repeat(6, 150px);
-      padding-top: 3rem;
+      padding: 3rem;
     }
   }
 </style>

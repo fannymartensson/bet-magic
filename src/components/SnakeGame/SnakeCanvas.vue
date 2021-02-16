@@ -189,8 +189,20 @@
   }
   #snake-canvas {
     border: 10px solid rgb(81, 57, 136);
-    height: 350px;
-    width: 350px;
+    height: 223px;
+    width: 223px;
     margin: 30px 0;
+  }
+  @media screan and (min-width: 800px) and (max-width: 999px) {
+    #snake-canvas {
+      height: 245px;
+      width: 245px;
+    }
+  }
+  @media (min-width: 1000px) {
+    #snake-canvas {
+      height: 330px;
+      width: 330px;
+    }
   }
 </style>

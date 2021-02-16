@@ -34,6 +34,6 @@
     background-image: url('./assets/Backgrund.svg');
     background-size: cover;
     background-position: center center;
-    min-height: 95vh;
+    min-height: 93vh;
   }
 </style>
