@@ -72,7 +72,7 @@ export default new Vuex.Store({
       {
         title: 'Mastermind',
         description:
-          'Gissa den hemliga färgkombinationen. Endast en färg får användas en gång, vid rätt färg på rätt plats markeras svart, vid rätt färg på fel plats markeras rött.',
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
         img: '/mastermind.png',
         routerlink: 'Mastermind'
       },
