@@ -16,19 +16,24 @@
     font-family: 'Arcade';
     src: url('./assets/fonts/ARCADECLASSIC.TTF') format('truetype');
   }
+  body,
+  html {
+    box-sizing: border-box;
+    background: #06000c;
+    padding: 0;
+    margin: 0;
+    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
+    overflow: auto;
+  }
   #app {
     position: relative;
-    background-color: black;
-    box-sizing: border-box;
-    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     letter-spacing: 0.06em;
     color: white;
   }
   .background-img {
     background-image: url('./assets/Backgrund.svg');
-    height: 200vh;
     background-size: cover;
     background-position: center center;
-    background-attachment: fixed;
+    min-height: 93vh;
   }
 </style>

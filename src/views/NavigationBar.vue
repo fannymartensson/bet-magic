@@ -2,7 +2,7 @@
   <div class="background-nav">
     <logo-icon class="logo-btn" :logoIcon="true" />
     <nav>
-      <ul class="menu">
+      <ul class="menu-items">
         <li class="nav-item">
           <router-link class="nav-link" to="/login">LOGIN</router-link>
         </li>
@@ -33,21 +33,31 @@
     flex-direction: column;
     margin: 0 auto;
   }
+
   .logo-btn {
     margin-left: auto;
     margin-right: auto;
   }
-  .menu {
-    padding: 2rem;
+  .menu-items {
     text-align: center;
     list-style-type: none;
+    padding: 4rem;
   }
   .nav-link {
     text-decoration: none;
     color: #fff;
-    font-size: 30px;
+    font-size: 25px;
   }
   .nav-item {
-    padding: 1rem;
+    padding: 1.3rem;
+  }
+  @media (min-width: 800px) {
+    .nav-link {
+      padding: 3rem;
+      font-size: 30px;
+    }
+    .nav-item {
+      padding: 2rem;
+    }
   }
 </style>

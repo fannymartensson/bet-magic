@@ -14,23 +14,25 @@
 <style lang="scss" scoped>
   $background: #131212;
   $font: rgb(252, 242, 242);
-  .background-image {
-    background-attachment: unset;
-  }
+
   .game-setup {
     display: flex;
     justify-content: center;
     align-items: center;
     background: $background;
     z-index: 9999;
-    height: 100%;
+    min-height: 100%;
     width: 100%;
+    top: 0;
     position: absolute;
-    top: -28%;
-    background-attachment: fixed;
     color: $font;
     span {
       font-size: 2.2rem;
+    }
+    @media (min-width: 800px) {
+      .game-setup {
+        height: 100vh;
+      }
     }
 
     .game__load:nth-child(2) {

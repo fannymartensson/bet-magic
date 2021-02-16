@@ -7,7 +7,7 @@
     <h1>Snake Game</h1>
     <div class="column">
       Clarity
-      <input type="number" min="10" v-model.number="cellSize" />
+      <input type="number" min="25" v-model.number="cellSize" />
     </div>
     <div class="column">
       Size
@@ -25,6 +25,7 @@
       :stop="stop"
     />
     <p>Score: {{ score }}</p>
+    <p>Total:</p>
     <button id="play-btn" @click="isPlaying ? stop() : start()">
       {{ isPlaying ? 'Stop' : 'Play' }}
     </button>
@@ -46,7 +47,7 @@
 
     data() {
       return {
-        cellSize: 10,
+        cellSize: 25,
         boardSize: 20,
         speed: 10,
         isPlaying: false
@@ -81,26 +82,27 @@
     background: transparent;
   }
   #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
+    color: white;
     background: transparent;
   }
   .column {
     display: inline-block;
     width: 20%;
-    border-radius: 4px;
     padding: 5px;
     margin: 5px;
-    background-color: aliceblue;
+    color: white;
   }
   .column input {
     width: 30px;
-    border-radius: 40px;
-    border: 1px solid white;
+    border: none;
+    background: transparent;
     line-height: 20px;
+    color: white;
+    font-size: 17px;
+    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
 
   #play-btn {
@@ -108,7 +110,11 @@
     border: 1px solid #222;
     border-radius: 4px;
     font-size: 20px;
-    margin-top: 10px;
     cursor: pointer;
+    margin-top: 0.9em;
+    background-color: black;
+    border-color: white;
+    color: white;
+    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
 </style>
