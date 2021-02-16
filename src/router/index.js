@@ -38,6 +38,11 @@ const routes = [
     component: Game
   },
   {
+    path: '/memory-card',
+    name: 'Memory',
+    component: MemoryCard
+  },
+  {
     path: '*',
     name: 'LoginPage',
     component: LoginPage
@@ -46,11 +51,6 @@ const routes = [
     path: '/signup',
     name: 'SignUp',
     component: SignUp
-  },
-  {
-    path: '/memory-card',
-    name: 'MemoryCard',
-    component: MemoryCard
   },
   {
     path: '/profile',

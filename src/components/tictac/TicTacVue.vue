@@ -24,8 +24,12 @@
     },
 
     computed: {
-      ...mapState(['gameHistory']),
-      ...mapGetters(['hasPlayers'])
+      ...mapState({
+        gameHistory: 'a/gameHistory'
+      }),
+      ...mapGetters({
+        hasPlayers: 'a/hasPlayers'
+      })
     }
   }
 </script>

@@ -20,7 +20,11 @@
       }
     },
     computed: {
-      ...mapState(['current', 'currentTurn', 'feedback']),
+      ...mapState('c', {
+        current: 'current',
+        currentTurn: 'currentTurn',
+        feedback: 'feedback'
+      }),
       fbClass() {
         return x => {
           if (this.fb === undefined) return null

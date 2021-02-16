@@ -36,10 +36,14 @@
       }
     },
     computed: {
-      ...mapState(['secret'])
+      ...mapState('c', {
+        secret: 'secret'
+      })
     },
     methods: {
-      ...mapActions(['startNewGame'])
+      ...mapActions('c', {
+        startNewGame: 'startNewGame'
+      })
     }
   }
 </script>

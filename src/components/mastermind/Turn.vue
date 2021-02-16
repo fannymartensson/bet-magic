@@ -26,7 +26,9 @@
       Pippolo
     },
     computed: {
-      ...mapState(['current'])
+      ...mapState('c', {
+        current: 'current'
+      })
     }
   }
 </script>
