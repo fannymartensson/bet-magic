@@ -1,12 +1,15 @@
 <template>
-  <button id="restart">
+  <button @click="RESET_GAME" id="restart">
     Restart
   </button>
 </template>
 
 <script>
+  import { mapMutations } from 'vuex'
+
   export default {
-    name: 'restart'
+    name: 'restart',
+    methods: { ...mapMutations(['RESET_GAME']) }
   }
 </script>
 
