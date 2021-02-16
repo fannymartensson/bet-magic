@@ -22,6 +22,7 @@
     box-sizing: border-box;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     letter-spacing: 0.06em;
+    color: white;
   }
   .background-img {
     background-image: url('./assets/Backgrund.svg');

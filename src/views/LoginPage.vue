@@ -141,7 +141,7 @@
       margin: 3rem;
     }
     .textbox input {
-      min-width: 34rem;
+      min-width: 31rem;
     }
   }
 </style>

@@ -41,8 +41,6 @@
         )
       }
     },
-
-    methods: {},
     props: {
       firstId: {
         type: String,

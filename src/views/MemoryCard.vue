@@ -1,32 +1,46 @@
 <template>
-  <main class="main-deck">
-    <game-load />
-    <div v-for="card in cardsList" :key="card.id">
-      <Card-list
-        :cardName="card.name"
-        :pic="cardImg(card.name)"
-        :is-matched="card.isMatched"
-        :first-id="cardNumOne && cardNumOne.id"
-        :second-id="cardNumTwo && cardNumTwo.id"
-        :id="card.id"
-        :show-all="showAll"
-        @reveal-card="$store.dispatch('b/showCard', card)"
-      />
+  <main>
+    <h1 class="heading">Memory Card</h1>
+    <return class="btn-back" />
+    <game-load v-if="gameLoadStatus" />
+    <game-finish
+      class="finish"
+      v-if="status === 'WON'"
+      @play-again="$store.dispatch('b/updateDeck')"
+    />
+    <div v-else-if="status === 'SUIT'" class="main-deck">
+      <div v-for="card in cardsList" :key="card.id">
+        <Card-list
+          :cardName="card.name"
+          :pic="cardImg(card.name)"
+          :is-matched="card.isMatched"
+          :first-id="cardNumOne && cardNumOne.id"
+          :second-id="cardNumTwo && cardNumTwo.id"
+          :id="card.id"
+          :show-all="showAll"
+          @reveal-card="$store.dispatch('b/showCard', card)"
+        />
+      </div>
     </div>
   </main>
 </template>
 <script>
   import CardList from '@/components/memory/CardList.vue'
+  import GameLoad from '@/components/memory/GameLoad.vue'
+  import GameFinish from '@/components/memory/GameFinish.vue'
+  import Return from '@/components/return.vue'
   import { mapGetters } from 'vuex'
 
   export default {
     name: 'MemoryCard',
-    components: { CardList },
+    components: { CardList, GameLoad, GameFinish, Return },
     computed: {
       ...mapGetters({
         cardsList: 'b/getCards',
+        status: 'b/getStatus',
         cardNumOne: 'b/getCardNumOne',
-        cardNumTwo: 'b/getCardNumTwo'
+        cardNumTwo: 'b/getCardNumTwo',
+        gameLoadStatus: 'b/getGameLoadStatus'
       })
     },
     created() {
@@ -49,6 +63,20 @@
   }
 </script>
 <style scoped>
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .heading {
+    color: white;
+    margin-top: 2rem;
+    font-size: 3rem;
+  }
+  .btn-back {
+    margin-top: 2rem;
+  }
   .main-deck {
     display: grid;
     grid-template-columns: repeat(3, 3fr);
@@ -59,6 +87,9 @@
     height: 100vh;
     box-sizing: border-box;
     padding-top: 6rem;
+  }
+  .finish {
+    cursor: pointer;
   }
   @media screen and (min-width: 547px) and (max-width: 626px) {
     .main-deck {
@@ -71,6 +102,9 @@
     }
   }
   @media (min-width: 808px) {
+    .heading {
+      font-size: 4rem;
+    }
     .main-deck {
       grid-template-columns: repeat(6, 150px);
     }

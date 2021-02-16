@@ -3,6 +3,14 @@ import Vuex from 'vuex'
 import moduleB from './modules/moduleB'
 import moduleC from './modules/moduleC'
 
+import {
+  TOTAL,
+  INIT_TURN,
+  INIT_SECRET,
+  INIT_FEEDBACK,
+  COLORS
+} from './settings'
+
 Vue.use(Vuex)
 const emptyPositions = () => [
   null,
@@ -21,7 +29,20 @@ export default new Vuex.Store({
     b: moduleB,
     c: moduleC
   },
-  state: /* HÄR STARTAR TIC TAC */ {
+  state: {
+    /* Här startar Mastermind */
+    total: TOTAL,
+    current: 1,
+    currentTurn: INIT_TURN,
+    secret: INIT_SECRET,
+    colors: COLORS,
+    won: false,
+    lost: false,
+    forceReset: false,
+    feedback: INIT_FEEDBACK,
+    /* Här slutar Mastermind */
+
+    /* HÄR STARTAR TIC TAC */
     player: 'X',
     winner: null,
     players: null,
@@ -49,16 +70,39 @@ export default new Vuex.Store({
         routerlink: 'space-invaders'
       },
       {
-        title: 'Donky Kong',
+        title: 'Mastermind',
         description:
           'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
-        img: '/donkykong.png',
-        routerlink: 'tictac'
+        img: '/mastermind.png',
+        routerlink: 'Mastermind'
+      },
+      {
+        title: 'Snake Game',
+        description:
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
+        img: '/snakegame.png',
+        routerlink: 'SnakeGame'
       }
     ]
     /* HÄR SLUTAR GAMING CARDSEN */
   },
   getters: {
+    /* Här startar Mastermind */
+
+    checkButtonTranslation(state) {
+      const y = (state.current - 1) * 100
+      const offset = y / 10 // this works because $aria is 10px in the sass
+      return `translate(100%, calc(-${y}% - ${offset}px))`
+    },
+    isActive: state => x => x < state.current,
+    isCurrentTurnValid(state) {
+      const missing = state.currentTurn.filter(x => x === -1)
+      if (missing.length > 0) return false
+
+      return state.currentTurn.length === new Set(state.currentTurn).size
+    },
+    /* Här slutar mastermind */
+
     /* Här startar tictac*/
     hasPlayers: state => state.players,
     getMarker: state => index => state.positions[index],
@@ -81,6 +125,54 @@ export default new Vuex.Store({
   },
   /* HÄR SLUTAR GAMING CARDSEN */
   mutations: {
+    /* Här startar Mastermind */
+
+    GENERATE_SECRET(state) {
+      let s = new Set()
+      while (s.size !== 4)
+        s.add(Math.round(Math.random() * (state.colors.length - 1)))
+      state.secret = [...s]
+    },
+    RESET_TURN(state) {
+      state.won = false
+      state.lost = false
+      state.currentTurn = [-1, -1, -1, -1]
+    },
+    INCREMENT_TURN(state) {
+      state.current++
+    },
+    UPDATE_CURRENT_TURN(state, payload) {
+      state.currentTurn.splice(payload.index, 1, payload.colorIndex)
+    },
+    WON(state) {
+      state.won = true
+    },
+    LOST(state) {
+      state.lost = true
+    },
+    RESET_GAME(state) {
+      state.total = TOTAL
+      state.current = 1
+      state.currentTurn = INIT_TURN
+      state.secret = INIT_SECRET
+      state.won = false
+      state.lost = false
+      state.feedback = Array.from(' '.repeat(TOTAL))
+      state.forceReset = !state.forceReset
+    },
+    FEEDBACK(state) {
+      let fb = ''
+
+      for (let i = 0; i < state.currentTurn.length; i++) {
+        const found = state.secret.findIndex(x => x === state.currentTurn[i])
+        if (found === -1) continue
+        fb += found === i ? '1' : '0'
+      }
+
+      state.feedback[state.current] = fb
+    },
+    /* Här slutar Mastermind */
+
     /* Här startar tictac */
     setPlayers(state, payload) {
       state.players = payload
@@ -158,6 +250,43 @@ export default new Vuex.Store({
   },
   /* HÄR SLUTAR GAMING CARDSEN */
   actions: {
+    /* Här startar Mastermind */
+
+    generateSecret: context => {
+      context.commit('GENERATE_SECRET')
+    },
+    checkTurn: context => {
+      const win = context.state.currentTurn.findIndex((x, i) => {
+        return x !== context.state.secret[i]
+      })
+
+      context.commit('FEEDBACK')
+      context.commit('RESET_TURN')
+
+      if (win === -1) {
+        context.commit('WON')
+        return
+      }
+
+      if (context.state.current === context.state.total) {
+        context.commit('LOST')
+        return
+      }
+
+      context.commit('INCREMENT_TURN')
+    },
+    updateCurrentTurn: (context, payload) => {
+      context.commit('UPDATE_CURRENT_TURN', payload)
+    },
+    startNewGame: context => {
+      context.commit('RESET_GAME')
+      context.commit('GENERATE_SECRET')
+    },
+    getFeedback: context => {
+      context.commit('FEEDBACK')
+    },
+    /* Här slutar Mastermind */
+
     /* Här startar tictac */
     addMarker({ commit }, payload) {
       commit('pushMarker', { ...payload })
@@ -169,5 +298,4 @@ export default new Vuex.Store({
     }
     /* Här slutar tictac */
   }
-  /* Är det någon som skrivit in detta? =>  > 3 be76e02624a460027ebe33e6091e25432444289 */
 })

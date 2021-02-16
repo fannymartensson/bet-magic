@@ -8,11 +8,13 @@ import ProfilePage from '@/components/ProfilePage.vue'
 import MemoryCard from '@/views/MemoryCard.vue'
 import TicTac from '@/views/TicTac.vue'
 import SpaceInvaders from '@/views/SpaceInvadersPage.vue'
+import SnakeGame from '@/views/SnakeGame.vue'
+import Game from '../views/Mastermind.vue'
 
 Vue.use(VueRouter)
 const routes = [
   {
-    path: '/',
+    path: '*',
     name: 'NavigationBar',
     component: NavigationBar
   },
@@ -32,7 +34,18 @@ const routes = [
     component: SpaceInvaders
   },
   {
-    path: '*',
+    path: '/mastermind',
+    name: 'Mastermind',
+    component: Game
+  },
+
+  {
+    path: '/snakegame',
+    name: 'SnakeGame',
+    component: SnakeGame
+  },
+  {
+    path: '/login',
     name: 'LoginPage',
     component: LoginPage
   },

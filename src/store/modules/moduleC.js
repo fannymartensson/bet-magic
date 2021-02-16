@@ -1,11 +1,15 @@
-export default {
+import Vue from 'vue'
+import Vuex from 'vuex'
+Vue.use(Vuex)
+
+export default new Vuex.Store({
   state: {
-    position: {
-      x: 200,
-      y: 200
-    }
+    score: 0
   },
-  getters: {},
-  mutations: {},
-  actions: {}
-}
+  mutations: {
+    increment: state => state.score++,
+    reset: state => (state.score = 0)
+  },
+  actions: {},
+  modules: {}
+})

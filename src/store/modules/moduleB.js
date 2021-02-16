@@ -7,7 +7,7 @@ export default {
     cardNumOne: null,
     cardNumTwo: null,
     status: 'SUIT',
-    gameLoad: false
+    gameLoadStatus: false
   },
   getters: {
     getCards(state) {
@@ -18,6 +18,18 @@ export default {
     },
     getCardNumTwo(state) {
       return state.cardNumTwo
+    },
+    getGameLoadStatus(state) {
+      return state.gameLoadStatus
+    },
+    getStatus(state) {
+      return state.status
+    },
+    getUnMatchedCards(state) {
+      return (
+        state.cardsList &&
+        state.cardsList.filter(card => card.isMatched === false)
+      )
     }
   },
   mutations: {
@@ -32,6 +44,9 @@ export default {
     },
     UPDATE_STATUS(state, payload) {
       state.status = payload
+    },
+    UPDATE_GAME_LOAD(state, payload) {
+      state.gameLoadStatus = payload
     }
   },
   actions: {
@@ -61,13 +76,11 @@ export default {
 
       if (getters.getUnMatchedCards && getters.getUnMatchedCards.length === 0) {
         commit('UPDATE_STATUS', 'WON')
-      }
+      } else {
+        commit('UPDATE_STATUS', 'SUIT')
+      } // TO SEE THE GAME FINISH
     },
 
-    async updateDeck({ dispatch }) {
-      await dispatch('setDeck')
-      await dispatch('shuffleCards')
-    },
     setDeck(context) {
       //TO SHUFFLE WE NEED THE PROMISE
       return new Promise((resolve, reject) => {
@@ -109,12 +122,20 @@ export default {
           return
         }
         const copyCards = [...state.cardsList]
-
-        copyCards.sort(() => Math.random() - 0.4)
-
+        copyCards.sort(() => Math.random() - 0.5)
         commit('UPDATE_CARDS', copyCards)
         resolve(copyCards)
       })
+    },
+
+    async updateDeck({ dispatch, commit }) {
+      await dispatch('setDeck')
+      await dispatch('shuffleCards')
+      commit('UPDATE_STATUS', 'SUIT')
+      commit('UPDATE_GAME_LOAD', true)
+      setTimeout(() => {
+        commit('UPDATE_GAME_LOAD', false)
+      }, 1600)
     }
   }
 }
