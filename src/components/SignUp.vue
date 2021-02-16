@@ -88,7 +88,8 @@
     justify-content: center;
   }
   .signup-title {
-    font-size: 40px;
+    font-size: 30px;
+    text-align: center;
   }
   .signup-form {
     padding: 2rem;
@@ -113,7 +114,7 @@
     height: 2.3em;
     outline: none;
     padding: 1em;
-    min-width: 100%;
+    max-width: 12.8em;
     text-align: left;
   }
   .form-btn {
@@ -123,9 +124,9 @@
     border: 1px solid #fff;
     color: white;
     padding: 12px 11px;
-    font-size: 25px;
+    font-size: 20px;
     cursor: pointer;
-    margin: 0;
+    margin: 0.1em;
     height: 2.5em;
     border-radius: 6px;
   }
@@ -136,11 +137,11 @@
     }
     .signup-form {
       width: 18rem;
-      height: 35rem;
+      height: 36.5rem;
     }
     .textgroup {
       overflow: hidden;
-      padding: 1.2rem 0.08rem;
+      padding: 1.2rem 0.1rem;
     }
     .signup-title {
       margin: 2rem;
