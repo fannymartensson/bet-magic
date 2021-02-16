@@ -44,7 +44,7 @@
       LogoIcon
     },
 
-    data() {
+    data () {
       return {
         cellSize: 10,
         boardSize: 20,
@@ -54,16 +54,16 @@
     },
 
     computed: {
-      score() {
+      score () {
         return Store.state.score
       }
     },
 
     methods: {
-      start() {
+      start () {
         this.isPlaying = true
       },
-      stop() {
+      stop () {
         this.isPlaying = false
       }
     }
@@ -101,7 +101,7 @@
     line-height: 20px;
     color: white;
     font-size: 17px;
-     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
 
   #play-btn {
