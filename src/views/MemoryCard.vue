@@ -28,9 +28,8 @@
   import CardList from '@/components/memory/CardList.vue'
   import GameLoad from '@/components/memory/GameLoad.vue'
   import GameFinish from '@/components/memory/GameFinish.vue'
-  //import Return from '@/components/return.vue'
-  import { mapGetters } from 'vuex'
   import Return from '@/components/return.vue'
+  import { mapGetters } from 'vuex'
 
   export default {
     name: 'MemoryCard',
