@@ -63,11 +63,11 @@ export default new Vuex.Store({
         routerlink: 'tictac'
       },
       {
-        title: 'Space Invadors',
+        title: 'UFO Shooter',
         description:
           'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
         img: '/space-invadors.png',
-        routerlink: 'space-invaders'
+        routerlink: 'ufo-shooting'
       },
       {
         title: 'Mastermind',
@@ -298,5 +298,4 @@ export default new Vuex.Store({
     }
     /* Här slutar tictac */
   }
-  /* Är det någon som skrivit in detta? =>  > 3 be76e02624a460027ebe33e6091e25432444289 */
 })
