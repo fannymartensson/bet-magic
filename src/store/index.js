@@ -10,7 +10,11 @@ export default new Vuex.Store({
     c: moduleC
   },
   state: {
+    /* här startar PlayerScore data */
+    playerName: 'BigSpender',
+    playerScore: 100,
     currentIndex: 0,
+    /* här slutar PlayerScore data */
     /* HÄR BÖRJAR GAMING CARDSEN */
     cards: [
       {

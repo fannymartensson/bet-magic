@@ -3,11 +3,17 @@
     <div class="background-img">
       <router-view />
     </div>
+    <playerScore />
   </div>
 </template>
+
 <script>
+  import playerScore from '@/components/playerScore.vue'
   export default {
-    name: 'App'
+    name: 'App',
+    components: {
+      playerScore
+    }
   }
 </script>
 
