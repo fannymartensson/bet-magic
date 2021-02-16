@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import moduleB from './modules/moduleB'
+import moduleC from './modules/moduleC'
 
 Vue.use(Vuex)
 const emptyPositions = () => [
@@ -17,7 +18,8 @@ const emptyPositions = () => [
 
 export default new Vuex.Store({
   modules: {
-    b: moduleB
+    b: moduleB,
+    c: moduleC
   },
   state: /* HÄR STARTAR TIC TAC */ {
     player: 'X',
@@ -40,7 +42,7 @@ export default new Vuex.Store({
         routerlink: 'tictac'
       },
       {
-        title: 'Space Invadors',
+        title: 'UFO Shooter',
         description:
           'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
         img: '/space-invadors.png',

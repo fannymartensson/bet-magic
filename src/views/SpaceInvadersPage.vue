@@ -4,7 +4,7 @@
       <logo-icon class="logo-btn" :logoIcon="true" />
       <Return class="menu-btn" :return="true" />
     </header>
-    <h1>Space Invaders</h1>
+    <h1>UFO Shooting Game</h1>
 
     <SpaceInvaders />
   </div>

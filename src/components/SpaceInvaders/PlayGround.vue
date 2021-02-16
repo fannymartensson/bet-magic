@@ -19,7 +19,9 @@
     components: {
       Hero,
       Invaders
-    }
+    },
+    computed: {},
+    methods: {}
   }
 </script>
 <style lang="scss">

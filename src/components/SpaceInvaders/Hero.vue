@@ -1,14 +1,11 @@
 <template>
   <div>
-    <img class="hero" src="../../assets/SpaceInvaders/rocket.svg" />
+    <img id="hero" class="hero" src="../../assets/SpaceInvaders/rocket.svg" />
   </div>
 </template>
 
 <script>
-  export default {
-    components: {},
-    methods: {}
-  }
+  export default {}
 </script>
 <style lang="scss">
   .hero {
