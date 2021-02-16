@@ -141,7 +141,6 @@
     .textgroup {
       overflow: hidden;
       padding: 1.2rem 0.08rem;
-      
     }
     .signup-title {
       margin: 2rem;

@@ -25,7 +25,7 @@
       :stop="stop"
     />
     <p>Score: {{ score }}</p>
-    <p>Total: </p>
+    <p>Total:</p>
     <button id="play-btn" @click="isPlaying ? stop() : start()">
       {{ isPlaying ? 'Stop' : 'Play' }}
     </button>
@@ -45,7 +45,7 @@
       LogoIcon
     },
 
-    data () {
+    data() {
       return {
         cellSize: 25,
         boardSize: 20,
@@ -55,16 +55,16 @@
     },
 
     computed: {
-      score () {
+      score() {
         return Store.state.score
       }
     },
 
     methods: {
-      start () {
+      start() {
         this.isPlaying = true
       },
-      stop () {
+      stop() {
         this.isPlaying = false
       }
     }
