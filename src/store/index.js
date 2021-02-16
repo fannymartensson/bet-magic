@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import moduleB from './modules/moduleB'
+import moduleC from './modules/moduleC'
 
 import {
   TOTAL,
@@ -25,7 +26,8 @@ const emptyPositions = () => [
 
 export default new Vuex.Store({
   modules: {
-    b: moduleB
+    b: moduleB,
+    c: moduleC
   },
   state: {
     /* Här startar Mastermind */
@@ -73,7 +75,14 @@ export default new Vuex.Store({
           'Gissa den hemliga färgkombinationen. Endast en färg får användas en gång, vid rätt färg på rätt plats markeras svart, vid rätt färg på fel plats markeras rött.',
         img: '/mastermind.png',
         routerlink: 'Mastermind'
-      }
+      },
+      {
+        title: 'Snake Game',
+        description:
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
+        img: '/snakegame.png',
+        routerlink: 'SnakeGame'
+      },
     ]
     /* HÄR SLUTAR GAMING CARDSEN */
   },
