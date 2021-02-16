@@ -14,7 +14,7 @@ import Game from '../views/Mastermind.vue'
 Vue.use(VueRouter)
 const routes = [
   {
-    path: '/',
+    path: '*',
     name: 'NavigationBar',
     component: NavigationBar
   },
@@ -45,7 +45,7 @@ const routes = [
     component: SnakeGame
   },
   {
-    path: '*',
+    path: '/login',
     name: 'LoginPage',
     component: LoginPage
   },
