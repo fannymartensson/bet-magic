@@ -81,7 +81,6 @@
     background: transparent;
   }
   #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
@@ -91,16 +90,18 @@
   .column {
     display: inline-block;
     width: 20%;
-    border-radius: 4px;
     padding: 5px;
     margin: 5px;
-    background-color: aliceblue;
+    color: white;
   }
   .column input {
     width: 30px;
-    border-radius: 40px;
-    border: 1px solid white;
+    border: none;
+    background: transparent;
     line-height: 20px;
+    color: white;
+    font-size: 17px;
+     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
 
   #play-btn {
@@ -108,7 +109,11 @@
     border: 1px solid #222;
     border-radius: 4px;
     font-size: 20px;
-    margin-top: 10px;
     cursor: pointer;
+    margin-top: 0.9em;
+    background-color: black;
+    border-color: white;
+    color: white;
+    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
 </style>
