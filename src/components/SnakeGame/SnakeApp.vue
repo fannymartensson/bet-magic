@@ -25,6 +25,7 @@
       :stop="stop"
     />
     <p>Score: {{ score }}</p>
+    <p>Total: </p>
     <button id="play-btn" @click="isPlaying ? stop() : start()">
       {{ isPlaying ? 'Stop' : 'Play' }}
     </button>

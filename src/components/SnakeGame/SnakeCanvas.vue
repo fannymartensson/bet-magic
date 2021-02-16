@@ -6,8 +6,8 @@
       :width="boardSizePx"
       :height="boardSizePx"
     />
-
     <constants />
+     <h1>{{gameover}}</h1>
   </div>
 </template>
 <script>
@@ -16,6 +16,11 @@
 
   export default {
     components: { Constants },
+    data() {
+      return {
+        gameover: ''
+      }
+    },
     name: 'SnakeCanvas',
     props: {
       cellSize: Number,
@@ -50,6 +55,7 @@
     },
     methods: {
       resetSnake() {
+        this.gameover = ''
         this.snake = [
           {
             x: this.getMiddleCell(),
@@ -89,7 +95,7 @@
           this.amountCellsInSnake(this.snake[0]) > 1
         ) {
           this.stop()
-          alert(`Game over! You've scored ${Store.state.score} points.`)
+          this.gameover = `Game over! You've scored ${Store.state.score} points`
           this.resetScores()
         }
 
