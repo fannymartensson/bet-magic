@@ -193,7 +193,7 @@
     }
 #snake-canvas {
     border: 10px solid rgb(81, 57, 136);
-    height: 50vh;
+    height: 300px;
     margin: 30px 0;
   }
 }
@@ -202,7 +202,6 @@
   and (min-device-width: 800px) {
 #snake-canvas {
     border: 10px solid rgb(81, 57, 136);
-    height: 60vh;
     margin: 30px 0;
   }
 }
