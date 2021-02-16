@@ -68,6 +68,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
   }
   .heading {
     color: white;
@@ -84,9 +85,8 @@
     grid-gap: 5px;
     justify-content: center;
     text-align: center;
-    height: 100vh;
     box-sizing: border-box;
-    padding-top: 6rem;
+    padding-top: 0;
   }
   .finish {
     cursor: pointer;
@@ -107,6 +107,7 @@
     }
     .main-deck {
       grid-template-columns: repeat(6, 150px);
+      padding-top: 3rem;
     }
   }
 </style>
