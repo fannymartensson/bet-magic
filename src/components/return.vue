@@ -25,5 +25,6 @@
     border-color: white;
     color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
+    cursor: pointer;
   }
 </style>

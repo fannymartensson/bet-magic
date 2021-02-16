@@ -80,8 +80,10 @@
     background: transparent;
     border: none;
     outline: none;
+    width: 111px;
+    height: 145px;
   }
-  .card-container,
+
   .back-face,
   .front-face {
     width: 111px;
@@ -96,7 +98,7 @@
   }
   .flip-card {
     width: 100%;
-    height: 120%;
+    height: 76%;
     transition: 0.6s;
     transform-style: preserve-3d;
     position: relative;
@@ -104,7 +106,7 @@
   }
 
   .flip-card img {
-    height: 9rem;
+    height: 8rem;
     width: 6rem;
   }
 

@@ -109,7 +109,7 @@
     color: white;
     font-size: 17px;
     border-radius: 6px;
-    max-width: 15.2rem;
+    max-width: 12.3rem;
     height: 2.5em;
     outline: none;
     padding-left: 6px;
@@ -141,7 +141,7 @@
       margin: 3rem;
     }
     .textbox input {
-      min-width: 34rem;
+      min-width: 31rem;
     }
   }
 </style>

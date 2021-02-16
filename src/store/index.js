@@ -21,11 +21,11 @@ export default new Vuex.Store({
         routerlink: 'tictac'
       },
       {
-        title: 'Space Invadors',
+        title: 'UFO Shooter',
         description:
           'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
         img: '/space-invadors.png',
-        routerlink: 'space-invaders'
+        routerlink: 'ufo-shooting'
       },
       {
         title: 'Mastermind',
@@ -40,6 +40,13 @@ export default new Vuex.Store({
           'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
         img: '/mastermind.png',
         routerlink: 'Memory-card'
+      },
+      {
+        title: 'Snake Game',
+        description:
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
+        img: '/snakegame.png',
+        routerlink: 'SnakeGame'
       }
     ]
     /* HÄR SLUTAR GAMING CARDSEN */

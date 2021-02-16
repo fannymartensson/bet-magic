@@ -1,7 +1,7 @@
 <template>
   <div class="Signup">
     <header>
-      <logo-icon class="logo-btn" :LogoIcon="true" />
+      <logo-icon class="logo-btn" :logoIcon="true" />
       <menu-btn class="menu-btn" :MenuBtn="true" />
     </header>
     <main>
@@ -63,7 +63,7 @@
   import LogoIcon from '@/components/LogoIcon.vue'
 
   export default {
-    name: 'Signup',
+    name: 'SignUp',
     components: { MenuBtn, LogoIcon },
 
     data: function() {
@@ -89,32 +89,32 @@
   }
   .signup-title {
     font-size: 40px;
-    text-align: center;
   }
   .signup-form {
     padding: 2rem;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     color: white;
-    height: 34rem;
+    height: 31rem;
     border: 1px solid white;
-    width: 17rem;
+    width: 40rem;
     margin-left: 6px;
     border-radius: 6px;
   }
   .textgroup {
     overflow: hidden;
-    padding: 17px 9px;
+    padding: 1.2em 4.4em;
   }
   .textgroup input {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     background: transparent;
     color: #fff;
     font-size: 17px;
-    border-radius: 6px;
-    max-width: 15rem;
-    height: 2.5em;
+    border-radius: 8px;
+    height: 2.3em;
     outline: none;
-    padding-left: 6px;
+    padding: 1em;
+    min-width: 100%;
+    text-align: left;
   }
   .form-btn {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
@@ -122,11 +122,28 @@
     background: none;
     border: 1px solid #fff;
     color: white;
-    padding: 9px 10px;
-    font-size: 22px;
+    padding: 12px 11px;
+    font-size: 25px;
     cursor: pointer;
     margin: 0;
     height: 2.5em;
     border-radius: 6px;
+  }
+  @media (max-width: 500px) {
+    main {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .signup-form {
+      width: 18rem;
+      height: 35rem;
+    }
+    .textgroup {
+      overflow: hidden;
+      padding: 1.2rem 0.08rem;
+    }
+    .signup-title {
+      margin: 2rem;
+    }
   }
 </style>
