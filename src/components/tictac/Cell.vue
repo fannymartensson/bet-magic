@@ -33,9 +33,13 @@
     },
 
     computed: {
-      ...mapState(['winner']),
+      ...mapState({
+        winner: 'a/winner'
+      }),
 
-      ...mapGetters(['getMarker']),
+      ...mapGetters({
+        getMarker: 'a/getMarker'
+      }),
 
       isDisabled() {
         return this.position || this.winner || this.replay
@@ -57,9 +61,13 @@
     },
 
     methods: {
-      ...mapActions(['addMarker']),
+      ...mapActions({
+        addMarker: 'a/addMarker'
+      }),
 
-      ...mapMutations(['checkWinning']),
+      ...mapMutations({
+        checkWinning: 'a/checkWinning'
+      }),
 
       toggleCell(index) {
         if (!this.isDisabled) {

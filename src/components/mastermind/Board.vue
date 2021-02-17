@@ -23,8 +23,12 @@
       Turn
     },
     computed: {
-      ...mapGetters(['isActive']),
-      ...mapState(['total'])
+      ...mapGetters('c', {
+        isActive: 'isActive'
+      }),
+      ...mapState('c', {
+        total: 'total'
+      })
     }
   }
 </script>

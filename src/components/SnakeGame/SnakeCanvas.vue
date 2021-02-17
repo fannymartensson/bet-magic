@@ -6,8 +6,8 @@
       :width="boardSizePx"
       :height="boardSizePx"
     />
-
     <constants />
+    <h1>{{ gameover }}</h1>
   </div>
 </template>
 <script>
@@ -16,6 +16,11 @@
 
   export default {
     components: { Constants },
+    data() {
+      return {
+        gameover: ''
+      }
+    },
     name: 'SnakeCanvas',
     props: {
       cellSize: Number,
@@ -50,6 +55,7 @@
     },
     methods: {
       resetSnake() {
+        this.gameover = ''
         this.snake = [
           {
             x: this.getMiddleCell(),
@@ -89,14 +95,13 @@
           this.amountCellsInSnake(this.snake[0]) > 1
         ) {
           this.stop()
-          alert(`Game over! You've scored ${Store.state.score} points.`)
+          this.gameover = `Game over! You've scored ${Store.state.score} points`
           this.resetScores()
         }
 
         if (this.isTargetNewHead()) {
           this.snake.unshift(this.targetCell)
           this.targetCell = null
-          console.log(this)
           this.addScores()
         } else {
           this.snake.unshift(newHeadCell)
@@ -179,9 +184,25 @@
   }
 </script>
 <style scoped>
+  h1 {
+    font-size: 20px;
+  }
   #snake-canvas {
     border: 10px solid rgb(81, 57, 136);
-    height: 50vh;
+    height: 223px;
+    width: 223px;
     margin: 30px 0;
+  }
+  @media screan and (min-width: 800px) and (max-width: 999px) {
+    #snake-canvas {
+      height: 245px;
+      width: 245px;
+    }
+  }
+  @media (min-width: 1000px) {
+    #snake-canvas {
+      height: 330px;
+      width: 330px;
+    }
   }
 </style>

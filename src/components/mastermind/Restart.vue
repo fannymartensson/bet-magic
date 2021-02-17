@@ -9,7 +9,7 @@
 
   export default {
     name: 'restart',
-    methods: { ...mapMutations(['RESET_GAME']) }
+    methods: { ...mapMutations('c', { RESET_GAME: 'RESET_GAME' }) }
   }
 </script>
 

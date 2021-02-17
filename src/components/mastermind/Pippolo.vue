@@ -31,10 +31,15 @@
       }
     },
     computed: {
-      ...mapState(['colors', 'forceReset'])
+      ...mapState('c', {
+        colors: 'colors',
+        forceReset: 'forceReset'
+      })
     },
     methods: {
-      ...mapActions(['updateCurrentTurn']),
+      ...mapActions('c', {
+        updateCurrentTurn: 'updateCurrentTurn'
+      }),
       loopColor() {
         this.colorIndex =
           this.colorIndex === this.colors.length - 1 ? 0 : ++this.colorIndex

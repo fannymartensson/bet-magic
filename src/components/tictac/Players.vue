@@ -1,42 +1,48 @@
 <template>
-  <div class="players">
-    <h1>Skriv in spelarnamn</h1>
-    <div class="player">
-      <input
-        v-model="playerX"
-        class="form__input"
-        id="player-x"
-        type="text"
-        placeholder="Spelare X"
-      />
-    </div>
-    <div class="player">
-      <input
-        v-model="playerO"
-        class="form__input"
-        id="player-o"
-        type="text"
-        placeholder="Spelare O"
-      />
-    </div>
-    <div class="next text--center">
-      <button
-        :disabled="!hasPlayers"
-        class="btn btn--secondary"
-        @click="start({ O: playerO, X: playerX })"
-      >
-        {{ buttonValue }}
-      </button>
+  <div>
+    <Return id="Return" />
+    <div class="players">
+      <h1>Skriv in spelarnamn</h1>
+      <div class="player">
+        <input
+          v-model="playerX"
+          class="form__input"
+          id="player-x"
+          type="text"
+          placeholder="Spelare X"
+        />
+      </div>
+      <div class="player">
+        <input
+          v-model="playerO"
+          class="form__input"
+          id="player-o"
+          type="text"
+          placeholder="Spelare O"
+        />
+      </div>
+      <div class="next text--center">
+        <button
+          :disabled="!hasPlayers"
+          class="btn btn--secondary"
+          @click="start({ O: playerO, X: playerX })"
+        >
+          {{ buttonValue }}
+        </button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
   import { mapMutations } from 'vuex'
+  import Return from '../return.vue'
 
   export default {
     name: 'Players',
-
+    components: {
+      Return
+    },
     data() {
       return {
         playerO: '',
@@ -55,7 +61,9 @@
     },
 
     methods: {
-      ...mapMutations(['setPlayers']),
+      ...mapMutations({
+        setPlayers: 'a/setPlayers'
+      }),
 
       start(players) {
         this.setPlayers(players)
@@ -70,6 +78,9 @@
 </script>
 
 <style scoped>
+  #Return {
+    margin-left: 5%;
+  }
   .players {
     display: flex;
     flex-direction: column;

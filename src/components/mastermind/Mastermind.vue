@@ -41,11 +41,23 @@
       Restart
     },
     computed: {
-      ...mapGetters(['checkButtonTranslation', 'isActive']),
-      ...mapState(['current', 'total', 'won', 'lost', 'feedback'])
+      ...mapGetters('c', {
+        checkButtonTranslation: 'checkButtonTranslation',
+        isActive: 'isActive'
+      }),
+
+      ...mapState('c', {
+        current: 'current',
+        total: 'total',
+        won: 'won',
+        lost: 'lost',
+        feedback: 'feedback'
+      })
     },
     methods: {
-      ...mapActions(['generateSecret'])
+      ...mapActions('c', {
+        generateSecret: 'generateSecret'
+      })
     },
     mounted() {
       this.generateSecret()

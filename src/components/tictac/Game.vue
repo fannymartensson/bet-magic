@@ -24,7 +24,7 @@
             <button
               class="playAgain"
               v-if="winner || !hasEmptyCells"
-              @click="$store.dispatch('newGame')"
+              @click="$store.dispatch('a/newGame')"
             >
               <span>Play again</span>
             </button>
@@ -32,8 +32,8 @@
         </div>
       </div>
       <div class="playerScore">
-        <h2>{{ $store.state.players.O }}: {{ $store.state.scoreO }}</h2>
-        <h2>{{ $store.state.players.X }}: {{ $store.state.scoreX }}</h2>
+        <h2>{{ $store.state.a.players.O }}: {{ $store.state.a.scoreO }}</h2>
+        <h2>{{ $store.state.a.players.X }}: {{ $store.state.a.scoreX }}</h2>
       </div>
     </div>
   </div>
@@ -53,9 +53,17 @@
     },
 
     computed: {
-      ...mapState(['player', 'winner', 'positions']),
+      ...mapState('a', {
+        player: 'player',
+        winner: 'winner',
+        positions: 'positions'
+      }),
 
-      ...mapGetters(['getPlayerName', 'getWinnerName', 'hasEmptyCells'])
+      ...mapGetters({
+        getPlayerName: 'a/getPlayerName',
+        getWinnerName: 'a/getWinnerName',
+        hasEmptyCells: 'a/hasEmptyCells'
+      })
     },
 
     beforeCreate() {

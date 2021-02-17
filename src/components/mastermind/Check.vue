@@ -8,10 +8,14 @@
   export default {
     name: 'Check',
     methods: {
-      ...mapActions(['checkTurn'])
+      ...mapActions('c', {
+        checkTurn: 'checkTurn'
+      })
     },
     computed: {
-      ...mapGetters(['isCurrentTurnValid'])
+      ...mapGetters('c', {
+        isCurrentTurnValid: 'isCurrentTurnValid'
+      })
     }
   }
 </script>

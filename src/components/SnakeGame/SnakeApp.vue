@@ -7,7 +7,7 @@
     <h1>Snake Game</h1>
     <div class="column">
       Clarity
-      <input type="number" min="10" v-model.number="cellSize" />
+      <input type="number" min="25" v-model.number="cellSize" />
     </div>
     <div class="column">
       Size
@@ -25,6 +25,7 @@
       :stop="stop"
     />
     <p>Score: {{ score }}</p>
+    <p>Total:</p>
     <button id="play-btn" @click="isPlaying ? stop() : start()">
       {{ isPlaying ? 'Stop' : 'Play' }}
     </button>
@@ -44,9 +45,9 @@
       LogoIcon
     },
 
-    data () {
+    data() {
       return {
-        cellSize: 10,
+        cellSize: 25,
         boardSize: 20,
         speed: 10,
         isPlaying: false
@@ -54,16 +55,16 @@
     },
 
     computed: {
-      score () {
+      score() {
         return Store.state.score
       }
     },
 
     methods: {
-      start () {
+      start() {
         this.isPlaying = true
       },
-      stop () {
+      stop() {
         this.isPlaying = false
       }
     }
@@ -84,7 +85,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
+    color: white;
     background: transparent;
   }
   .column {

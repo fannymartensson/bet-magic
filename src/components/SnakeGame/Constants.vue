@@ -1,3 +1,7 @@
+<template>
+  <div class="constants" />
+</template>
+
 <script>
   export default [
     {
