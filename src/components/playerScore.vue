@@ -14,6 +14,7 @@
 
 <style scoped>
   #playerScore {
+    margin-top: 4vh;
     display: flex;
     justify-content: flex-end;
     align-items: right;

@@ -23,10 +23,10 @@
       Turn
     },
     computed: {
-      ...mapGetters('c', {
+      ...mapGetters('d', {
         isActive: 'isActive'
       }),
-      ...mapState('c', {
+      ...mapState('d', {
         total: 'total'
       })
     }
