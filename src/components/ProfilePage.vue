@@ -9,13 +9,16 @@
         <h1>Your Profile</h1>
       </header>
       <section class="profile-overview">
-        <h2>Avatar</h2>
         <div class="points">
+          <h2>{{ Alias }}</h2>
+          <p>{{ Förnamn }}</p>
+          <p>{{ Efternamn }}</p>
           <p>TicTacToe: 25</p>
           <p>Ufo Shooter: 56</p>
           <p>Mastermind: 8</p>
           <p>Memory: 22</p>
           <p>Snake: 88</p>
+          <p>Total score: {{ userScore }}</p>
           <button type="button" class="btn btn-secondary">Share</button>
         </div>
       </section>
@@ -51,10 +54,21 @@
 <script>
   import MenuBtn from '@/components/MenuBtn.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
+  import { mapState } from 'vuex'
 
   export default {
     name: 'ProfilePage',
-    components: { MenuBtn, LogoIcon }
+    components: { MenuBtn, LogoIcon },
+
+    computed: {
+      ...mapState('playerData', {
+        Alias: 'Alias',
+        Förnamn: 'Förnamn',
+        Efternamn: 'Efternamn',
+        Email: 'Email',
+        userScore: 'userScore'
+      })
+    }
   }
 </script>
 

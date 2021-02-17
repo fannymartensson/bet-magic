@@ -1,7 +1,7 @@
 <template>
   <span>
     <h1 id="playerScore">
-      {{ $store.state.playerData.Alias }}:
+      {{ $store.state.playerData.Alias }}
       {{ $store.state.playerData.userScore }}
     </h1>
   </span>

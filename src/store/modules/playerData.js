@@ -11,7 +11,7 @@ export default {
     Efternamn: null,
     Email: null,
     Password: null,
-    userScore: 99,
+    userScore: null,
     players: true
   },
 
@@ -23,6 +23,7 @@ export default {
       state.Email = payload.Email
       state.Password = payload.password
       state.players = false
+      state.userScore = 100
     }
   },
   getters: {

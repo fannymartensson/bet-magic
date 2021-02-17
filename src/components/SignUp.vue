@@ -77,20 +77,20 @@
       </main>
     </div>
     <div v-else>
-      <Return />
-      <h1>Här kan man lägga länken till Profilsidan</h1>
+      <ProfilePage />
     </div>
   </div>
 </template>
+
 <script>
   import MenuBtn from '@/components/MenuBtn.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
-  import Return from './return.vue'
+  import ProfilePage from './ProfilePage.vue'
   import { mapMutations, mapGetters } from 'vuex'
 
   export default {
     name: 'SignUp',
-    components: { MenuBtn, LogoIcon, Return },
+    components: { MenuBtn, LogoIcon, ProfilePage },
 
     data: function() {
       return {
