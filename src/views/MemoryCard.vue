@@ -1,7 +1,10 @@
 <template>
   <main>
+    <header>
+      <logo-icon class="logo-btn" :logoIcon="true" />
+      <Return class="menu-btn" :return="true" />
+    </header>
     <h1 class="heading">Memory Card</h1>
-    <return class="btn-back" />
     <game-load v-if="gameLoadStatus" />
     <game-finish
       class="finish"
@@ -29,10 +32,11 @@
   import GameFinish from '@/components/memory/GameFinish.vue'
   import Return from '@/components/return.vue'
   import { mapGetters } from 'vuex'
+  import LogoIcon from '@/components/LogoIcon.vue'
 
   export default {
     name: 'MemoryCard',
-    components: { CardList, GameLoad, GameFinish, Return },
+    components: { CardList, GameLoad, GameFinish, Return, LogoIcon },
     computed: {
       ...mapGetters('b', {
         cardsList: 'getCards',

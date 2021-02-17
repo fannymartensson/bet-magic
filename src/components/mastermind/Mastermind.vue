@@ -1,9 +1,7 @@
 <template>
   <div class="bigPic">
     <main id="Mastermind">
-      <Return id="Return" />
       <Restart />
-      <h1>Mastermind</h1>
       <Board />
       <section id="feedbacks">
         <Feedback
@@ -23,7 +21,6 @@
 <script>
   import { mapGetters, mapState, mapActions } from 'vuex'
 
-  import Return from '../return.vue'
   import Board from './Board.vue'
   import Feedback from './Feedback.vue'
   import Check from './Check.vue'
@@ -37,7 +34,6 @@
       Feedback,
       Check,
       Dialog,
-      Return,
       Restart
     },
     computed: {

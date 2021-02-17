@@ -2,12 +2,23 @@
   <div id="app">
     <header>
       <logo-icon class="logo-btn" :LogoIcon="true" />
-      <Return class="menu-btn" :return="true" />
     </header>
-    <h1>Snake Game</h1>
+    <snake-canvas
+      :cellSize="cellSize"
+      :boardSize="boardSize"
+      :speed="speed"
+      :isPlaying="isPlaying"
+      :stop="stop"
+    />
+    <p>Points: {{ score }}</p>
+    <p>Score: 88</p>
+
+    <button id="play-btn" @click="isPlaying ? stop() : start()">
+      {{ isPlaying ? 'Stop' : 'Play' }}
+    </button>
     <section class="nav">
       <div class="column">
-        Level
+        Settings
         <p number="cellSize" />
       </div>
       <div class="column">
@@ -19,36 +30,21 @@
         <input type="number" min="1" v-model.number="speed" />
       </div>
     </section>
-    <snake-canvas
-      :cellSize="cellSize"
-      :boardSize="boardSize"
-      :speed="speed"
-      :isPlaying="isPlaying"
-      :stop="stop"
-    />
-    <p>Points: {{ score }}</p>
-    <p>Score:</p>
-
-    <button id="play-btn" @click="isPlaying ? stop() : start()">
-      {{ isPlaying ? 'Stop' : 'Play' }}
-    </button>
   </div>
 </template>
 <script>
   import SnakeCanvas from './SnakeCanvas.vue'
   import Store from '../../store/modules/moduleC.js'
-  import Return from '@/components/return.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
 
   export default {
     name: 'SnakeApp',
     components: {
       SnakeCanvas,
-      Return,
       LogoIcon
     },
 
-    data () {
+    data() {
       return {
         cellSize: 25,
         boardSize: 20,
@@ -58,16 +54,16 @@
     },
 
     computed: {
-      score () {
+      score() {
         return Store.state.score
       }
     },
 
     methods: {
-      start () {
+      start() {
         this.isPlaying = true
       },
-      stop () {
+      stop() {
         this.isPlaying = false
       }
     }
@@ -91,6 +87,21 @@
     color: white;
     background: transparent;
   }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+    width: 120px;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 0.9em;
+    background-color: black;
+    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
+  }
+
   .column {
     display: inline-block;
     width: 20%;
@@ -110,13 +121,12 @@
 
   #play-btn {
     padding: 5px 10px;
-    border: 1px solid #222;
+    border: 1px solid white;
     border-radius: 4px;
     font-size: 20px;
     cursor: pointer;
     margin-top: 0.9em;
     background-color: black;
-    border-color: white;
     color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
