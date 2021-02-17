@@ -21,12 +21,9 @@
       </div>
 
       <div id="hidden-items">
-        <img src="../../assets/SpaceInvaders/alien-red.png" ref="image" />
+        <img src="../../assets/SpaceInvaders/alien-purple.png" ref="image" />
       </div>
     </div>
-    <!-- end of .col-md-12 -->
-
-    <!-- end of #app -->
   </body>
 </template>
 
@@ -72,7 +69,7 @@
             // Draw a rectangular gun shooting image on top of UFO Image
             this.canvas = this.$refs.canvas
             this.ctx = this.canvas.getContext('2d')
-            this.ctx.fillStyle = '#fff'
+            this.ctx.fillStyle = '#fffff'
             this.ctx.fillRect(this.x, this.y, 5, 5)
           }
         } else {
@@ -127,6 +124,12 @@
         this.ended = false
         this.health = 100
         this.points = 0
+        this.ctx.clearRect(
+          this.imgX,
+          this.imgY,
+          this.imgX + 100,
+          this.imgY + 100
+        )
       }
     },
     mounted() {
@@ -149,12 +152,11 @@
   }
 
   #myCanvas {
-    width: 300px;
+    width: 100%;
     height: 400px;
 
     margin: 0 auto;
     border: 2px solid #e6e6e6;
-    background-color: black;
   }
 
   #health {
@@ -179,7 +181,10 @@
     margin: 20px auto;
     text-align: center;
   }
-
+  img {
+    height: 20px;
+    width: 30px;
+  }
   #hidden-items {
     display: none;
   }
