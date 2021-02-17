@@ -1,11 +1,13 @@
 <template>
   <a href="">
-    <img
-      v-if="logoIcon"
-      class="logo-img"
-      src="../assets/logo-dark.svg"
-      alt="bet-magic-logo"
-    />
+    <router-link to="/">
+      <img
+        v-if="logoIcon"
+        class="logo-img"
+        src="../assets/logo-dark.svg"
+        alt="bet-magic-logo"
+      />
+    </router-link>
   </a>
 </template>
 
