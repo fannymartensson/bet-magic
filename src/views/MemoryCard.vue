@@ -17,7 +17,6 @@
           :first-id="cardNumOne && cardNumOne.id"
           :second-id="cardNumTwo && cardNumTwo.id"
           :id="card.id"
-          :show-all="showAll"
           @reveal-card="$store.dispatch('b/showCard', card)"
         />
       </div>
@@ -35,21 +34,16 @@
     name: 'MemoryCard',
     components: { CardList, GameLoad, GameFinish, Return },
     computed: {
-      ...mapGetters({
-        cardsList: 'b/getCards',
-        status: 'b/getStatus',
-        cardNumOne: 'b/getCardNumOne',
-        cardNumTwo: 'b/getCardNumTwo',
-        gameLoadStatus: 'b/getGameLoadStatus'
+      ...mapGetters('b', {
+        cardsList: 'getCards',
+        status: 'getStatus',
+        cardNumOne: 'getCardNumOne',
+        cardNumTwo: 'getCardNumTwo',
+        gameLoadStatus: 'getGameLoadStatus'
       })
     },
     created() {
       this.$store.dispatch('b/updateDeck')
-    },
-    data() {
-      return {
-        showAll: false
-      }
     },
     //TO SEE THE FRONT CARD
     methods: {

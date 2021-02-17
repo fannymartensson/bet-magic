@@ -6,8 +6,7 @@
       @click="$emit('reveal-card')"
       :class="{
         first: firstId && id === firstId,
-        second: secondId && id === secondId,
-        all: showAll
+        second: secondId && id === secondId
       }"
     >
       <div class="flip-card">
@@ -64,10 +63,6 @@
       },
       id: {
         type: String,
-        required: true
-      },
-      showAll: {
-        type: Boolean,
         required: true
       }
     }
