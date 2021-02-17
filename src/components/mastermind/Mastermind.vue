@@ -41,12 +41,12 @@
       Restart
     },
     computed: {
-      ...mapGetters('c', {
+      ...mapGetters('d', {
         checkButtonTranslation: 'checkButtonTranslation',
         isActive: 'isActive'
       }),
 
-      ...mapState('c', {
+      ...mapState('d', {
         current: 'current',
         total: 'total',
         won: 'won',
@@ -55,7 +55,7 @@
       })
     },
     methods: {
-      ...mapActions('c', {
+      ...mapActions('d', {
         generateSecret: 'generateSecret'
       })
     },

@@ -1,13 +1,15 @@
 import Vuex from 'vuex'
 import moduleA from './modules/moduleA'
 import moduleB from './modules/moduleB'
-import moduleC from './modules/moduleC'
+import moduleC from './modules/moduleD'
+import moduleD from './modules/moduleD'
 
 export default new Vuex.Store({
   modules: {
     a: moduleA,
     b: moduleB,
-    c: moduleC
+    c: moduleC,
+    d: moduleD
   },
   state: {
     /* här startar PlayerScore data */

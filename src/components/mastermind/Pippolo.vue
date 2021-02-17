@@ -31,13 +31,13 @@
       }
     },
     computed: {
-      ...mapState('c', {
+      ...mapState('d', {
         colors: 'colors',
         forceReset: 'forceReset'
       })
     },
     methods: {
-      ...mapActions('c', {
+      ...mapActions('d', {
         updateCurrentTurn: 'updateCurrentTurn'
       }),
       loopColor() {

@@ -20,7 +20,7 @@
       }
     },
     computed: {
-      ...mapState('c', {
+      ...mapState('d', {
         current: 'current',
         currentTurn: 'currentTurn',
         feedback: 'feedback'

@@ -8,12 +8,12 @@
   export default {
     name: 'Check',
     methods: {
-      ...mapActions('c', {
+      ...mapActions('d', {
         checkTurn: 'checkTurn'
       })
     },
     computed: {
-      ...mapGetters('c', {
+      ...mapGetters('d', {
         isCurrentTurnValid: 'isCurrentTurnValid'
       })
     }
