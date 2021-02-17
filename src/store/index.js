@@ -30,11 +30,11 @@ export default new Vuex.Store({
         routerlink: 'tictac'
       },
       {
-        title: 'UFO Shooter',
+        title: 'Alien Shooter',
         description:
           'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
         img: '/space-invadors.png',
-        routerlink: 'ufo-shooting'
+        routerlink: 'alien-shooting'
       },
       {
         title: 'Mastermind',

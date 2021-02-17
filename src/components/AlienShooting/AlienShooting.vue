@@ -1,6 +1,6 @@
 <template>
   <body>
-    <div id="ufo-game">
+    <div id="alien-game">
       <br />
       <canvas id="myCanvas" v-show="!ended" ref="canvas" @click="shoot" />
       <canvas id="myCanvas" v-show="ended" ref="endCanvas" />
@@ -33,7 +33,7 @@
 <script>
   import _ from 'lodash'
   export default {
-    name: 'SpaceInvaders',
+    name: 'AlienShooting',
     data() {
       return {
         canvas: '',

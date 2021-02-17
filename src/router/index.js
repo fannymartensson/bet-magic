@@ -7,7 +7,7 @@ import LoginPage from '@/views/LoginPage.vue'
 import ProfilePage from '@/components/ProfilePage.vue'
 import MemoryCard from '@/views/MemoryCard.vue'
 import TicTac from '@/views/TicTac.vue'
-import UfoShootingGame from '@/views/UfoShootingGame.vue'
+import AlienShootingGame from '@/views/AlienShootingGame.vue'
 import SnakeGame from '@/views/SnakeGame.vue'
 import Game from '../views/Mastermind.vue'
 
@@ -29,9 +29,9 @@ const routes = [
     component: TicTac
   },
   {
-    path: '/ufo-shooting',
-    name: 'UfoShootingGame',
-    component: UfoShootingGame
+    path: '/alien-shooting',
+    name: 'AlienShootingGame',
+    component: AlienShootingGame
   },
   {
     path: '/mastermind',
