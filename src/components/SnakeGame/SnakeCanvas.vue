@@ -16,7 +16,7 @@
 
   export default {
     components: { Constants },
-    data() {
+    data () {
       return {
         gameover: ''
       }
@@ -30,22 +30,22 @@
       stop: Function
     },
     computed: {
-      boardSizePx() {
+      boardSizePx () {
         return this.cellSize * this.boardSize
       }
     },
-    mounted() {
+    mounted () {
       this.boardContext = this.$refs.board.getContext('2d')
       window.addEventListener('keydown', this.onKeyPress)
     },
-    created() {
+    created () {
       this.resetSnake()
     },
-    beforeDestroy() {
+    beforeDestroy () {
       window.removeEventListener('keydown', this.onKeyPress)
     },
     watch: {
-      isPlaying(value) {
+      isPlaying (value) {
         this.clear()
         if (value) {
           this.resetSnake()
@@ -54,7 +54,7 @@
       }
     },
     methods: {
-      resetSnake() {
+      resetSnake () {
         this.gameover = ''
         this.snake = [
           {
@@ -66,18 +66,18 @@
         this.direction = Constants[randomDirectionIndex]
         this.targetCell = null
       },
-      getMiddleCell() {
+      getMiddleCell () {
         return Math.round(this.boardSize / 2)
       },
 
-      addScores() {
+      addScores () {
         Store.commit('increment')
       },
-      resetScores() {
+      resetScores () {
         Store.commit('reset')
       },
 
-      move() {
+      move () {
         if (!this.isPlaying) {
           return
         }
@@ -114,10 +114,10 @@
 
         setTimeout(this.move, this.getMoveDelay())
       },
-      clear() {
+      clear () {
         this.boardContext.clearRect(0, 0, this.boardSizePx, this.boardSizePx)
       },
-      drawCell({ x, y }) {
+      drawCell ({ x, y }) {
         this.boardContext.rect(
           x * this.cellSize,
           y * this.cellSize,
@@ -127,13 +127,13 @@
         this.boardContext.fillStyle = 'white'
         this.boardContext.fill()
       },
-      getMoveDelay() {
+      getMoveDelay () {
         return (2 / Number(this.speed)) * 1000
       },
-      isCellOutOfBoard({ x, y }) {
+      isCellOutOfBoard ({ x, y }) {
         return x < 0 || y < 0 || x >= this.boardSize || y >= this.boardSize
       },
-      onKeyPress(event) {
+      onKeyPress (event) {
         const newDirection = Constants.find(c => c.keyCode === event.keyCode)
 
         if (!newDirection) {
@@ -144,7 +144,7 @@
           this.direction = newDirection
         }
       },
-      setTargetCell() {
+      setTargetCell () {
         if (!this.targetCell) {
           let targetCell = this.getRandomCell()
           while (this.amountCellsInSnake(targetCell) > 0) {
@@ -164,17 +164,17 @@
         this.boardContext.fill()
         this.boardContext.closePath()
       },
-      getRandomCell() {
+      getRandomCell () {
         return {
           x: Math.floor(Math.random() * this.boardSize),
           y: Math.floor(Math.random() * this.boardSize)
         }
       },
-      amountCellsInSnake(cell) {
+      amountCellsInSnake (cell) {
         return this.snake.filter(({ x, y }) => x === cell.x && y === cell.y)
           .length
       },
-      isTargetNewHead() {
+      isTargetNewHead () {
         return (
           this.snake[0].x + this.direction.move.x === this.targetCell.x &&
           this.snake[0].y + this.direction.move.y === this.targetCell.y
@@ -189,20 +189,20 @@
   }
   #snake-canvas {
     border: 10px solid rgb(81, 57, 136);
-    height: 223px;
-    width: 223px;
+    height: 320px;
+    width: 320px;
     margin: 30px 0;
   }
   @media screan and (min-width: 800px) and (max-width: 999px) {
     #snake-canvas {
-      height: 245px;
-      width: 245px;
+      height: 500px;
+      width: 500px;
     }
   }
   @media (min-width: 1000px) {
     #snake-canvas {
-      height: 330px;
-      width: 330px;
+      height: 500px;
+      width: 500px;
     }
   }
 </style>

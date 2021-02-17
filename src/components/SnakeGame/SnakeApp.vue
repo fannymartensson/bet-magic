@@ -48,7 +48,7 @@
       LogoIcon
     },
 
-    data() {
+    data () {
       return {
         cellSize: 25,
         boardSize: 20,
@@ -58,16 +58,16 @@
     },
 
     computed: {
-      score() {
+      score () {
         return Store.state.score
       }
     },
 
     methods: {
-      start() {
+      start () {
         this.isPlaying = true
       },
-      stop() {
+      stop () {
         this.isPlaying = false
       }
     }
@@ -109,7 +109,7 @@
   }
 
   #play-btn {
-    padding: 10px 20px;
+    padding: 5px 10px;
     border: 1px solid #222;
     border-radius: 4px;
     font-size: 20px;
