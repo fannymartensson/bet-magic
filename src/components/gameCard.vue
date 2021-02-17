@@ -75,8 +75,8 @@
         text-align: center;
         position: relative;
         bottom: 70px;
-        padding: 10px;
-        width: calc(100% - 20px);
+        padding: 5px;
+        width: 100%;
         height: 30px;
         font-size: 1.6rem;
         color: black;
@@ -125,7 +125,7 @@
       max-width: 100%;
       margin-top: 40px;
       position: relative;
-      height: 400px;
+      height: 300px;
       border: 1px solid white;
       overflow: hidden;
       transition: all 0.5s ease;
@@ -135,18 +135,18 @@
       }
       .img {
         width: 100%;
-        height: 400px;
+        height: 300px;
         background-position: center;
         background-size: cover;
       }
       .title {
         text-align: center;
         position: relative;
-        bottom: 70px;
-        padding: 10px;
-        width: calc(100% - 20px);
+        bottom: 50px;
+        padding: 5px;
+        width: 100%;
         height: 30px;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         color: black;
         background-color: rgba($color: #ffffff, $alpha: 0.8);
       }
