@@ -120,6 +120,7 @@ export default {
         resolve(copyCards)
       })
     },
+
     async updateDeck({ dispatch, commit }) {
       await dispatch('setDeck')
       await dispatch('shuffleCards')

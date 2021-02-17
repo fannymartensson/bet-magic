@@ -1,5 +1,5 @@
 <template>
-  <div class="card-list">
+  <div class="cardList">
     <button
       class="card-container"
       v-if="isMatched === false"
@@ -35,8 +35,7 @@
       toggleCardName() {
         return (
           (this.firstId && this.id === this.firstId) ||
-          (this.secondId && this.id === this.secondId) ||
-          this.showAll
+          (this.secondId && this.id === this.secondId)
         )
       }
     },
@@ -76,7 +75,7 @@
     border: none;
     outline: none;
     width: 111px;
-    height: 145px;
+    height: 163px;
   }
 
   .back-face,
