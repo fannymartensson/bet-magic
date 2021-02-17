@@ -11,7 +11,11 @@
       <section class="profile-overview">
         <h2>Avatar</h2>
         <div class="points">
-          <p>Points: 10401</p>
+          <p>TicTacToe: 25</p>
+          <p>Ufo Shooter: 56</p>
+          <p>Mastermind: 8</p>
+          <p>Memory: 22</p>
+          <p>Snake: 88</p>
           <button type="button" class="btn btn-secondary">Share</button>
         </div>
       </section>
@@ -78,13 +82,12 @@
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     border-radius: 3px;
     padding: 0.2em;
-    border-radius: 0;
+    border: 1px solid white;
+    border-radius: 4px;
     background-color: black;
     cursor: pointer;
   }
-  #share-btn {
-    margin-top: 0.7em;
-  }
+
   h1,
   h2 {
     font-size: 1.8rem;
@@ -100,7 +103,7 @@
     color: white;
   }
   .profile-overview {
-    margin-top: 3em;
+    margin-top: 2em;
     display: flex;
     flex-direction: row;
   }
@@ -112,7 +115,7 @@
   .settings {
     display: flex;
     flex-direction: row;
-    margin-top: 2em;
+    margin-top: 1em;
   }
   .settings-btns {
     display: flex;
@@ -121,7 +124,7 @@
     margin-left: 3em;
   }
   p {
-    margin-top: 0.4em;
+    margin-top: 0.3em;
   }
 
   /* toggle button all the way */
@@ -151,7 +154,7 @@
     display: block;
     height: inherit;
     font-size: 14px;
-    background: white;
+    background: black;
     border-radius: inherit;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12),
       inset 0 0 2px rgba(0, 0, 0, 0.15);
@@ -178,7 +181,7 @@
   .switch-label:before {
     content: attr(data-off);
     right: 9px;
-    color: rgb(7, 7, 7);
+    color: rgb(255, 255, 255);
   }
   .switch-label:after {
     content: attr(data-on);
@@ -188,7 +191,7 @@
     opacity: 0;
   }
   .switch-input:checked ~ .switch-label {
-    background: #3d125c;
+    background: #000000;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
   }
   .switch-input:checked ~ .switch-label:before {

@@ -1,8 +1,5 @@
 <template>
-  <div id="app">
-    <header>
-      <logo-icon class="logo-btn" :LogoIcon="true" />
-    </header>
+  <div id="snake-canvas">
     <snake-canvas
       :cellSize="cellSize"
       :boardSize="boardSize"
@@ -16,9 +13,8 @@
     <button id="play-btn" @click="isPlaying ? stop() : start()">
       {{ isPlaying ? 'Stop' : 'Play' }}
     </button>
-    <section class="nav">
+    <section class="settings">
       <div class="column">
-        Settings
         <p number="cellSize" />
       </div>
       <div class="column">
@@ -35,13 +31,11 @@
 <script>
   import SnakeCanvas from './SnakeCanvas.vue'
   import Store from '../../store/modules/moduleC.js'
-  import LogoIcon from '@/components/LogoIcon.vue'
 
   export default {
     name: 'SnakeApp',
     components: {
-      SnakeCanvas,
-      LogoIcon
+      SnakeCanvas
     },
 
     data() {
@@ -80,7 +74,7 @@
     height: 100vh;
     background: transparent;
   }
-  #app {
+  #snake-canvas {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
@@ -88,11 +82,11 @@
     background: transparent;
   }
 
-  .nav {
+  .settings {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 5px 10px;
-    width: 120px;
+    width: 200px;
     border: 1px solid white;
     border-radius: 4px;
     font-size: 20px;
@@ -100,6 +94,7 @@
     margin-top: 0.9em;
     background-color: black;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
+    margin-top: 5em;
   }
 
   .column {
