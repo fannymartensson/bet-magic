@@ -2,21 +2,23 @@
   <div id="app">
     <header>
       <logo-icon class="logo-btn" :LogoIcon="true" />
-      <menu-btn class="menu-btn" :MenuBtn="true" />
+      <Return class="menu-btn" :return="true" />
     </header>
     <h1>Snake Game</h1>
-    <div class="column">
-      Clarity
-      <input type="number" min="25" v-model.number="cellSize" />
-    </div>
-    <div class="column">
-      Size
-      <input type="number" min="5" v-model.number="boardSize" />
-    </div>
-    <div class="column">
-      Speed
-      <input type="number" min="1" v-model.number="speed" />
-    </div>
+    <section class="nav">
+      <div class="column">
+        Level
+        <p number="cellSize" />
+      </div>
+      <div class="column">
+        Zoom
+        <input type="number" min="10" v-model.number="boardSize" />
+      </div>
+      <div class="column">
+        Speed
+        <input type="number" min="1" v-model.number="speed" />
+      </div>
+    </section>
     <snake-canvas
       :cellSize="cellSize"
       :boardSize="boardSize"
@@ -24,8 +26,9 @@
       :isPlaying="isPlaying"
       :stop="stop"
     />
-    <p>Score: {{ score }}</p>
-    <p>Total:</p>
+    <p>Points: {{ score }}</p>
+    <p>Score:</p>
+
     <button id="play-btn" @click="isPlaying ? stop() : start()">
       {{ isPlaying ? 'Stop' : 'Play' }}
     </button>
@@ -34,14 +37,14 @@
 <script>
   import SnakeCanvas from './SnakeCanvas.vue'
   import Store from '../../store/modules/moduleC.js'
-  import MenuBtn from '@/components/MenuBtn.vue'
+  import Return from '@/components/return.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
 
   export default {
     name: 'SnakeApp',
     components: {
       SnakeCanvas,
-      MenuBtn,
+      Return,
       LogoIcon
     },
 
