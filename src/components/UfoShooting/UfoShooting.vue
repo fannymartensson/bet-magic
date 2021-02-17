@@ -22,6 +22,9 @@
 
       <div id="hidden-items">
         <img src="../../assets/SpaceInvaders/alien-purple.png" ref="image" />
+        <audio ref="audio" volume="1" preload="auto">
+          <source src="../../assets/SpaceInvaders/shoot.wav" type="audio/wav" />
+        </audio>
       </div>
     </div>
   </body>
@@ -52,6 +55,8 @@
       },
       shoot(event) {
         if (this.health > 0 && this.started == true) {
+          this.$refs.audio.play() // Play Shooting Sound
+
           // Get the absolute X and Y position of mouse pointer related to our canvas
           let rect = this.canvas.getBoundingClientRect() // abs. size of element
           let scaleX = this.canvas.width / rect.width // relationship bitmap vs. element for X
@@ -69,7 +74,8 @@
             // Draw a rectangular gun shooting image on top of UFO Image
             this.canvas = this.$refs.canvas
             this.ctx = this.canvas.getContext('2d')
-            this.ctx.fillStyle = '#fffff'
+
+            this.ctx.fillStyle = 'red'
             this.ctx.fillRect(this.x, this.y, 5, 5)
           }
         } else {
@@ -141,10 +147,6 @@
   }
 </script>
 <style scoped lang="scss">
-  body {
-    background-size: 300px;
-  }
-
   h4 {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     font-weight: bolder;
@@ -153,7 +155,7 @@
 
   #myCanvas {
     width: 100%;
-    height: 400px;
+    height: 250px;
 
     margin: 0 auto;
     border: 2px solid #e6e6e6;
@@ -169,10 +171,10 @@
     height: 20px;
     background: linear-gradient(
       to bottom,
-      rgba(30, 87, 153, 1) 33%,
-      rgba(48, 106, 168, 1) 46%,
-      rgba(119, 179, 227, 0.7) 96%,
-      rgba(125, 185, 232, 0) 100%
+      rgb(128, 30, 153) 33%,
+      rgb(140, 48, 168) 46%,
+      rgba(193, 119, 227, 0.7) 96%,
+      rgba(189, 125, 232, 0) 100%
     );
   }
 
@@ -181,10 +183,7 @@
     margin: 20px auto;
     text-align: center;
   }
-  img {
-    height: 20px;
-    width: 30px;
-  }
+
   #hidden-items {
     display: none;
   }
@@ -209,5 +208,16 @@
     border-color: white;
     color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
+  }
+  @media screen and (min-width: 760px) {
+    #myCanvas {
+      width: 70%;
+      height: 70%;
+    }
+    #health {
+      width: 70%;
+      border: 2px solid #e6e6e6;
+      margin: 20px auto 20px auto;
+    }
   }
 </style>

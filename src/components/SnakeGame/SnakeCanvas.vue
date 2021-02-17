@@ -95,7 +95,7 @@
           this.amountCellsInSnake(this.snake[0]) > 1
         ) {
           this.stop()
-          this.gameover = `Game over! You've scored ${Store.state.score} points`
+          this.gameover = 'Game over!'
           this.resetScores()
         }
 
@@ -189,20 +189,20 @@
   }
   #snake-canvas {
     border: 10px solid rgb(81, 57, 136);
-    height: 223px;
-    width: 223px;
+    height: 320px;
+    width: 320px;
     margin: 30px 0;
   }
   @media screan and (min-width: 800px) and (max-width: 999px) {
     #snake-canvas {
-      height: 245px;
-      width: 245px;
+      height: 500px;
+      width: 500px;
     }
   }
   @media (min-width: 1000px) {
     #snake-canvas {
-      height: 330px;
-      width: 330px;
+      height: 500px;
+      width: 500px;
     }
   }
 </style>

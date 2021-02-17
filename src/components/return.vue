@@ -16,15 +16,14 @@
 
 <style>
   .btn-return {
-    padding: 0em;
-    padding-left: 0.8em;
-    padding-right: 0.8em;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
     margin-top: 0.9em;
-    border-radius: 0;
     background-color: black;
-    border-color: white;
     color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
-    cursor: pointer;
   }
 </style>

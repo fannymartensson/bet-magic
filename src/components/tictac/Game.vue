@@ -1,7 +1,5 @@
 <template>
   <div class="page-game">
-    <Return />
-    <h1>TIC-TAC-VUE</h1>
     <Cells
       style="background-color: green; font-size: 70px"
       :positions="positions"
@@ -43,13 +41,11 @@
   import { mapState, mapGetters } from 'vuex'
 
   import Cells from './Cells'
-  import Return from '../return.vue'
 
   export default {
     name: 'Game',
     components: {
-      Cells,
-      Return
+      Cells
     },
 
     computed: {

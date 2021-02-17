@@ -1,7 +1,10 @@
 <template>
   <main>
+    <header>
+      <logo-icon class="logo-btn" :logoIcon="true" />
+      <Return class="menu-btn" :return="true" />
+    </header>
     <h1 class="heading">Memory Card</h1>
-    <return class="btn-back" />
     <game-load v-if="gameLoadStatus" />
     <game-finish
       class="finish"
@@ -17,7 +20,6 @@
           :first-id="cardNumOne && cardNumOne.id"
           :second-id="cardNumTwo && cardNumTwo.id"
           :id="card.id"
-          :show-all="showAll"
           @reveal-card="$store.dispatch('b/showCard', card)"
         />
       </div>
@@ -30,26 +32,22 @@
   import GameFinish from '@/components/memory/GameFinish.vue'
   import Return from '@/components/return.vue'
   import { mapGetters } from 'vuex'
+  import LogoIcon from '@/components/LogoIcon.vue'
 
   export default {
     name: 'MemoryCard',
-    components: { CardList, GameLoad, GameFinish, Return },
+    components: { CardList, GameLoad, GameFinish, Return, LogoIcon },
     computed: {
-      ...mapGetters({
-        cardsList: 'b/getCards',
-        status: 'b/getStatus',
-        cardNumOne: 'b/getCardNumOne',
-        cardNumTwo: 'b/getCardNumTwo',
-        gameLoadStatus: 'b/getGameLoadStatus'
+      ...mapGetters('b', {
+        cardsList: 'getCards',
+        status: 'getStatus',
+        cardNumOne: 'getCardNumOne',
+        cardNumTwo: 'getCardNumTwo',
+        gameLoadStatus: 'getGameLoadStatus'
       })
     },
     created() {
       this.$store.dispatch('b/updateDeck')
-    },
-    data() {
-      return {
-        showAll: false
-      }
     },
     //TO SEE THE FRONT CARD
     methods: {

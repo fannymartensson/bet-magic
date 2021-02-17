@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Return id="Return" />
     <div class="players">
       <h1>Skriv in spelarnamn</h1>
       <div class="player">
@@ -36,13 +35,10 @@
 
 <script>
   import { mapMutations } from 'vuex'
-  import Return from '../return.vue'
 
   export default {
     name: 'Players',
-    components: {
-      Return
-    },
+    components: {},
     data() {
       return {
         playerO: '',
