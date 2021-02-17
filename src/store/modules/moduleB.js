@@ -64,23 +64,19 @@ export default {
         const secondIndex = cardsList.findIndex(
           card => card.id === cardNumTwo.id
         )
-
         copy[firstIndex].isMatched = true
         copy[secondIndex].isMatched = true
-
         commit('UPDATE_CARDS', copy)
       }
       // Reset selected cards
       commit('UPDATE_CARD_NUM_ONE', null)
       commit('UPDATE_CARD_NUM_TWO', null)
-
       if (getters.getUnMatchedCards && getters.getUnMatchedCards.length === 0) {
         commit('UPDATE_STATUS', 'WON')
       } else {
         commit('UPDATE_STATUS', 'SUIT')
       } // TO SEE THE GAME FINISH
     },
-
     setDeck(context) {
       //TO SHUFFLE WE NEED THE PROMISE
       return new Promise((resolve, reject) => {
@@ -99,16 +95,13 @@ export default {
       if (state.cardNumOne && state.cardNumTwo) {
         return
       }
-
       if (!state.cardNumOne) {
         commit('UPDATE_CARD_NUM_ONE', card)
       } else if (state.cardNumOne && !state.cardNumTwo) {
         if (state.cardNumOne.id === card.id) {
           return
         }
-
         commit('UPDATE_CARD_NUM_TWO', card)
-
         setTimeout(() => {
           dispatch('checkCards')
         }, 600)
@@ -127,7 +120,6 @@ export default {
         resolve(copyCards)
       })
     },
-
     async updateDeck({ dispatch, commit }) {
       await dispatch('setDeck')
       await dispatch('shuffleCards')
