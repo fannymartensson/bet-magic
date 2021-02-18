@@ -51,6 +51,7 @@
   .nav-item {
     padding: 1.3rem;
   }
+
   @media (min-width: 800px) {
     .nav-link {
       padding: 3rem;

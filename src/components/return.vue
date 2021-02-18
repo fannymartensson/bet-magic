@@ -15,6 +15,11 @@
 </script>
 
 <style>
+  .heading {
+    color: white;
+    margin-top: 2rem;
+    font-size: 3rem;
+  }
   .btn-return {
     padding: 5px 10px;
     border: 1px solid white;

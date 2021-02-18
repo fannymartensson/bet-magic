@@ -1,9 +1,8 @@
 <template>
   <main>
-    <h1 class="heading">Memory Card</h1>
-    <Return class="menu-btn" :return="true" />
-
+    <return-back @click.native="back" />
     <game-load v-if="gameLoadStatus" />
+    <background-deck />
     <game-finish
       class="finish"
       v-if="status === 'WON'"
@@ -28,12 +27,19 @@
   import CardList from '@/components/memory/CardList.vue'
   import GameLoad from '@/components/memory/GameLoad.vue'
   import GameFinish from '@/components/memory/GameFinish.vue'
-  import Return from '@/components/return.vue'
+  import BackgroundDeck from '@/components/memory/BackgroundDeck.vue'
+  import ReturnBack from '@/components/memory/ReturnBack.vue'
   import { mapGetters } from 'vuex'
 
   export default {
     name: 'MemoryCard',
-    components: { CardList, GameLoad, GameFinish, Return },
+    components: {
+      CardList,
+      GameLoad,
+      GameFinish,
+      ReturnBack,
+      BackgroundDeck
+    },
     computed: {
       ...mapGetters('b', {
         cardsList: 'getCards',
@@ -53,11 +59,14 @@
           return ''
         }
         return image.replace(/\s/g, '-')
+      },
+      back() {
+        this.$router.push('/')
       }
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
   main {
     display: flex;
     flex-direction: column;
@@ -65,14 +74,7 @@
     justify-content: center;
     padding: 1rem;
   }
-  .heading {
-    color: white;
-    margin-top: 2rem;
-    font-size: 3rem;
-  }
-  .btn-back {
-    margin-top: 2rem;
-  }
+
   .main-deck {
     display: grid;
     grid-template-columns: repeat(3, 3fr);
@@ -83,6 +85,7 @@
     box-sizing: border-box;
     padding-top: 01rem;
     padding-bottom: 3rem;
+    background: #07070783;
   }
   .finish {
     cursor: pointer;

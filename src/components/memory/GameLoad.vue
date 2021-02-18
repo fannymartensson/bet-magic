@@ -18,16 +18,17 @@
   .game-setup {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     background: $background;
     z-index: 9999;
-    min-height: 100%;
+    height: 100%;
     width: 100%;
     top: 0;
     position: absolute;
+    padding-top: 19rem;
     color: $font;
     span {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
     }
     @media (min-width: 800px) {
       .game-setup {

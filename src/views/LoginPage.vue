@@ -2,9 +2,11 @@
   <div class="login">
     <header>
       <logo-icon class="logo-btn" :logoIcon="true" />
+
       <menu-btn class="menu-btn" :menuBtn="true" />
     </header>
     <main>
+      <background-deck />
       <form @submit.prevent class="login-form">
         <h1 class="login-title">Login</h1>
         <div class="textbox">

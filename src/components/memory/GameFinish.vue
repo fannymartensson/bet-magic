@@ -24,6 +24,8 @@
 <style scoped>
   button {
     cursor: pointer;
+    border: 1px aliceblue solid;
+    color: black;
   }
   .game-finish {
     background: transparent;

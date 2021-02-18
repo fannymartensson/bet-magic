@@ -77,14 +77,12 @@
     width: 111px;
     height: 163px;
   }
-
   .back-face,
   .front-face {
     width: 111px;
     height: 124px;
     cursor: pointer;
   }
-
   .card-container.first .flip-card,
   .card-container.second .flip-card,
   .card-container.all .flip-card {
@@ -98,12 +96,10 @@
     position: relative;
     border-radius: 4px;
   }
-
   .flip-card img {
     height: 8rem;
     width: 6rem;
   }
-
   .front-face,
   .back-face {
     backface-visibility: hidden; /* NOT TO SHOW THE FRONT */
