@@ -1,14 +1,13 @@
 import axios from 'axios'
 
-export default  {
+export default {
   namespaced: true,
   state: {
     cardsList: [],
     cardNumOne: null,
     cardNumTwo: null,
     status: 'SUIT',
-    gameLoadStatus: false,
-
+    gameLoadStatus: false
   },
   getters: {
     getCards(state) {
@@ -48,9 +47,7 @@ export default  {
     },
     UPDATE_GAME_LOAD(state, payload) {
       state.gameLoadStatus = payload
-    },
-
-
+    }
   },
   actions: {
     checkCards({ commit, getters, state }) {
@@ -127,10 +124,10 @@ export default  {
 
     async updateDeck({ dispatch, commit }) {
       await dispatch('setDeck')
-     await dispatch('shuffleCards')
+      await dispatch('shuffleCards')
       setTimeout(() => {
         commit('UPDATE_GAME_LOAD', false)
-      },1600)
+      }, 1600)
     }
   }
 }
