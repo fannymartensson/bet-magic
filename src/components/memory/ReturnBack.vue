@@ -1,8 +1,5 @@
 <template>
   <div class="btn">
-    <div>
-      <h1 class="heading">Memory Card</h1>
-    </div>
     <div class="return">
       <button
         class="btn-return-back"
@@ -14,6 +11,9 @@
       >
         back
       </button>
+    </div>
+    <div>
+      <h1 class="heading">Memory Card</h1>
     </div>
   </div>
 </template>
@@ -33,7 +33,8 @@
     font-size: 20px;
     cursor: pointer;
     margin-top: 0.9em;
-    color: rgb(3, 0, 0);
+    background-color: rgb(3, 0, 0);
+    color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     margin-left: 6rem;
   }
