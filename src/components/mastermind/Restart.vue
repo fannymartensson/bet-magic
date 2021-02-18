@@ -1,5 +1,5 @@
 <template>
-  <button @click="RESET_GAME" id="restart">
+  <button @click="RESET_GAME" class="btn-return">
     Restart
   </button>
 </template>
@@ -14,16 +14,14 @@
 </script>
 
 <style scoped>
-  #restart {
-    margin-left: 130px;
-    height: 20px;
-    padding: 0em;
-    padding-left: 0.8em;
-    padding-right: 0.8em;
+  .btn-return {
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
     margin-top: 0.9em;
-    border-radius: 0;
-    background-color: rgb(0, 0, 0);
-    border-color: white;
+    background-color: black;
     color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }

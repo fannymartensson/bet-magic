@@ -1,7 +1,10 @@
 <template>
   <div class="bigPic">
     <main id="Mastermind">
-      <Restart />
+      <div id="header">
+        <Restart />
+        <Return />
+      </div>
       <h1>Mastermind</h1>
       <Board />
       <section id="feedbacks">
@@ -27,6 +30,7 @@
   import Check from './Check.vue'
   import Dialog from './Dialog.vue'
   import Restart from './Restart.vue'
+  import Return from '../return.vue'
 
   export default {
     name: 'Mastermind',
@@ -35,7 +39,8 @@
       Feedback,
       Check,
       Dialog,
-      Restart
+      Restart,
+      Return
     },
     computed: {
       ...mapGetters('d', {
@@ -136,5 +141,9 @@
 
   * {
     box-sizing: border-box;
+  }
+  #header {
+    display: flex;
+    justify-content: space-between;
   }
 </style>
