@@ -74,7 +74,6 @@
     justify-content: center;
     padding: 1rem;
   }
-
   .main-deck {
     display: grid;
     grid-template-columns: repeat(3, 3fr);

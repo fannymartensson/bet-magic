@@ -1,19 +1,12 @@
 <template>
   <div class="btn">
-    <div class="return">
-      <button
-        class="btn-return-back"
-        @click="
-          'return-back'
-
-
-        "
-      >
-        back
-      </button>
-    </div>
     <div>
       <h1 class="heading">Memory Card</h1>
+    </div>
+    <div class="return">
+      <button class="btn-return-back">
+        back
+      </button>
     </div>
   </div>
 </template>
