@@ -78,7 +78,7 @@
     display: grid;
     grid-template-columns: repeat(3, 3fr);
     grid-template-rows: auto;
-    grid-gap: 5px;
+    grid-gap: 1px;
     justify-content: center;
     text-align: center;
     box-sizing: border-box;
@@ -99,10 +99,16 @@
       grid-template-columns: repeat(4, 150px);
     }
   }
-  @media (min-width: 808px) {
+  @media screen and (min-width: 808px) and (min-width: 899px) {
     .heading {
       font-size: 4rem;
     }
+    .main-deck {
+      grid-template-columns: repeat(4, 142px);
+      padding: 3rem;
+    }
+  }
+  @media (min-width: 900px) {
     .main-deck {
       grid-template-columns: repeat(6, 150px);
       padding: 3rem;

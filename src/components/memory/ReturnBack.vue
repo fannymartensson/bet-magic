@@ -1,8 +1,5 @@
 <template>
   <div class="btn">
-    <div>
-      <h1 class="heading">Memory Card</h1>
-    </div>
     <div class="return">
       <button class="btn-return-back">
         back
@@ -31,7 +28,6 @@
     background-color: transparent;
     color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
-    margin-left: 6rem;
   }
   .btn-return-back:hover {
     background: white;
