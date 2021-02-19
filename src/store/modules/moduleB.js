@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export default {
+export default  {
   namespaced: true,
   state: {
     cardsList: [],
@@ -125,9 +125,10 @@ export default {
     async updateDeck({ dispatch, commit }) {
       await dispatch('setDeck')
       await dispatch('shuffleCards')
+      commit('UPDATE_STATUS', 'SUIT') //THIS COMMIT IS FOR RESTATING THE GAME
       setTimeout(() => {
         commit('UPDATE_GAME_LOAD', false)
-      }, 1600)
+      },1600)
     }
   }
 }

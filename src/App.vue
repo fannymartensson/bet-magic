@@ -9,6 +9,7 @@
 
 <script>
   import playerScore from '@/components/playerScore.vue'
+
   export default {
     name: 'App',
     components: {

@@ -12,7 +12,9 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+    name: 'ReturnBack'
+  }
 </script>
 
 <style>
@@ -26,9 +28,13 @@
     font-size: 20px;
     cursor: pointer;
     margin-top: 0.9em;
-    background-color: rgb(3, 0, 0);
+    background-color: transparent;
     color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     margin-left: 6rem;
+  }
+  .btn-return-back:hover {
+    background: white;
+    color: black;
   }
 </style>

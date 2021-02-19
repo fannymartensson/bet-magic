@@ -5,6 +5,8 @@
     <div class="background__drop-line" />
     <div class="background__drop-line" />
     <div class="background__drop-line" />
+    <div class="background__drop-line" />
+    <div class="background__drop-line" />
   </div>
 </template>
 
@@ -42,59 +44,47 @@
         left: 0;
         background: linear-gradient(
           to bottom,
-          #fbfafc00 0%,
-          #bd57c8 75%,
+          rgba(255, 255, 255, 0) 0%,
+          #bd57c8 80%,
           #bd57c8 100%
         );
-        animation: backgroundDropDown 9s 0s infinite;
+        animation: backgroundDropDown 8s 0s infinite;
         animation-fill-mode: forwards;
         animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
       }
-
       &:nth-child(1) {
-        margin-left: -40%;
+        margin-left: -38%;
         &::after {
           animation-delay: 4s;
         }
       }
       &:nth-child(2) {
-        margin-left: -20%;
+        margin-left: -24%;
         &::after {
-          animation-delay: 1s;
+          animation-delay: 2s;
         }
       }
-
       &:nth-child(4) {
-        margin-left: 20%;
+        margin-left: 24%;
         &::after {
-          animation-delay: 3s;
+          animation-delay: 2s;
         }
       }
       &:nth-child(5) {
-        margin-left: 40%;
+        margin-left: 38%;
         &::after {
           animation-delay: 4s;
         }
-      }
-    }
-    &--success &__drop-line {
-      &::after {
-        background: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0) 0%,
-          #ffffff07 75%,
-          #ffffff00 100%
-        );
       }
     }
   }
 
   @keyframes backgroundDropDown {
     0% {
-      top: -50%;
+      top: -45%;
     }
     100% {
-      top: 110%;
+      top: 100%;
     }
   }
 </style>
