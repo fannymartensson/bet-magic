@@ -18,7 +18,8 @@
   }
 </script>
 
-<style>
+<style lang="scss">
+  @import './assets/scss/global.scss';
   @font-face {
     font-family: 'Arcade';
     src: url('./assets/fonts/ARCADECLASSIC.TTF') format('truetype');
@@ -35,7 +36,6 @@
   #app {
     position: relative;
     letter-spacing: 0.06em;
-    color: white;
   }
   .background-img {
     background-image: url('./assets/Backgrund.svg');

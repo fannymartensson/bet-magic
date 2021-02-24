@@ -72,7 +72,8 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+  @import '../assets/scss/global.scss';
   /* I'll make this cleaner when we decide on a complete layout and merge our styles */
 
   * {
@@ -92,13 +93,10 @@
     margin-right: auto;
   }
   .btn {
-    color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     border-radius: 3px;
     padding: 0.2em;
-    border: 1px solid white;
     border-radius: 4px;
-    background-color: black;
     cursor: pointer;
   }
 
@@ -114,7 +112,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
   }
   .profile-overview {
     margin-top: 2em;
@@ -200,12 +197,12 @@
   .switch-label:after {
     content: attr(data-on);
     left: 11px;
-    color: white;
+    color: $primary;
     text-shadow: 0 2px rgba(0, 0, 0, 0.2);
     opacity: 0;
   }
   .switch-input:checked ~ .switch-label {
-    background: #000000;
+    background: $secondary;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
   }
   .switch-input:checked ~ .switch-label:before {

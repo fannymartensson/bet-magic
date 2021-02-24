@@ -68,7 +68,8 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+  @import '@/assets/scss/global.scss';
   .page-game {
     background-image: '../assets/Background.svg';
     width: 100%;
@@ -84,8 +85,6 @@
     margin-top: 30px;
   }
   .playAgain {
-    background-color: rgb(110, 40, 175);
-    color: rgb(238, 238, 238);
     font-weight: bold;
     padding: 10%;
     border-radius: 8%;

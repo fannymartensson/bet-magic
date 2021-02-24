@@ -6,7 +6,6 @@
       <menu-btn class="menu-btn" :menuBtn="true" />
     </header>
     <main>
-      <background-deck />
       <form @submit.prevent class="login-form">
         <h1 class="login-title">Login</h1>
         <div class="textbox">
@@ -80,70 +79,6 @@
     }
   }
 </script>
-<style scoped>
-  main {
-    display: flex;
-    justify-content: center;
-  }
-  .login-title {
-    font-size: 40px;
-    text-align: center;
-  }
-  .login-form {
-    padding: 2rem;
-    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
-    color: white;
-    height: 31rem;
-    border: 1px solid white;
-    width: 17rem;
-    margin-left: 6px;
-    border-radius: 6px;
-  }
-
-  .textbox,
-  .submit-btn {
-    overflow: hidden;
-    padding: 17px 9px;
-  }
-  .textbox input {
-    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
-    background: transparent;
-    color: white;
-    font-size: 17px;
-    border-radius: 6px;
-    max-width: 12.3rem;
-    height: 2.5em;
-    outline: none;
-    padding-left: 6px;
-  }
-  .check-box {
-    margin: 0 9px;
-  }
-  .form-btn {
-    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
-    min-width: 100%;
-    background: none;
-    border: 1px solid white;
-    color: white;
-    padding: 9px 11px;
-    font-size: 23px;
-    cursor: pointer;
-    margin: 0;
-    border-radius: 6px;
-  }
-  @media (min-width: 700px) {
-    header {
-      justify-content: space-evenly;
-    }
-    .login-form {
-      width: 36rem;
-      height: 33rem;
-    }
-    .login-title {
-      margin: 3rem;
-    }
-    .textbox input {
-      min-width: 31rem;
-    }
-  }
+<style scoped lang="scss">
+  @import '../assets/scss/forms.scss';
 </style>

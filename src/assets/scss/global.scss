@@ -1,0 +1,58 @@
+/** Global Settings
+------------------------------------------------------------*/
+/* 1. Variables
+------------------------------------------------------------*/
+$primary: white;
+$secondary: black;
+$h1: 40px;
+
+/** 2. Text in App
+------------------------------------------------------------*/
+#app {
+  color: $primary;
+}
+
+/** 3. ProfilePage
+------------------------------------------------------------*/
+.profile-page {
+  color: $primary;
+}
+.btn {
+  color: $primary;
+  border: 1px solid $primary;
+  background-color: $secondary;
+}
+/** 4. Buttons
+------------------------------------------------------------*/
+/** Return btn */
+.btn-return {
+  border: 1px solid $primary;
+  background-color: $secondary;
+  color: $primary;
+}
+/** Restart btn */
+
+/** Play btn */
+#play-btn {
+  border: 1px solid $primary;
+  background-color: $secondary;
+  color: $primary;
+}
+/** Play & Restart btn AlienShooting*/
+.btn-primary,
+.btn-default {
+  background-color: $secondary;
+  border-color: $primary;
+  color: $primary;
+}
+/** Play after filling player names btn TicTac*/
+button {
+  background-color: $secondary;
+  border-color: $primary;
+  color: $primary;
+}
+/** Playagain btn TicTac*/
+.playAgain {
+  background-color: rgb(110, 40, 175);
+  color: $primary;
+}
