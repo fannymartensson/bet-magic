@@ -27,8 +27,7 @@
   }
 </script>
 
-<style scoped lang="scss">
-  @import '../assets/scss/global.scss';
+<style lang="scss">
   .background-nav {
     display: flex;
     flex-direction: column;
@@ -46,7 +45,6 @@
   .nav-link {
     text-decoration: none;
     font-size: 25px;
-    color: $primary;
   }
   .nav-item {
     padding: 1.3rem;

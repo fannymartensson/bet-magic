@@ -1,58 +1,135 @@
 /** Global Settings
 ------------------------------------------------------------*/
-/* 1. Variables
-------------------------------------------------------------*/
-$primary: white;
-$secondary: black;
-$h1: 40px;
+@import 'theme-colors';
 
-/** 2. Text in App
+/* 1. BODY, APP BACKGROUND ETC.
 ------------------------------------------------------------*/
+body,
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
+  overflow: auto;
+}
+.app-background {
+  color: var(--dynamic-title-color);
+  background-color: var(--app-background-color);
+}
 #app {
-  color: $primary;
+  color: var(--dynamic-title-color);
+  background-image: var(--app-background-image);
+}
+.background-img {
+  background-image: var(--app-background-image);
+  background-size: cover;
+  background-position: center center;
+  min-height: 88vh;
 }
 
-/** 3. ProfilePage
+/* END
+------------------------------------------------------------*/
+/** 2. Navigation
+------------------------------------------------------------*/
+
+/* END
+------------------------------------------------------------*/
+/** 3. Game cards
+------------------------------------------------------------*/
+.description {
+  color: var(--dynamic-title-color);
+}
+a {
+  color: var(--dynamic-title-color);
+}
+.card-desktop {
+  border: 1px solid var(--dynamic-border-color);
+}
+.play-button {
+  background-color: var(--app-background-color);
+  color: var(--dynamic-title-color);
+  border: 1px solid var(--dynamic-border-color);
+}
+/* END
+------------------------------------------------------------*/
+/** 4. Profile Page
 ------------------------------------------------------------*/
 .profile-page {
-  color: $primary;
+  color: var(--dynamic-title-color);
 }
 .btn {
-  color: $primary;
-  border: 1px solid $primary;
-  background-color: $secondary;
+  color: var(--dynamic-title-color);
+  border: 1px solid var(--dynamic-border-color);
+  background-color: var(--app-background-color);
 }
-/** 4. Buttons
+/* END
+------------------------------------------------------------*/
+/** 5. Buttons
 ------------------------------------------------------------*/
 /** Return btn */
 .btn-return {
-  border: 1px solid $primary;
-  background-color: $secondary;
-  color: $primary;
+  border: 1px solid var(--dynamic-border-color);
+  background-color: var(--app-background-color);
+  color: var(--dynamic-title-color);
 }
-/** Restart btn */
-
 /** Play btn */
 #play-btn {
-  border: 1px solid $primary;
-  background-color: $secondary;
-  color: $primary;
+  border: 1px solid var(--dynamic-border-color);
+  background-color: var(--app-background-color);
+  color: var(--dynamic-title-color);
 }
 /** Play & Restart btn AlienShooting*/
 .btn-primary,
 .btn-default {
-  background-color: $secondary;
-  border-color: $primary;
-  color: $primary;
+  background-color: var(--app-background-color);
+  border-color: var(--dynamic-border-color);
+  color: var(--dynamic-title-color);
 }
 /** Play after filling player names btn TicTac*/
 button {
-  background-color: $secondary;
-  border-color: $primary;
-  color: $primary;
+  background-color: var(--app-background-color);
+  border-color: var(--dynamic-border-color);
+  color: var(--dynamic-title-color);
 }
 /** Playagain btn TicTac*/
 .playAgain {
-  background-color: rgb(110, 40, 175);
-  color: $primary;
+  background-color: var(--app-background-color);
+  color: var(--dynamic-title-color);
+}
+.col {
+  color: var(--dynamic-title-color);
+}
+/* END
+------------------------------------------------------------*/
+/** 6. Forms
+------------------------------------------------------------*/
+form {
+  border: 1px solid var(--dynamic-border-color);
+}
+
+.textbox input,
+.textgroup input {
+  color: var(--dynamic-title-color);
+  background: none;
+}
+.form-btn {
+  background: none;
+  border: 1px solid var(--dynamic-border-color);
+  color: var(--dynamic-title-color);
+}
+
+/* 7.THEME SWITCH
+------------------------------------------------------------*/
+
+input.theme-switch + label {
+  cursor: pointer;
+}
+
+input.theme-switch:not(:checked) + label:hover {
+  cursor: pointer;
+}
+
+input.theme-switch + label:active,
+input.theme-switch:checked + label {
+  cursor: pointer;
 }
