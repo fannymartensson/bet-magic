@@ -63,7 +63,8 @@
     }
   }
 </script>
-<style scoped>
+<style scoped lang="scss">
+  @import '@/assets/scss/global.scss';
   * {
     box-sizing: border-box;
   }
@@ -113,16 +114,12 @@
     font-size: 17px;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
-
   #play-btn {
     padding: 5px 10px;
-    border: 1px solid white;
     border-radius: 4px;
     font-size: 20px;
     cursor: pointer;
     margin-top: 0.9em;
-    background-color: black;
-    color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
 </style>
