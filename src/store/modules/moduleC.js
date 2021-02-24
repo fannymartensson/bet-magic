@@ -6,7 +6,6 @@ export default new Vuex.Store({
   state: {
     score: 0
   },
-
   mutations: {
     increment: state => state.score++,
     reset: state => (state.score = 0)

@@ -3,24 +3,31 @@ import axios from 'axios'
 export default {
   namespaced: true,
   state: {
-    cardsList: [],
     cardNumOne: null,
     cardNumTwo: null,
-    status: 'SUIT',
-    gameLoadStatus: false
+    cardsList: [],
+    gameFinishStatus: false,
+    gameLoadStatus: false,
+    lives: 0,
+    livesMax: 20,
+    loosingLifeStatus: false,
+    status: 'SUIT'
   },
   getters: {
-    getCards(state) {
-      return state.cardsList
-    },
     getCardNumOne(state) {
       return state.cardNumOne
     },
     getCardNumTwo(state) {
       return state.cardNumTwo
     },
+    getCards(state) {
+      return state.cardsList
+    },
     getGameLoadStatus(state) {
       return state.gameLoadStatus
+    },
+    getLivesNum(state) {
+      return state.lives
     },
     getStatus(state) {
       return state.status
@@ -33,8 +40,8 @@ export default {
     }
   },
   mutations: {
-    UPDATE_CARDS: (state, cardsList) => {
-      state.cardsList = cardsList
+    COMPLETE_GAME(state, payload) {
+      state.gameFinishStatus = payload
     },
     UPDATE_CARD_NUM_ONE(state, payload) {
       state.cardNumOne = payload
@@ -42,19 +49,33 @@ export default {
     UPDATE_CARD_NUM_TWO(state, payload) {
       state.cardNumTwo = payload
     },
-    UPDATE_STATUS(state, payload) {
-      state.status = payload
+    UPDATE_CARDS: (state, cardsList) => {
+      state.cardsList = cardsList
     },
     UPDATE_GAME_LOAD(state, payload) {
       state.gameLoadStatus = payload
+    },
+    UPDATE_STATUS(state, payload) {
+      state.status = payload
+    },
+    // LIFE
+    DECREASE_LIVES(state) {
+      state.lives = state.lives - 1
+    },
+    LOOSING_LIFE(state, payload) {
+      state.loosingLifeStatus = payload
+    },
+    SET_LIVES(state) {
+      state.lives = state.livesMax
+    },
+    UPDATE_LIVES(state, lives) {
+      state.livesMax = lives
     }
   },
   actions: {
     checkCards({ commit, getters, state }) {
       const { cardsList, cardNumOne, cardNumTwo } = state
-
       commit('UPDATE_STATUS', 'COMPARE')
-
       if (cardNumOne.name === cardNumTwo.name) {
         // Update cards
         const copy = [...cardsList]
@@ -67,12 +88,21 @@ export default {
         copy[firstIndex].isMatched = true
         copy[secondIndex].isMatched = true
         commit('UPDATE_CARDS', copy)
+        commit('LOOSING_LIFE', false)
+      }
+      if (cardNumOne.name !== cardNumTwo.name) {
+        commit('DECREASE_LIVES')
+        commit('LOOSING_LIFE', true)
       }
       // Reset selected cards
       commit('UPDATE_CARD_NUM_ONE', null)
       commit('UPDATE_CARD_NUM_TWO', null)
       if (getters.getUnMatchedCards && getters.getUnMatchedCards.length === 0) {
-        commit('UPDATE_STATUS', 'WON')
+        commit('COMPLETE_GAME', true)
+        commit('UPDATE_STATUS', 'WINNER')
+      } else if (getters.getLivesNum === 0) {
+        commit('COMPLETE_GAME', true)
+        commit('UPDATE_STATUS', 'GAMEOVER')
       } else {
         commit('UPDATE_STATUS', 'SUIT')
       } // TO SEE THE GAME FINISH
@@ -103,6 +133,7 @@ export default {
           return
         }
         commit('UPDATE_CARD_NUM_TWO', card)
+
         setTimeout(() => {
           dispatch('checkCards')
         }, 600)
@@ -121,11 +152,12 @@ export default {
         resolve(copyCards)
       })
     },
-
     async updateDeck({ dispatch, commit }) {
       await dispatch('setDeck')
       await dispatch('shuffleCards')
+      commit('SET_LIVES')
       commit('UPDATE_STATUS', 'SUIT') //THIS COMMIT IS FOR RESTATING THE GAME
+      commit('COMPLETE_GAME', false)
       setTimeout(() => {
         commit('UPDATE_GAME_LOAD', false)
       }, 1600)

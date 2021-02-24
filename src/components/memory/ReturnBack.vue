@@ -1,32 +1,39 @@
 <template>
-  <div class="btn">
+  <div class="return--back">
     <div class="return">
       <button class="btn-return-back">
         back
       </button>
     </div>
+    <status-lives :status="true" />
   </div>
 </template>
-
 <script>
+  import { mapGetters, mapState } from 'vuex'
+  import StatusLives from './StatusLives.vue'
   export default {
-    name: 'ReturnBack'
+    components: { StatusLives },
+    name: 'ReturnBack',
+    computed: {
+      ...mapState('b', ['lives']),
+      ...mapGetters('b', ['getLivesStatus'])
+    }
   }
 </script>
 
-<style>
-  .btn {
+<style scoped>
+  .return--back {
     z-index: 3;
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
   }
   .btn-return-back {
     padding: 5px 10px;
-    border: 1px solid white;
-    border-radius: 4px;
+    border-radius: 3px;
     font-size: 20px;
     cursor: pointer;
     margin-top: 0.9em;
-    background-color: transparent;
-    color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
   .btn-return-back:hover {

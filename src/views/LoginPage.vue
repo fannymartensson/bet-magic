@@ -71,12 +71,12 @@
           this.showError = true
         }
       }
-    },
-    watch: {
+    }
+    /*   watch: {
       username(newValue, oldValue) {
         console.log(`username has changed from ${oldValue} to ${newValue}`)
       }
-    }
+    } */
   }
 </script>
 <style scoped lang="scss">
