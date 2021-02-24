@@ -35,7 +35,6 @@
         height: 100vh;
       }
     }
-
     .game__load:nth-child(2) {
       opacity: 0;
       animation: loadFade1 1.5s infinite;

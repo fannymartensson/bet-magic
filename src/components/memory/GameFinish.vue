@@ -8,10 +8,12 @@
         winner!
       </span>
       <div>
-        <button @click="$emit('play-again')">Try Again</button>
+        <button class="play-again" @click="$emit('play-again')">
+          play Again
+        </button>
       </div>
       <div>
-        <button @click="backHome">Home</button>
+        <button class="back-home" @click="backHome">Home</button>
       </div>
     </div>
   </div>
@@ -33,10 +35,11 @@
   }
 </script>
 <style scoped>
-  button {
+  .play-again,
+  .back-home {
     cursor: pointer;
     border: 1px aliceblue solid;
-    color: black;
+    color: rgb(253, 250, 250);
   }
   .game-finish {
     background: transparent;
@@ -47,6 +50,5 @@
     justify-content: center;
     align-items: center;
     margin-top: -121px;
-    color: white;
   }
 </style>

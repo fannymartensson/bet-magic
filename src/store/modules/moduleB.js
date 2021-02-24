@@ -6,12 +6,12 @@ export default {
     cardsList: [],
     cardNumOne: null,
     cardNumTwo: null,
-    lives: 0,
-    livesMax: 1,
-    status: 'SUIT',
+    gameFinishStatus: false,
     gameLoadStatus: false,
+    lives: 0,
+    livesMax: 20,
     loosingLifeStatus: false,
-    gameFinishStatus: false
+    status: 'SUIT'
   },
   getters: {
     getCards(state) {
@@ -26,6 +26,9 @@ export default {
     getGameLoadStatus(state) {
       return state.gameLoadStatus
     },
+    getLivesNum(state) {
+      return state.lives
+    },
     getStatus(state) {
       return state.status
     },
@@ -34,14 +37,14 @@ export default {
         state.cardsList &&
         state.cardsList.filter(card => card.isMatched === false)
       )
-    },
-    getLivesNum(state) {
-      return state.lives
     }
   },
   mutations: {
     UPDATE_CARDS: (state, cardsList) => {
       state.cardsList = cardsList
+    },
+    COMPLETE_GAME(state, payload) {
+      state.gameFinishStatus = payload
     },
     UPDATE_CARD_NUM_ONE(state, payload) {
       state.cardNumOne = payload
@@ -49,27 +52,24 @@ export default {
     UPDATE_CARD_NUM_TWO(state, payload) {
       state.cardNumTwo = payload
     },
-    UPDATE_STATUS(state, payload) {
-      state.status = payload
-    },
     UPDATE_GAME_LOAD(state, payload) {
       state.gameLoadStatus = payload
     },
-    COMPLETE_GAME(state, payload) {
-      state.gameFinishStatus = payload
+    UPDATE_STATUS(state, payload) {
+      state.status = payload
     },
     // LIFE
+    DECREASE_LIVES(state) {
+      state.lives = state.lives - 1
+    },
     LOOSING_LIFE(state, payload) {
       state.loosingLifeStatus = payload
-    },
-    UPDATE_LIVES(state, lives) {
-      state.livesMax = lives
     },
     SET_LIVES(state) {
       state.lives = state.livesMax
     },
-    DECREASE_LIVES(state) {
-      state.lives = state.lives - 1
+    UPDATE_LIVES(state, lives) {
+      state.livesMax = lives
     }
   },
   actions: {
@@ -155,7 +155,7 @@ export default {
 
     async updateDeck({ dispatch, commit }) {
       await dispatch('setDeck')
-      // await dispatch('shuffleCards')
+      await dispatch('shuffleCards')
       commit('SET_LIVES')
       commit('UPDATE_STATUS', 'SUIT') //THIS COMMIT IS FOR RESTATING THE GAME
       commit('COMPLETE_GAME', false)

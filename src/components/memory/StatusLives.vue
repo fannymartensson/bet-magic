@@ -56,7 +56,6 @@
       justify-content: flex-end;
     }
   }
-
   @keyframes decreaseLivesFlash {
     0% {
       color: white;

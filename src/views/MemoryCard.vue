@@ -25,29 +25,29 @@
   </main>
 </template>
 <script>
-  import CardList from '@/components/memory/CardList.vue'
-  import GameLoad from '@/components/memory/GameLoad.vue'
-  import GameFinish from '@/components/memory/GameFinish.vue'
   import BackgroundDeck from '@/components/memory/BackgroundDeck.vue'
+  import CardList from '@/components/memory/CardList.vue'
+  import GameFinish from '@/components/memory/GameFinish.vue'
+  import GameLoad from '@/components/memory/GameLoad.vue'
   import ReturnBack from '@/components/memory/ReturnBack.vue'
   import { mapGetters } from 'vuex'
 
   export default {
     name: 'MemoryCard',
     components: {
-      CardList,
-      GameLoad,
-      ReturnBack,
       BackgroundDeck,
-      GameFinish
+      CardList,
+      GameFinish,
+      GameLoad,
+      ReturnBack
     },
     computed: {
       ...mapGetters('b', {
         cardsList: 'getCards',
-        status: 'getStatus',
+        gameLoadStatus: 'getGameLoadStatus',
         cardNumOne: 'getCardNumOne',
         cardNumTwo: 'getCardNumTwo',
-        gameLoadStatus: 'getGameLoadStatus'
+        status: 'getStatus'
       })
     },
     created() {
@@ -55,14 +55,14 @@
     },
     //TO SEE THE FRONT CARD
     methods: {
+      back() {
+        this.$router.push('/')
+      },
       cardImg(image) {
         if (!image) {
           return ''
         }
         return image.replace(/\s/g, '-')
-      },
-      back() {
-        this.$router.push('/')
       }
     }
   }
@@ -95,7 +95,7 @@
   }
   @media screen and (min-width: 627px) and (max-width: 807px) {
     .main-deck {
-      grid-template-columns: repeat(4, 150px);
+      grid-template-columns: repeat(4, 140px);
     }
   }
   @media screen and (min-width: 808px) and (min-width: 899px) {

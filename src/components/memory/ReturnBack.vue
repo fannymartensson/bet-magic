@@ -1,5 +1,5 @@
 <template>
-  <div class="btn">
+  <div class="return--back">
     <div class="return">
       <button class="btn-return-back">
         back
@@ -22,7 +22,7 @@
 </script>
 
 <style>
-  .btn {
+  .return--back {
     z-index: 3;
     display: flex;
     align-items: baseline;
