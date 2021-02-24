@@ -21,7 +21,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .return--back {
     z-index: 3;
     display: flex;
@@ -30,13 +30,10 @@
   }
   .btn-return-back {
     padding: 5px 10px;
-    border: 1px solid white;
-    border-radius: 4px;
+    border-radius: 3px;
     font-size: 20px;
     cursor: pointer;
     margin-top: 0.9em;
-    background-color: transparent;
-    color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
   .btn-return-back:hover {

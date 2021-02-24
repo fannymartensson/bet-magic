@@ -12,12 +12,12 @@
     <div v-else-if="status === 'SUIT'" class="main-deck">
       <div v-for="card in cardsList" :key="card.id">
         <Card-list
-          :cardName="card.name"
-          :pic="cardImg(card.name)"
-          :is-matched="card.isMatched"
+          :card-name="card.name"
           :first-id="cardNumOne && cardNumOne.id"
-          :second-id="cardNumTwo && cardNumTwo.id"
           :id="card.id"
+          :is-matched="card.isMatched"
+          :pic="cardImg(card.name)"
+          :second-id="cardNumTwo && cardNumTwo.id"
           @reveal-card="$store.dispatch('b/showCard', card)"
         />
       </div>

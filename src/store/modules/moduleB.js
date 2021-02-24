@@ -3,9 +3,9 @@ import axios from 'axios'
 export default {
   namespaced: true,
   state: {
-    cardsList: [],
     cardNumOne: null,
     cardNumTwo: null,
+    cardsList: [],
     gameFinishStatus: false,
     gameLoadStatus: false,
     lives: 0,
@@ -14,14 +14,14 @@ export default {
     status: 'SUIT'
   },
   getters: {
-    getCards(state) {
-      return state.cardsList
-    },
     getCardNumOne(state) {
       return state.cardNumOne
     },
     getCardNumTwo(state) {
       return state.cardNumTwo
+    },
+    getCards(state) {
+      return state.cardsList
     },
     getGameLoadStatus(state) {
       return state.gameLoadStatus
@@ -40,9 +40,6 @@ export default {
     }
   },
   mutations: {
-    UPDATE_CARDS: (state, cardsList) => {
-      state.cardsList = cardsList
-    },
     COMPLETE_GAME(state, payload) {
       state.gameFinishStatus = payload
     },
@@ -51,6 +48,9 @@ export default {
     },
     UPDATE_CARD_NUM_TWO(state, payload) {
       state.cardNumTwo = payload
+    },
+    UPDATE_CARDS: (state, cardsList) => {
+      state.cardsList = cardsList
     },
     UPDATE_GAME_LOAD(state, payload) {
       state.gameLoadStatus = payload
@@ -152,7 +152,6 @@ export default {
         resolve(copyCards)
       })
     },
-
     async updateDeck({ dispatch, commit }) {
       await dispatch('setDeck')
       await dispatch('shuffleCards')
