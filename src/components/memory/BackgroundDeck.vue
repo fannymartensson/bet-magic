@@ -9,7 +9,6 @@
     <div class="background__drop-line" />
   </div>
 </template>
-
 <script>
   export default {
     name: 'BackgroundDeck'

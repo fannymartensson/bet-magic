@@ -6,7 +6,6 @@
       <menu-btn class="menu-btn" :menuBtn="true" />
     </header>
     <main>
-      <background-deck />
       <form @submit.prevent class="login-form">
         <h1 class="login-title">Login</h1>
         <div class="textbox">
@@ -72,12 +71,12 @@
           this.showError = true
         }
       }
-    },
-    watch: {
+    }
+    /*   watch: {
       username(newValue, oldValue) {
         console.log(`username has changed from ${oldValue} to ${newValue}`)
       }
-    }
+    } */
   }
 </script>
 <style scoped>

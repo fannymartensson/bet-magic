@@ -1,11 +1,12 @@
 <template>
   <main>
+    <h1>Memory Card</h1>
     <return-back @click.native="back" />
     <game-load v-if="gameLoadStatus" />
     <background-deck />
     <game-finish
       class="finish"
-      v-if="status === 'WON'"
+      v-if="status !== 'SUIT'"
       @play-again="$store.dispatch('b/updateDeck')"
     />
     <div v-else-if="status === 'SUIT'" class="main-deck">
@@ -36,9 +37,9 @@
     components: {
       CardList,
       GameLoad,
-      GameFinish,
       ReturnBack,
-      BackgroundDeck
+      BackgroundDeck,
+      GameFinish
     },
     computed: {
       ...mapGetters('b', {
@@ -82,8 +83,6 @@
     justify-content: center;
     text-align: center;
     box-sizing: border-box;
-    padding-top: 01rem;
-    padding-bottom: 3rem;
     background: #07070783;
   }
   .finish {

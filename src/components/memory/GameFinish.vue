@@ -1,9 +1,14 @@
 <template>
-  <div class="game-finish">
+  <div class="game-finish" v-if="status">
     <div class="player-choices">
-      WINNER!
+      <span v-if="status === 'GAMEOVER'">
+        GAME OVER!
+      </span>
+      <span v-else-if="status === 'WINNER'">
+        winner!
+      </span>
       <div>
-        <button @click="$emit('play-again')">Play Again</button>
+        <button @click="$emit('play-again')">Try Again</button>
       </div>
       <div>
         <button @click="backHome">Home</button>
@@ -12,8 +17,14 @@
   </div>
 </template>
 <script>
+  import { mapGetters } from 'vuex'
   export default {
     name: 'GameFinish',
+    computed: {
+      ...mapGetters('b', {
+        status: 'getStatus'
+      })
+    },
     methods: {
       backHome() {
         this.$router.push('/')

@@ -5,18 +5,28 @@
         back
       </button>
     </div>
+    <status-lives :status="true" />
   </div>
 </template>
-
 <script>
+  import { mapGetters, mapState } from 'vuex'
+  import StatusLives from './StatusLives.vue'
   export default {
-    name: 'ReturnBack'
+    components: { StatusLives },
+    name: 'ReturnBack',
+    computed: {
+      ...mapState('b', ['lives']),
+      ...mapGetters('b', ['getLivesStatus'])
+    }
   }
 </script>
 
 <style>
   .btn {
     z-index: 3;
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
   }
   .btn-return-back {
     padding: 5px 10px;
