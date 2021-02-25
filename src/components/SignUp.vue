@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div v-if="hasPlayers" class="Signup">
+    <div v-if="!hasPlayers || Registered">
+      <ProfilePage />
+    </div>
+    <div v-else class="Signup">
       <header>
         <logo-icon class="logo-btn" :logoIcon="true" />
         <menu-btn class="menu-btn" :MenuBtn="true" />
@@ -76,9 +79,6 @@
         </form>
       </main>
     </div>
-    <div v-else>
-      <ProfilePage />
-    </div>
   </div>
 </template>
 
@@ -94,7 +94,7 @@
 
     data: function() {
       return {
-        loggedIn: this.$store.state.playerData.signedUp,
+        Registered: localStorage.getItem('Registered'),
         alias: '',
         firstname: '',
         lastname: '',
@@ -103,18 +103,18 @@
         confirmpassword: ''
       }
     },
+    methods: {
+      ...mapMutations('playerData', {
+        setUser: 'setUser'
+      })
+      /*      start(SignUp) {
+        this.setUser(SignUp)
+      } */
+    },
     computed: {
       ...mapGetters('playerData', {
         hasPlayers: 'hasPlayers'
       })
-    },
-    methods: {
-      ...mapMutations('playerData', {
-        setUser: 'setUser'
-      }),
-      start(SignUp) {
-        this.setUser(SignUp)
-      }
     }
   }
 </script>

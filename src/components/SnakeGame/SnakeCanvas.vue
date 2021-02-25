@@ -1,5 +1,6 @@
 <template>
   <div>
+    <collectScore v-if="showMe" />
     <canvas
       ref="board"
       id="snake-canvas"
@@ -11,11 +12,13 @@
   </div>
 </template>
 <script>
+  import collectScore from '../collectScore.vue'
   import Constants from './Constants.vue'
   import Store from '../../store/modules/moduleC.js'
+  import { mapGetters } from 'vuex'
 
   export default {
-    components: { Constants },
+    components: { Constants, collectScore },
     data() {
       return {
         gameover: ''
@@ -32,7 +35,10 @@
     computed: {
       boardSizePx() {
         return this.cellSize * this.boardSize
-      }
+      },
+      ...mapGetters('playerData', {
+        showMe: 'showMe'
+      })
     },
     mounted() {
       this.boardContext = this.$refs.board.getContext('2d')
@@ -96,6 +102,9 @@
         ) {
           this.stop()
           this.gameover = 'Game over!'
+          if (Store.state.score > 2) {
+            this.$store.state.playerData.show = true
+          }
           this.resetScores()
         }
 

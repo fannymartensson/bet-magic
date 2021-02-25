@@ -15,7 +15,7 @@
           <p>{{ Efternamn }}</p>
           <p>TicTacToe: 25</p>
           <p>Ufo Shooter: 56</p>
-          <p>Mastermind: 8</p>
+          <p>Mastermind: 100</p>
           <p>Memory: 22</p>
           <p>Snake: 88</p>
           <p>Total score: {{ userScore }}</p>
@@ -54,20 +54,18 @@
 <script>
   import MenuBtn from '@/components/MenuBtn.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
-  import { mapState } from 'vuex'
 
   export default {
     name: 'ProfilePage',
     components: { MenuBtn, LogoIcon },
 
-    computed: {
-      ...mapState('playerData', {
-        Alias: 'Alias',
-        Förnamn: 'Förnamn',
-        Efternamn: 'Efternamn',
-        Email: 'Email',
-        userScore: 'userScore'
-      })
+    data() {
+      return {
+        Alias: localStorage.getItem('Alias'),
+        Förnamn: localStorage.getItem('Förnamn'),
+        Efternamn: localStorage.getItem('Efternamn'),
+        userScore: localStorage.getItem('userScore')
+      }
     }
   }
 </script>

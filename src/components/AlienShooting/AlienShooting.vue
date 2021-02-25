@@ -2,6 +2,7 @@
   <body>
     <div id="alien-game">
       <br />
+      <collectScore v-if="collectScores" />
       <canvas id="myCanvas" v-show="!ended" ref="canvas" @click="shoot" />
       <canvas id="myCanvas" v-show="ended" ref="endCanvas" />
 
@@ -31,9 +32,13 @@
 </template>
 
 <script>
+  import collectScore from '../collectScore.vue'
   import _ from 'lodash'
   export default {
     name: 'AlienShooting',
+    components: {
+      collectScore
+    },
     data() {
       return {
         canvas: '',
@@ -46,7 +51,8 @@
         points: 0,
         health: 100,
         started: false,
-        ended: false
+        ended: false,
+        collectScores: false
       }
     },
     methods: {
@@ -81,6 +87,9 @@
         } else {
           if (this.health <= 0) {
             alert('Game Finished Please Restart')
+            if (this.points > 45) {
+              this.collectScores = true
+            }
           } else {
             alert('Game Not Yet Started !')
           }

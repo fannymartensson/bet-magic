@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
-
+import Vuex, { mapMutations } from 'vuex'
+import { mapState } from 'vuex'
 Vue.use(Vuex)
 
 import {
@@ -25,10 +25,20 @@ export default {
     feedback: INIT_FEEDBACK
   },
 
+  ...mapMutations('playerData', {
+    WonMastermind: 'WonMastermind'
+  }),
+
+  computed: {
+    ...mapState('playerData', {
+      Mastermind: 'Mastermind'
+    })
+  },
+
   getters: {
     checkButtonTranslation(state) {
       const y = (state.current - 1) * 100
-      const offset = y / 10 // this works because $aria is 10px in the sass
+      const offset = y / 10
       return `translate(100%, calc(-${y}% - ${offset}px))`
     },
     isActive: state => x => x < state.current,

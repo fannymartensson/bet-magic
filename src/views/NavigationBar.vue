@@ -3,9 +3,14 @@
     <logo-icon class="logo-btn" :logoIcon="true" />
     <nav>
       <ul class="menu-items">
-        <li class="nav-item">
+        <li class="nav-item" v-if="loggedIn">
+          <router-link class="nav-link" to="/signup">PROFILE</router-link>
+        </li>
+
+        <li class="nav-item" v-else>
           <router-link class="nav-link" to="/login">LOGIN</router-link>
         </li>
+
         <li class="nav-item">
           <router-link class="nav-link" to="/our-games">OUR GAMES</router-link>
         </li>
@@ -23,6 +28,11 @@
     name: 'NavigationBar',
     components: {
       LogoIcon
+    },
+    data() {
+      return {
+        loggedIn: localStorage.getItem('Registered')
+      }
     }
   }
 </script>
