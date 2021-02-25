@@ -7,8 +7,8 @@
       :isPlaying="isPlaying"
       :stop="stop"
     />
-    <p class="snake-game">Points: {{ score }}</p>
-    <p class="snake-game">Score: 88</p>
+    <p class="snake-game">Score: {{ score }}</p>
+    <p class="snake-game">Highest Score: {{ highestScore }}</p>
 
     <button id="play-btn" @click="isPlaying ? stop() : start()">
       {{ isPlaying ? 'Stop' : 'Play' }}
@@ -44,6 +44,7 @@
         boardSize: 20,
         speed: 10,
         isPlaying: false
+        // highestScore: ''
       }
     },
 
@@ -52,6 +53,17 @@
         return Store.state.score
       }
     },
+    // created() {
+    //   if (localStorage.score) {
+    //     localStorage.setItem('highestScore', this.score)
+    //     this.score = localStorage.getItem('score')
+    //   }
+    // },
+    // watch: {
+    //   score(highestScore) {
+    //     localStorage.score = highestScore
+    //   }
+    // },
 
     methods: {
       start() {

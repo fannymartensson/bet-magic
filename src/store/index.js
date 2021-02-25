@@ -53,7 +53,7 @@ export default new Vuex.Store({
       {
         title: 'Snake Game',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
+          'A simple game with levels to play while you are waiting for websites to load! Move the snake around with the arrow keys, eat the red dots to grow bigger, and avoid hitting your own tail.',
         img: '/snakegame.png',
         routerlink: 'SnakeGame'
       }
