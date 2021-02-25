@@ -37,13 +37,12 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss">
   .background-nav {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
   }
-
   .logo-btn {
     margin-left: auto;
     margin-right: auto;
@@ -55,14 +54,13 @@
   }
   .nav-link {
     text-decoration: none;
-    color: #fff;
     font-size: 25px;
   }
   .nav-item {
     padding: 1.3rem;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 700px) {
     .nav-link {
       padding: 3rem;
       font-size: 30px;

@@ -7,8 +7,8 @@
       :isPlaying="isPlaying"
       :stop="stop"
     />
-    <p>Points: {{ score }}</p>
-    <p>Score: 88</p>
+    <p class="snake-game">Score: {{ score }}</p>
+    <p class="snake-game">Highest Score: {{ highestScore }}</p>
 
     <button id="play-btn" @click="isPlaying ? stop() : start()">
       {{ isPlaying ? 'Stop' : 'Play' }}
@@ -44,6 +44,7 @@
         boardSize: 20,
         speed: 10,
         isPlaying: false
+        // highestScore: ''
       }
     },
 
@@ -52,6 +53,17 @@
         return Store.state.score
       }
     },
+    // created() {
+    //   if (localStorage.score) {
+    //     localStorage.setItem('highestScore', this.score)
+    //     this.score = localStorage.getItem('score')
+    //   }
+    // },
+    // watch: {
+    //   score(highestScore) {
+    //     localStorage.score = highestScore
+    //   }
+    // },
 
     methods: {
       start() {
@@ -63,7 +75,8 @@
     }
   }
 </script>
-<style scoped>
+<style scoped lang="scss">
+  @import '@/assets/scss/global.scss';
   * {
     box-sizing: border-box;
   }
@@ -113,16 +126,12 @@
     font-size: 17px;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
-
   #play-btn {
     padding: 5px 10px;
-    border: 1px solid white;
     border-radius: 4px;
     font-size: 20px;
     cursor: pointer;
     margin-top: 0.9em;
-    background-color: black;
-    color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
 </style>

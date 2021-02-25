@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <div>
     <div id="alien-game">
       <br />
       <collectScore v-if="collectScores" />
@@ -11,24 +11,24 @@
       </div>
 
       <div class="text-center">
-        <h4>Points : {{ points }}</h4>
+        <h4 class="score">Points : {{ points }}</h4>
       </div>
 
       <div id="controls">
         <button @click="start" v-show="!ended" class="btn-primary">
-          Start
+          Play
         </button>
         <button @click="restart" class="btn-default">Restart</button>
       </div>
 
       <div id="hidden-items">
-        <img src="../../assets/SpaceInvaders/alien-purple.png" ref="image" />
+        <img src="../../assets/AlienShooting/alien-purple.png" ref="image" />
         <audio ref="audio" volume="1" preload="auto">
-          <source src="../../assets/SpaceInvaders/shoot.wav" type="audio/wav" />
+          <source src="../../assets/AlienShooting/shoot.wav" type="audio/wav" />
         </audio>
       </div>
     </div>
-  </body>
+  </div>
 </template>
 
 <script>
@@ -70,14 +70,14 @@
           ;(this.x = (event.clientX - rect.left) * scaleX), // scale mouse coordinates after they have
             (this.y = (event.clientY - rect.top) * scaleY) // been adjusted to be relative to element
 
-          // Check Whether Click is inside UFO Image
+          // Check Whether Click is inside Alien Image
           if (
             _.inRange(this.x, this.imgX, this.imgX + 50) &&
             _.inRange(this.y, this.imgY, this.imgY + 50)
           ) {
             this.points += 1 // Increment Point to 1
 
-            // Draw a rectangular gun shooting image on top of UFO Image
+            // Draw a rectangular gun shooting image on top of Alien Image
             this.canvas = this.$refs.canvas
             this.ctx = this.canvas.getContext('2d')
 
@@ -100,7 +100,7 @@
           this.canvas = this.$refs.canvas
           this.ctx = this.canvas.getContext('2d')
 
-          // Clear Old UFO Image
+          // Clear Old ALien Image
           this.ctx.clearRect(
             this.imgX,
             this.imgY,
@@ -159,13 +159,12 @@
   h4 {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     font-weight: bolder;
-    color: #e6e6e6;
   }
 
   #myCanvas {
     width: 100%;
     height: 250px;
-
+    background-color: black;
     margin: 0 auto;
     border: 2px solid #e6e6e6;
   }
@@ -197,25 +196,20 @@
     display: none;
   }
   .btn-primary {
-    padding: 0em;
-    padding-left: 0.8em;
-    padding-right: 0.8em;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
     margin-top: 0.9em;
-    border-radius: 0;
-    background-color: black;
-    border-color: white;
-    color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
   .btn-default {
-    padding: 0em;
-    padding-left: 0.8em;
-    padding-right: 0.8em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
     margin-top: 0.9em;
-    border-radius: 0;
-    background-color: black;
-    border-color: white;
-    color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
   @media screen and (min-width: 760px) {

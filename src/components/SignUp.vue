@@ -118,69 +118,75 @@
     }
   }
 </script>
-<style scoped>
+<style scoped lang="scss">
   main {
     display: flex;
     justify-content: center;
   }
-  .signup-title {
-    font-size: 30px;
+
+  h1 {
+    font-size: 40px;
     text-align: center;
   }
+  .login-form,
   .signup-form {
     padding: 2rem;
-    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
-    color: white;
-    height: 31rem;
-    border: 1px solid white;
-    width: 40rem;
+    height: auto;
+    width: 19rem;
     margin-left: 6px;
     border-radius: 6px;
   }
+  .textbox,
+  .submit-btn,
   .textgroup {
     overflow: hidden;
-    padding: 1.2em 4.4em;
+    padding: 17px 9px;
   }
+  .textbox input,
   .textgroup input {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     background: transparent;
-    color: #fff;
-    font-size: 17px;
-    border-radius: 8px;
-    height: 2.3em;
+    font-size: 15px;
+    border-radius: 6px;
+    max-width: 100%;
+    height: 2.5em;
     outline: none;
-    padding: 1em;
-    max-width: 12.8em;
-    text-align: left;
+    padding-left: 6px;
   }
   .form-btn {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     min-width: 100%;
     background: none;
-    border: 1px solid #fff;
-    color: white;
-    padding: 12px 11px;
-    font-size: 20px;
+    padding: 9px 11px;
+    font-size: 23px;
     cursor: pointer;
-    margin: 0.1em;
-    height: 2.5em;
+    margin: 0px;
     border-radius: 6px;
   }
-  @media (max-width: 500px) {
-    main {
-      display: flex;
+  .check-box {
+    margin: 0 9px;
+  }
+
+  /** Form Settings for desktop
+------------------------------------------------------------*/
+  @media (min-width: 700px) {
+    header {
       justify-content: space-evenly;
     }
+    .login-form,
     .signup-form {
-      width: 18rem;
-      height: 36.5rem;
+      width: 36rem;
     }
-    .textgroup {
-      overflow: hidden;
-      padding: 1.2rem 0.1rem;
-    }
+    .login-title,
     .signup-title {
-      margin: 0.5rem;
+      margin: 3rem;
+    }
+    .textbox input,
+    .textgroup input {
+      min-width: 31rem;
+    }
+    .form-btn {
+      margin: 10px 0 10px 0;
     }
   }
 </style>

@@ -5,7 +5,7 @@
       <div class="title">{{ item.title }}</div>
       <div class="submit-btn">
         <router-link :to="item.routerlink">
-          <input class="button" type="Button" value="PLAY GAME"
+          <input class="play-button" type="Button" value="PLAY GAME"
         /></router-link>
       </div>
       <div class="description">{{ item.description }}</div>
@@ -20,7 +20,7 @@
         <div class="title">{{ item.title }}</div>
         <div class="submit-btn">
           <router-link :to="item.routerlink">
-            <input class="button" type="Button" value="PLAY GAME"
+            <input class="play-button" type="Button" value="PLAY GAME"
           /></router-link>
         </div>
         <div class="description">{{ item.description }}</div>
@@ -58,7 +58,6 @@
       position: relative;
       max-width: auto;
       height: 400px;
-      border: 1px solid white;
       overflow: hidden;
       transition: all 0.5s ease;
       &.open {
@@ -88,12 +87,10 @@
         position: relative;
         bottom: 40px;
       }
-      .button {
+      .play-button {
         background-color: transparent;
         padding: 10px;
         font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
-        color: white;
-        border: 1px solid white;
         width: 100px;
         margin-left: auto;
         margin-right: auto;
@@ -102,14 +99,12 @@
 
       a {
         text-decoration: none;
-        color: white;
       }
       .description {
         bottom: 40px;
         position: relative;
         padding: 25px;
         text-align: left;
-        color: white;
       }
     }
   }
@@ -126,7 +121,7 @@
       margin-top: 40px;
       position: relative;
       height: 300px;
-      border: 1px solid white;
+
       overflow: hidden;
       transition: all 0.5s ease;
       &.open {
@@ -156,28 +151,23 @@
         position: relative;
         bottom: 40px;
       }
-      .button {
+      .play-button {
         background-color: transparent;
         padding: 10px;
         font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
-        color: white;
-        border: 1px solid white;
         width: 100px;
         margin-left: auto;
         margin-right: auto;
         border-radius: 6px;
       }
-
       a {
         text-decoration: none;
-        color: white;
       }
       .description {
         bottom: 40px;
         position: relative;
         padding: 25px;
         text-align: left;
-        color: white;
       }
     }
   }

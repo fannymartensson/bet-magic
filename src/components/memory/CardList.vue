@@ -40,19 +40,15 @@
       }
     },
     props: {
+      cardName: {
+        type: String,
+        required: true
+      },
       firstId: {
         type: String,
         default: ''
       },
-      secondId: {
-        type: String,
-        default: ''
-      },
-      pic: {
-        type: String,
-        required: true
-      },
-      cardName: {
+      id: {
         type: String,
         required: true
       },
@@ -60,9 +56,13 @@
         type: Boolean,
         required: true
       },
-      id: {
+      pic: {
         type: String,
         required: true
+      },
+      secondId: {
+        type: String,
+        default: ''
       }
     }
   }

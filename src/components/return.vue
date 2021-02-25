@@ -14,21 +14,13 @@
   }
 </script>
 
-<style>
-  .heading {
-    color: white;
-    margin-top: 2rem;
-    font-size: 3rem;
-  }
+<style scoped lang="scss">
   .btn-return {
     padding: 5px 10px;
-    border: 1px solid white;
     border-radius: 4px;
     font-size: 20px;
     cursor: pointer;
     margin-top: 0.9em;
-    background-color: black;
-    color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
 </style>

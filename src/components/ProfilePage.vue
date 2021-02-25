@@ -70,7 +70,7 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   /* I'll make this cleaner when we decide on a complete layout and merge our styles */
 
   * {
@@ -90,13 +90,10 @@
     margin-right: auto;
   }
   .btn {
-    color: white;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     border-radius: 3px;
     padding: 0.2em;
-    border: 1px solid white;
     border-radius: 4px;
-    background-color: black;
     cursor: pointer;
   }
 
@@ -112,7 +109,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
   }
   .profile-overview {
     margin-top: 2em;
@@ -137,83 +133,5 @@
   }
   p {
     margin-top: 0.3em;
-  }
-
-  /* toggle button all the way */
-
-  .container > .switch {
-    display: block;
-    margin: 2px auto;
-  }
-  .switch {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    width: 66px;
-    height: 20px;
-    padding: 1px;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  .switch-input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-  }
-  .switch-label {
-    position: relative;
-    display: block;
-    height: inherit;
-    font-size: 14px;
-    background: black;
-    border-radius: inherit;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12),
-      inset 0 0 2px rgba(0, 0, 0, 0.15);
-    -webkit-transition: 0.5s ease-out;
-    -moz-transition: 0.5s ease-out;
-    -o-transition: 0.5s ease-out;
-    transition: 0.5s ease-out;
-    -webkit-transition-property: opacity background;
-    -moz-transition-property: opacity background;
-    -o-transition-property: opacity background;
-    transition-property: opacity background;
-  }
-  .switch-label:before,
-  .switch-label:after {
-    position: absolute;
-    top: 50%;
-    margin-top: -0.5em;
-    line-height: 1;
-    -webkit-transition: inherit;
-    -moz-transition: inherit;
-    -o-transition: inherit;
-    transition: inherit;
-  }
-  .switch-label:before {
-    content: attr(data-off);
-    right: 9px;
-    color: rgb(255, 255, 255);
-  }
-  .switch-label:after {
-    content: attr(data-on);
-    left: 11px;
-    color: white;
-    text-shadow: 0 2px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-  }
-  .switch-input:checked ~ .switch-label {
-    background: #000000;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
-  }
-  .switch-input:checked ~ .switch-label:before {
-    opacity: 0;
-  }
-  .switch-input:checked ~ .switch-label:after {
-    opacity: 1;
-  }
-  .switch-input:checked ~ {
-    left: 70px;
-    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
   }
 </style>

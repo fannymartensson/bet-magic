@@ -73,7 +73,8 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+  @import '@/assets/scss/global.scss';
   #Return {
     margin-left: 5%;
   }
@@ -88,5 +89,14 @@
     height: 60vh;
     border: solid 2px rgb(170, 170, 170);
     padding: 3%;
+  }
+  button {
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 0.9em;
+    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
 </style>

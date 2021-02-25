@@ -22,19 +22,16 @@
   }
 </script>
 <style lang="scss">
+  @import '../assets/scss/global.scss';
   h1 {
-    color: white;
     text-align: center;
+    font-size: $h1;
   }
   * {
     font-size: 1rem;
     margin: 0;
     padding: 0;
   }
-  h1 {
-    font-size: 2rem;
-  }
-
   body {
     width: 100%;
     margin: 0;
@@ -47,7 +44,6 @@
   }
   .nav-link {
     text-decoration: none;
-    color: #fff;
     font-size: 30px;
   }
   .menu {

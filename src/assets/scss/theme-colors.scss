@@ -1,0 +1,19 @@
+/* Variables
+------------------------------------------------------------*/
+$primary: white;
+$secondary: black;
+$h1: 40px;
+
+:root {
+  --app-background-color: black;
+  --app-background-image: url('~@/assets/scss/Backgrounds/Backgrund.svg');
+  --dynamic-title-color: white;
+  --dynamic-border-color: white;
+}
+
+[theme='light'] {
+  --app-background-color: white;
+  --app-background-image: url('~@/assets/scss/Backgrounds/light-mode-background.svg');
+  --dynamic-title-color: black;
+  --dynamic-border-color: black;
+}
