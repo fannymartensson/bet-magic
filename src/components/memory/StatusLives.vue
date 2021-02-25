@@ -38,7 +38,6 @@
   .lives input {
     background: transparent;
     outline: none;
-    color: white;
     border: none;
     width: 20px;
     margin-left: 2px;

@@ -15,8 +15,6 @@
 </script>
 
 <style scoped lang="scss">
-  @import '../assets/scss/global.scss';
-
   .btn-return {
     padding: 5px 10px;
     border-radius: 4px;

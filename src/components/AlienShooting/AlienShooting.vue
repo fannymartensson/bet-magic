@@ -10,7 +10,7 @@
       </div>
 
       <div class="text-center">
-        <h4>Points : {{ points }}</h4>
+        <h4 class="score">Points : {{ points }}</h4>
       </div>
 
       <div id="controls">
@@ -147,11 +147,9 @@
   }
 </script>
 <style scoped lang="scss">
-  @import '@/assets/scss/global.scss';
   h4 {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     font-weight: bolder;
-    color: #e6e6e6;
   }
 
   #myCanvas {

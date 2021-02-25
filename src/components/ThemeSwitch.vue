@@ -1,21 +1,16 @@
 <template>
-  <div id="app">
-    <themeSwitch />
-    <router-view />
-    <playerScore />
+  <div id="ThemeSwitch">
+    <label class="switch">
+      <input type="checkbox" class="switch-input" v-model="darkMode" />
+      <span class="switch-label" data-on="Dark" data-off="Light" />
+    </label>
   </div>
 </template>
 
 <script>
-  import playerScore from '@/components/playerScore.vue'
-  import ThemeSwitch from '@/components/ThemeSwitch.vue'
-
   export default {
-    name: 'App',
-    components: {
-      playerScore,
-      ThemeSwitch
-    },
+    name: 'ThemeSwitch',
+
     data() {
       return {
         darkMode: false
@@ -58,13 +53,4 @@
   }
 </script>
 
-<style lang="scss">
-  @font-face {
-    font-family: 'Arcade';
-    src: url('./assets/fonts/ARCADECLASSIC.TTF') format('truetype');
-  }
-  #app {
-    position: relative;
-    letter-spacing: 0.06em;
-  }
-</style>
+<style lang="scss"></style>

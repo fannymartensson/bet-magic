@@ -7,8 +7,8 @@
       :isPlaying="isPlaying"
       :stop="stop"
     />
-    <p>Points: {{ score }}</p>
-    <p>Score: 88</p>
+    <p class="snake-game">Points: {{ score }}</p>
+    <p class="snake-game">Score: 88</p>
 
     <button id="play-btn" @click="isPlaying ? stop() : start()">
       {{ isPlaying ? 'Stop' : 'Play' }}

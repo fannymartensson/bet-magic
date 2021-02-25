@@ -7,7 +7,7 @@
       :height="boardSizePx"
     />
     <constants />
-    <h1>{{ gameover }}</h1>
+    <h1 class="snake-game">{{ gameover }}</h1>
   </div>
 </template>
 <script>
