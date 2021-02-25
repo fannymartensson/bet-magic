@@ -4,7 +4,7 @@
       <div id="header">
         <Restart />
         <Return />
-        <CollectScore v-if="won" />
+        <CollectScore v-if="showMe" />
       </div>
       <h1>Mastermind</h1>
       <Board />
@@ -51,7 +51,9 @@
         checkButtonTranslation: 'checkButtonTranslation',
         isActive: 'isActive'
       }),
-
+      ...mapGetters('playerData', {
+        showMe: 'showMe'
+      }),
       ...mapState('d', {
         current: 'current',
         total: 'total',
