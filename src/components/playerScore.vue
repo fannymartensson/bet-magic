@@ -1,15 +1,28 @@
 <template>
   <span>
     <h1 id="playerScore">
-      {{ $store.state.playerData.Alias }}
-      {{ $store.state.playerData.userScore }}
+      {{ localAlias }}
+      {{ localScore }}
     </h1>
   </span>
 </template>
 
 <script>
   export default {
-    methods: {}
+    created() {
+      setInterval(() => {
+        this.localAlias = localStorage.getItem('Alias')
+        this.localScore = localStorage.getItem('localScore')
+        this.$forceUpdate()
+      }, 1000)
+    },
+    data() {
+      return {
+        localAlias: localStorage.getItem('Alias'),
+        localScore: localStorage.getItem('localScore'),
+        Registered: localStorage.getItem('Registered')
+      }
+    }
   }
 </script>
 

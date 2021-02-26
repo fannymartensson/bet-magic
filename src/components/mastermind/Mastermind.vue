@@ -4,6 +4,7 @@
       <div id="header">
         <Restart />
         <Return />
+        <CollectScore v-if="won" />
       </div>
       <h1>Mastermind</h1>
       <Board />
@@ -17,6 +18,7 @@
       </section>
       <Check v-bind:style="{ transform: checkButtonTranslation }" />
       <Dialog v-if="won" status="happy" />
+
       <Dialog v-if="lost" status="sad" />
     </main>
   </div>
@@ -31,6 +33,7 @@
   import Dialog from './Dialog.vue'
   import Restart from './Restart.vue'
   import Return from '../return.vue'
+  import CollectScore from '../collectScore.vue'
 
   export default {
     name: 'Mastermind',
@@ -40,14 +43,14 @@
       Check,
       Dialog,
       Restart,
-      Return
+      Return,
+      CollectScore
     },
     computed: {
       ...mapGetters('d', {
         checkButtonTranslation: 'checkButtonTranslation',
         isActive: 'isActive'
       }),
-
       ...mapState('d', {
         current: 'current',
         total: 'total',

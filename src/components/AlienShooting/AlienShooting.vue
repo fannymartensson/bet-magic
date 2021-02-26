@@ -2,6 +2,7 @@
   <div>
     <div id="alien-game">
       <br />
+      <collectScore v-if="showMe" />
       <canvas id="myCanvas" v-show="!ended" ref="canvas" @click="shoot" />
       <canvas id="myCanvas" v-show="ended" ref="endCanvas" />
 
@@ -31,9 +32,14 @@
 </template>
 
 <script>
+  import collectScore from '../collectScore.vue'
+  import { mapGetters } from 'vuex'
   import _ from 'lodash'
   export default {
     name: 'AlienShooting',
+    components: {
+      collectScore
+    },
     data() {
       return {
         canvas: '',
@@ -44,9 +50,10 @@
         x: '',
         y: '',
         points: 0,
-        health: 100,
+        health: 10,
         started: false,
-        ended: false
+        ended: false,
+        collectScores: false
       }
     },
     methods: {
@@ -80,8 +87,11 @@
             this.ctx.fillRect(this.x, this.y, 5, 5)
           }
         } else {
-          if (this.health <= 0) {
-            alert('Game Finished Please Restart')
+          if (this.points > 5) {
+            this.$store.state.playerData.show = true
+            if (this.health <= 0) {
+              alert('Game Finished Please Restart')
+            }
           } else {
             alert('Game Not Yet Started !')
           }
@@ -138,6 +148,11 @@
           this.imgY + 100
         )
       }
+    },
+    computed: {
+      ...mapGetters('playerData', {
+        showMe: 'showMe'
+      })
     },
     mounted() {
       let self = this

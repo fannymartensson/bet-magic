@@ -1,5 +1,6 @@
 <template>
   <div>
+    <collectScore v-if="showMe" />
     <canvas
       ref="board"
       id="snake-canvas"
@@ -8,14 +9,21 @@
     />
     <constants />
     <h1 class="snake-game">{{ gameover }}</h1>
+    <div id="hidden-items">
+      <audio ref="audio">
+        <source src="../../assets/SnakeGame/eat.wav" type="audio/wav" />
+      </audio>
+    </div>
   </div>
 </template>
 <script>
+  import collectScore from '../collectScore.vue'
   import Constants from './Constants.vue'
   import Store from '../../store/modules/moduleC.js'
+  import { mapGetters } from 'vuex'
 
   export default {
-    components: { Constants },
+    components: { Constants, collectScore },
     data() {
       return {
         gameover: ''
@@ -32,7 +40,10 @@
     computed: {
       boardSizePx() {
         return this.cellSize * this.boardSize
-      }
+      },
+      ...mapGetters('playerData', {
+        showMe: 'showMe'
+      })
     },
     mounted() {
       this.boardContext = this.$refs.board.getContext('2d')
@@ -54,6 +65,7 @@
       }
     },
     methods: {
+      // To make the snake move in directions
       resetSnake() {
         this.gameover = ''
         this.snake = [
@@ -69,13 +81,14 @@
       getMiddleCell() {
         return Math.round(this.boardSize / 2)
       },
-
+      // To add and reset scores
       addScores() {
         Store.commit('increment')
       },
       resetScores() {
         Store.commit('reset')
       },
+      // To make the snake move
 
       move() {
         if (!this.isPlaying) {
@@ -84,6 +97,16 @@
 
         this.clear()
         this.setTargetCell()
+        // level1
+        if (Store.state.score === 5) {
+          this.drawCell({ x: 1, y: 2, color: 'orange' })
+        }
+        // level2
+        if (Store.state.score === 10) {
+          this.drawCell({ x: 9, y: 7, color: 'pink' })
+          this.drawCell({ x: 3, y: 4, color: 'yellow' })
+        }
+        // To create newhead and also direction
 
         const newHeadCell = {
           x: this.snake[0].x + this.direction.move.x,
@@ -96,11 +119,16 @@
         ) {
           this.stop()
           this.gameover = 'Game over!'
+          if (Store.state.score > 2) {
+            this.$store.state.playerData.show = true
+          }
           this.resetScores()
         }
-
+        // To make snake eat the food and make it long
         if (this.isTargetNewHead()) {
           this.snake.unshift(this.targetCell)
+          // To play the sound while eating food
+          this.$refs.audio.play()
           this.targetCell = null
           this.addScores()
         } else {
@@ -117,14 +145,15 @@
       clear() {
         this.boardContext.clearRect(0, 0, this.boardSizePx, this.boardSizePx)
       },
-      drawCell({ x, y }) {
+      // to build the white blocks or snake body
+      drawCell({ x, y, color }) {
         this.boardContext.rect(
           x * this.cellSize,
           y * this.cellSize,
           this.cellSize,
           this.cellSize
         )
-        this.boardContext.fillStyle = 'white'
+        this.boardContext.fillStyle = color
         this.boardContext.fill()
       },
       getMoveDelay() {
@@ -144,6 +173,7 @@
           this.direction = newDirection
         }
       },
+      // to create the food
       setTargetCell() {
         if (!this.targetCell) {
           let targetCell = this.getRandomCell()
@@ -164,6 +194,7 @@
         this.boardContext.fill()
         this.boardContext.closePath()
       },
+      // to make the food come randomly
       getRandomCell() {
         return {
           x: Math.floor(Math.random() * this.boardSize),
@@ -193,7 +224,7 @@
     width: 320px;
     margin: 30px 0;
   }
-  @media screan and (min-width: 800px) and (max-width: 999px) {
+  @media screen and (min-width: 800px) and (max-width: 999px) {
     #snake-canvas {
       height: 500px;
       width: 500px;
