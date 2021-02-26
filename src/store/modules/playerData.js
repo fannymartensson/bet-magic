@@ -15,7 +15,9 @@ export default {
     players: true,
     Mastermind: 0,
     signedUp: false,
-    show: false
+    show: false,
+    latestSnakeScore: '',
+    snakeHighscore: null
   },
 
   mutations: {
@@ -34,14 +36,26 @@ export default {
       localStorage.setItem('Password', payload.Password)
       localStorage.setItem('localScore', '1000')
       localStorage.setItem('Registered', 'true')
+      localStorage.setItem('SnakeHighscore', '1')
     },
     increaseScore(state, payload) {
       state.userScore = localStorage.setItem('localScore', payload)
       this.show = false
+    },
+    newSnakeScore(state, x) {
+      console.log(x)
+      if (x > parseInt(localStorage.getItem('SnakeHighscore'))) {
+        localStorage.setItem('SnakeHighscore', x)
+        state.snakeHighscore = x
+        console.log('vi kom in')
+      }
+      state.latestSnakeScore = x
     }
   },
   getters: {
     hasPlayers: state => state.players,
-    showMe: state => state.show
+    showMe: state => state.show,
+    snakeHighscore: state => state.snakeHighscore,
+    latestSnakeScore: state => state.latestSnakeScore
   }
 }

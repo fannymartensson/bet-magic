@@ -14,13 +14,16 @@
         <source src="../../assets/SnakeGame/eat.wav" type="audio/wav" />
       </audio>
     </div>
+    <h1 v-if="snakeHighscore">Higscore: {{ snakeHighscore }}</h1>
+    <h1 v-else>Highscore: {{ localHigh }} local</h1>
+    <h2>Latest score: {{ latestSnakeScore }}</h2>
   </div>
 </template>
 <script>
   import collectScore from '../collectScore.vue'
   import Constants from './Constants.vue'
   import Store from '../../store/modules/moduleC.js'
-  import { mapGetters } from 'vuex'
+  import { mapGetters, mapMutations } from 'vuex'
 
   export default {
     components: { Constants, collectScore },
@@ -42,7 +45,10 @@
         return this.cellSize * this.boardSize
       },
       ...mapGetters('playerData', {
-        showMe: 'showMe'
+        showMe: 'showMe',
+        snakeHighscore: 'snakeHighscore',
+        latestSnakeScore: 'latestSnakeScore',
+        latestHigh: 'latestHigh'
       })
     },
     mounted() {
@@ -88,6 +94,9 @@
       resetScores() {
         Store.commit('reset')
       },
+      ...mapMutations('playerData', {
+        newSnakeScore: 'newSnakeScore'
+      }),
       // To make the snake move
 
       move() {
@@ -121,6 +130,8 @@
           this.gameover = 'Game over!'
           if (Store.state.score > 2) {
             this.$store.state.playerData.show = true
+            this.newSnakeScore(Store.state.score)
+            console.log(this.localHighscore)
           }
           this.resetScores()
         }
