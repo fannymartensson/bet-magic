@@ -13,7 +13,7 @@
         </button>
       </div>
       <div>
-        <button class="back-home" @click="backHome">Home</button>
+        <button class="back-home" @click="$emit('back-home')">Home</button>
       </div>
     </div>
   </div>
@@ -26,11 +26,6 @@
       ...mapGetters('b', {
         status: 'getStatus'
       })
-    },
-    methods: {
-      backHome() {
-        this.$router.push('/')
-      }
     }
   }
 </script>
