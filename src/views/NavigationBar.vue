@@ -27,7 +27,7 @@
   }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   .background-nav {
     display: flex;
     flex-direction: column;

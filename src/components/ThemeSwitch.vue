@@ -17,9 +17,6 @@
       }
     },
     mounted() {
-      // set page title
-      document.title = 'Multiple Themes in Vue.js'
-
       // set 'app-background' class to body tag
       let bodyElement = document.body
       bodyElement.classList.add('app-background')
@@ -53,4 +50,10 @@
   }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+  #ThemeSwitch {
+    margin-left: 10px;
+    position: fixed;
+    bottom: 10px;
+  }
+</style>

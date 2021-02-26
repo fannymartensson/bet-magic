@@ -22,7 +22,7 @@
 
       <div id="hidden-items">
         <img src="../../assets/AlienShooting/alien-purple.png" ref="image" />
-        <audio ref="audio" volume="1" preload="auto">
+        <audio id="audio" ref="audio" volume="1" preload="auto">
           <source src="../../assets/AlienShooting/shoot.wav" type="audio/wav" />
         </audio>
       </div>
@@ -56,6 +56,7 @@
       shoot(event) {
         if (this.health > 0 && this.started == true) {
           this.$refs.audio.play() // Play Shooting Sound
+          this.$refs.audio.currentTime = 0
 
           // Get the absolute X and Y position of mouse pointer related to our canvas
           let rect = this.canvas.getBoundingClientRect() // abs. size of element
