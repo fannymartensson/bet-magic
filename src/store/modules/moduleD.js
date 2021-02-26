@@ -56,6 +56,7 @@ export default {
       while (s.size !== 4)
         s.add(Math.round(Math.random() * (state.colors.length - 1)))
       state.secret = [...s]
+      console.log(state.secret)
     },
     RESET_TURN(state) {
       state.won = false

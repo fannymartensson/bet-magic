@@ -11,11 +11,6 @@
   import { mapMutations } from 'vuex'
 
   export default {
-    created() {
-      setInterval(() => {
-        document.getElementById('winner').style.visibility = 'visible'
-      }, 5000)
-    },
     data() {
       return {
         current: null,
@@ -37,7 +32,6 @@
         this.increaseScore(this.toNum)
         this.toNum.toString()
         localStorage.setItem('localScore', this.toNum)
-        document.getElementById('winner').style.visibility = 'hidden'
         this.$store.state.playerData.show = false
       }
     }

@@ -50,7 +50,7 @@
         x: '',
         y: '',
         points: 0,
-        health: 100,
+        health: 10,
         started: false,
         ended: false,
         collectScores: false
@@ -86,7 +86,7 @@
             this.ctx.fillRect(this.x, this.y, 5, 5)
           }
         } else {
-          if (this.points > 45) {
+          if (this.points > 5) {
             this.$store.state.playerData.show = true
             if (this.health <= 0) {
               alert('Game Finished Please Restart')
