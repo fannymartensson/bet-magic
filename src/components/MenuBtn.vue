@@ -1,8 +1,7 @@
 <template>
-  <a href=""
-    ><router-link class="menu-link" to="/"
-      ><img src="../assets/menu-btn.svg"/></router-link
-  ></a>
+  <span>
+    <button class="btn-menu" @click="menu">menu</button>
+  </span>
 </template>
 <script>
   export default {
@@ -11,27 +10,30 @@
       menuBtn: {
         type: Boolean
       }
+    },
+    methods: {
+      menu() {
+        return this.$router.go(-1)
+      }
     }
   }
 </script>
 
-<style>
+<style lang="scss">
   header {
+    height: 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
   }
-  .logo-img {
-    width: 139px;
-    margin-left: -2rem;
-    margin-top: 2rem;
-  }
-  .menu-btn {
+
+  .btn-menu {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 20px;
     cursor: pointer;
-    height: 4rem;
-    margin-top: 2rem;
-    border-radius: 6px;
-    margin-right: 10px;
+    margin-top: 20px;
+    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
   .menu-link {
     color: white;

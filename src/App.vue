@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <themeSwitch />
     <router-view />
     <playerScore />
+    <themeSwitch />
   </div>
 </template>
 
@@ -15,45 +15,6 @@
     components: {
       playerScore,
       ThemeSwitch
-    },
-    data() {
-      return {
-        darkMode: false
-      }
-    },
-    mounted() {
-      // set page title
-      document.title = 'Multiple Themes in Vue.js'
-
-      // set 'app-background' class to body tag
-      let bodyElement = document.body
-      bodyElement.classList.add('app-background')
-
-      // check for active theme
-      let htmlElement = document.documentElement
-      let theme = localStorage.getItem('theme')
-
-      if (theme === 'dark') {
-        htmlElement.setAttribute('theme', 'dark')
-        this.darkMode = true
-      } else {
-        htmlElement.setAttribute('theme', 'light')
-        this.darkMode = false
-      }
-    },
-    watch: {
-      darkMode: function() {
-        // add/remove class to/from html tag
-        let htmlElement = document.documentElement
-
-        if (this.darkMode) {
-          localStorage.setItem('theme', 'dark')
-          htmlElement.setAttribute('theme', 'dark')
-        } else {
-          localStorage.setItem('theme', 'light')
-          htmlElement.setAttribute('theme', 'light')
-        }
-      }
     }
   }
 </script>

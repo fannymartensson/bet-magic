@@ -22,10 +22,9 @@
   }
 </script>
 <style lang="scss">
-  @import '../assets/scss/global.scss';
   h1 {
     text-align: center;
-    font-size: $h1;
+    font-size: 40px;
   }
   * {
     font-size: 1rem;
@@ -50,10 +49,5 @@
     padding: 2rem;
     text-align: center;
     list-style-type: none;
-  }
-  @media screen and (min-width: 759px) {
-    logo-btn {
-      margin-left: 0px;
-    }
   }
 </style>

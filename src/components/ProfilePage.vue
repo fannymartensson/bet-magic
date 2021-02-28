@@ -1,9 +1,9 @@
 <template>
   <div>
-    <section class="nav">
+    <header>
       <logo-icon class="logo-btn" :logoIcon="true" />
       <menu-btn class="menu-btn" :menuBtn="true" />
-    </section>
+    </header>
     <div class="profile-page">
       <header>
         <h1>Your Profile</h1>
@@ -76,19 +76,7 @@
   * {
     margin: 0;
   }
-  .nav {
-    display: flex;
-    align-content: center;
-    align-items: center;
-  }
-  .logo-btn {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .menu-btn {
-    margin-left: auto;
-    margin-right: auto;
-  }
+
   .btn {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     border-radius: 3px;
