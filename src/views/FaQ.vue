@@ -5,18 +5,14 @@
       <menu-btn class="menu-btn" :menuBtn="true" />
     </header>
     <h1>FAQ</h1>
-   
   </div>
 </template>
 <script>
   import MenuBtn from '@/components/MenuBtn.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
-  
- 
 
   export default {
     components: {
-    
       MenuBtn,
       LogoIcon
     }
