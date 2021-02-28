@@ -4,6 +4,7 @@ import OurGames from '@/views/OurGames.vue'
 import NavigationBar from '@/views/NavigationBar.vue'
 import SignUp from '@/components/SignUp.vue'
 import LoginPage from '@/views/LoginPage.vue'
+import FaQ from '@/views/FaQ.vue'
 import ProfilePage from '@/components/ProfilePage.vue'
 import MemoryCard from '@/views/MemoryCard.vue'
 import TicTac from '@/views/TicTac.vue'
@@ -58,6 +59,11 @@ const routes = [
     path: '/signup',
     name: 'SignUp',
     component: SignUp
+  },
+  {
+    path: '/faq',
+    name: 'FaQ',
+    component: FaQ
   },
   {
     path: '/profile',
