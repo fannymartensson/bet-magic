@@ -14,7 +14,7 @@ export default {
     status: 'SUIT'
   },
   getters: {
-     getCardNumOne(state) {
+    getCardNumOne(state) {
       return state.cardNumOne
     },
     getCardNumTwo(state) {
@@ -23,10 +23,10 @@ export default {
     getCards(state) {
       return state.cardsList
     },
-   getGameLoadStatus(state) {
+    getGameLoadStatus(state) {
       return state.gameLoadStatus
     },
-      getLivesNum(state) {
+    getLivesNum(state) {
       return state.lives
     },
     getStatus(state) {
@@ -97,18 +97,14 @@ export default {
       commit('UPDATE_CARD_NUM_TWO', null)
 
       if (getters.getUnMatchedCards && getters.getUnMatchedCards.length === 0) {
-
         commit('COMPLETE_GAME', true)
         commit('UPDATE_STATUS', 'WINNER')
-
       } else if (getters.getLivesNum === 0) {
         commit('COMPLETE_GAME', true)
         commit('UPDATE_STATUS', 'GAMEOVER')
-
       } else {
         commit('UPDATE_STATUS', 'SUIT')
       } // TO SEE THE GAME FINISH
-
     },
     setDeck(context) {
       //TO SHUFFLE WE NEED THE PROMISE
