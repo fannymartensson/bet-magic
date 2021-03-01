@@ -33,7 +33,6 @@
     props: {
       cellSize: Number,
       boardSize: Number,
-      speed: Number,
       isPlaying: Boolean,
       stop: Function
     },
@@ -42,7 +41,8 @@
         return this.cellSize * this.boardSize
       },
       ...mapGetters('playerData', {
-        showMe: 'showMe'
+        showMe: 'showMe',
+        speed: 'speed'
       })
     },
     mounted() {
@@ -103,8 +103,7 @@
         }
         // level2
         if (Store.state.score === 10) {
-          this.drawCell({ x: 9, y: 7, color: 'pink' })
-          this.drawCell({ x: 3, y: 4, color: 'yellow' })
+          this.drawCell({ x: 9, y: 7, color: 'purple' })
         }
         // To create newhead and also direction
 
@@ -162,16 +161,25 @@
       isCellOutOfBoard({ x, y }) {
         return x < 0 || y < 0 || x >= this.boardSize || y >= this.boardSize
       },
-      onKeyPress(event) {
-        const newDirection = Constants.find(c => c.keyCode === event.keyCode)
+      // keypress and button
+      changeDirection(key, value) {
+        const direction = Constants.find(c => c[key] === value)
 
-        if (!newDirection) {
+        if (!direction) {
           return
         }
 
-        if (Math.abs(newDirection.keyCode - this.direction.keyCode) !== 2) {
-          this.direction = newDirection
+        if (Math.abs(direction.keyCode - this.direction.keyCode) !== 2) {
+          this.direction = direction
         }
+      },
+      onKeyPress(event) {
+        event.preventDefault()
+        this.changeDirection('keyCode', event.keyCode)
+      },
+      handleClick(direction) {
+        this.changeDirection('direction', direction)
+        console.log('btn direction: ' + direction)
       },
       // to create the food
       setTargetCell() {
@@ -190,7 +198,7 @@
           this.cellSize,
           this.cellSize
         )
-        this.boardContext.fillStyle = 'red'
+        this.boardContext.fillStyle = 'purple'
         this.boardContext.fill()
         this.boardContext.closePath()
       },
@@ -219,7 +227,7 @@
     font-size: 20px;
   }
   #snake-canvas {
-    border: 10px solid rgb(81, 57, 136);
+    border: 10px solid #1c0447;
     height: 320px;
     width: 320px;
     margin: 30px 0;

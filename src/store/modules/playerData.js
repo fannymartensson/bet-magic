@@ -42,6 +42,7 @@ export default {
   },
   getters: {
     hasPlayers: state => state.players,
-    showMe: state => state.show
+    showMe: state => state.show,
+    speed: state => Math.ceil(state.score / 5) || 15
   }
 }
