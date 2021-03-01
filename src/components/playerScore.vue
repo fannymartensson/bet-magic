@@ -29,12 +29,10 @@
 
 <style scoped>
   #playerScore {
-    margin-top: 4vh;
-    display: flex;
-    justify-content: flex-end;
-    align-items: right;
+    margin-left: 75vw;
+    position: fixed;
+    bottom: 10px;
     font-size: 2.5vh;
-    padding-right: 4vw;
     color: rgb(255, 255, 255);
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
