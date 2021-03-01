@@ -28,19 +28,12 @@
       <div class="settings-text">
         <p>Profile</p>
         <p>Password</p>
-        <p>Logout</p>
-        <p>Sound</p>
       </div>
       <div class="settings-btns">
         <button class="btn btn-secondary">
           Edit
         </button>
-        <button class="btn btn-secondary">
-          Edit
-        </button>
-        <button type="button" @click="logout" class="btn btn-secondary">
-          Log Out
-        </button>
+
         <div class="radio">
           <div class="radio-container">
             <label class="switch">
