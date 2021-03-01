@@ -79,6 +79,7 @@
       display: none;
     }
     .card-list {
+      height: auto;
       margin: 0 30px;
       ul {
         display: flex;
@@ -96,7 +97,9 @@
     }
 
     .card-list-desktop {
-      padding: 20px;
+      min-width: 100%;
+      height: auto;
+      padding: 10px;
       display: flex;
       flex-grow: 1;
       margin: 0 auto;

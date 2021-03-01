@@ -32,28 +32,27 @@ export default new Vuex.Store({
       {
         title: 'Alien Shooter',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et ju',
         img: '/space-invadors.png',
         routerlink: 'alien-shooting'
       },
       {
         title: 'Mastermind',
-        description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
+        description: 'Lorem ipsum dolor sit amet, consetetur sadipscing e',
         img: '/mastermind.png',
         routerlink: 'Mastermind'
       },
       {
         title: 'Memory',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, ',
         img: '/cardBack.jpg',
         routerlink: 'Memory-card'
       },
       {
         title: 'Snake Game',
         description:
-          'A simple game with levels to play while you are waiting for websites to load! Move the snake around with the arrow keys, eat the red dots to grow bigger, and avoid hitting your own tail.',
+          'A simple game with levels to play while you are waiting for websites to load! Move the snake around with the arrow keys, eat the red dots to grow bigger, and avoid hitting your own tail. ',
         img: '/snakegame.png',
         routerlink: 'SnakeGame'
       }
