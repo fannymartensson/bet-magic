@@ -2,9 +2,10 @@
   <div id="app">
     <online-offline />
     <router-view />
-    <playerScore />
+
     <themeSwitch />
-    <sound-btn />
+    <SoundBtn />
+    <playerScore />
   </div>
 </template>
 

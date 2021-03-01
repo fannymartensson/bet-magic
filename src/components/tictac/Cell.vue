@@ -8,6 +8,9 @@
         position
       }}</span>
     </transition>
+    <audio id="enter" ref="enter" volume="1" preload="auto">
+      <source src="../../assets/TicTac/enter.wav" type="audio/wav" />
+    </audio>
   </div>
 </template>
 
@@ -71,6 +74,9 @@
 
       toggleCell(index) {
         if (!this.isDisabled) {
+          this.$refs.enter.play()
+          this.$refs.enter.currentTime = 0
+
           this.addMarker({ index })
           this.checkWinning({
             player: this.getMarker(this.index)

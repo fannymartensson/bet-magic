@@ -106,6 +106,7 @@
       ...mapMutations('playerData', {
         setUser: 'setUser'
       })
+
       /*      start(SignUp) {
         this.setUser(SignUp)
       } */
