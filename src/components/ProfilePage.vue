@@ -80,7 +80,7 @@
 </script>
 
 <style scoped lang="scss">
-  /* I'll make this cleaner when we decide on a complete layout and merge our styles */
+  /* I'll make this cleaner wheen we decide on a complete layout and merge our styles */
 
   * {
     margin: 0;
