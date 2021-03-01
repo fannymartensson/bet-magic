@@ -17,7 +17,8 @@ export default {
     signedUp: false,
     show: false,
     latestSnakeScore: '',
-    snakeHighscore: null
+    snakeHighscore: null,
+    Registered: false
   },
 
   mutations: {
@@ -56,6 +57,7 @@ export default {
     hasPlayers: state => state.players,
     showMe: state => state.show,
     snakeHighscore: state => state.snakeHighscore,
-    latestSnakeScore: state => state.latestSnakeScore
+    latestSnakeScore: state => state.latestSnakeScore,
+    signedUp: state => state.signedUp
   }
 }

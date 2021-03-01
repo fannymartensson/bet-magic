@@ -19,7 +19,9 @@
           <p>Memory: 22</p>
           <p>Snake: 88</p>
           <p>Total score: {{ userScore }}</p>
-          <button type="button" class="btn btn-secondary">Share</button>
+          <button type="button" @click="logout" class="btn btn-secondary">
+            Log Out
+          </button>
         </div>
       </section>
       <h2 class="h2-settings">Settings</h2>
@@ -65,6 +67,13 @@
         Förnamn: localStorage.getItem('Förnamn'),
         Efternamn: localStorage.getItem('Efternamn'),
         userScore: localStorage.getItem('localScore')
+      }
+    },
+    methods: {
+      logout() {
+        localStorage.removeItem('Registered')
+        this.$store.state.playerData.signedUp = false
+        return this.$router.go(-1)
       }
     }
   }

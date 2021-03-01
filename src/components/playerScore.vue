@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <span v-if="Registered">
     <h1 id="playerScore">
       {{ localAlias }}
       {{ localScore }}
@@ -13,6 +13,7 @@
       setInterval(() => {
         this.localAlias = localStorage.getItem('Alias')
         this.localScore = localStorage.getItem('localScore')
+        this.Registered = localStorage.getItem('Registered')
         this.$forceUpdate()
       }, 1000)
     },

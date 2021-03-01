@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="!hasPlayers || Registered">
+    <div v-if="signedUp">
       <ProfilePage />
     </div>
     <div v-else class="Signup">
@@ -94,7 +94,6 @@
 
     data: function() {
       return {
-        Registered: localStorage.getItem('Registered'),
         alias: '',
         firstname: '',
         lastname: '',
@@ -113,7 +112,8 @@
     },
     computed: {
       ...mapGetters('playerData', {
-        hasPlayers: 'hasPlayers'
+        hasPlayers: 'hasPlayers',
+        signedUp: 'signedUp'
       })
     }
   }

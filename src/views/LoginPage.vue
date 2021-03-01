@@ -1,72 +1,92 @@
 <template>
-  <div class="login">
-    <header>
-      <logo-icon class="logo-btn" :logoIcon="true" />
+  <div>
+    <div v-if="signedUp">
+      <ProfilePage />
+    </div>
+    <div v-else class="login">
+      <header>
+        <logo-icon class="logo-btn" :logoIcon="true" />
 
-      <menu-btn class="menu-btn" :menuBtn="true" />
-    </header>
-    <main>
-      <form @submit.prevent class="login-form">
-        <h1 class="login-title">Login</h1>
-        <div class="textbox">
-          <input
-            type="email"
-            class="email"
-            placeholder="email (magic@yahoo.se)"
-            v-model="username"
-          />
-        </div>
-        <div class="textbox">
-          <input
-            type="password"
-            class="Password"
-            placeholder="password (123)"
-            v-model="password"
-          />
-        </div>
-        <div class="check-box">
-          <input class="check-box" type="checkbox" name="remember" />
-          <label for="remember">REMEMBER ME</label>
-        </div>
-        <div class="submit-btn">
-          <input
-            @click="loginUser()"
-            class="form-btn"
-            type="submit"
-            value="LOG IN"
-          />
-        </div>
-        <div class="submit-btn">
-          <router-link to="/signup"
-            ><input class="form-btn" type="submit" value="SIGN UP"
-          /></router-link>
-        </div>
-        <p id="error-message" v-show="showError">
-          Incorrect username or password. Please try again!
-        </p>
-      </form>
-    </main>
+        <menu-btn class="menu-btn" :menuBtn="true" />
+      </header>
+      <main>
+        <form @submit.prevent class="login-form">
+          <h1 class="login-title">Login</h1>
+          <div class="textbox">
+            <input
+              type="email"
+              class="email"
+              placeholder="email (magic@yahoo.se)"
+              v-model="username"
+            />
+          </div>
+          <div class="textbox">
+            <input
+              type="password"
+              class="Password"
+              placeholder="password (123)"
+              v-model="password"
+            />
+          </div>
+          <div class="check-box">
+            <input class="check-box" type="checkbox" name="remember" />
+            <label for="remember">REMEMBER ME</label>
+          </div>
+          <div class="submit-btn">
+            <input
+              @click="loginUser()"
+              class="form-btn"
+              type="submit"
+              value="LOG IN"
+            />
+          </div>
+          <div class="submit-btn">
+            <router-link to="/signup"
+              ><input class="form-btn" type="submit" value="SIGN UP"
+            /></router-link>
+          </div>
+          <p id="error-message" v-show="showError">
+            Incorrect username or password. Please try again!
+          </p>
+        </form>
+      </main>
+    </div>
   </div>
 </template>
 <script>
   import MenuBtn from '@/components/MenuBtn.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
+  import ProfilePage from '../components/ProfilePage.vue'
+  import { mapGetters } from 'vuex'
+
   export default {
-    components: { MenuBtn, LogoIcon },
+    components: { MenuBtn, LogoIcon, ProfilePage },
     name: 'LoginPage',
     data() {
       return {
         username: '',
         password: '',
-        showError: false
+        showError: false,
+        storageEmail: localStorage.getItem('Email'),
+        storagePassword: localStorage.getItem('Password')
       }
+    },
+    computed: {
+      ...mapGetters('playerData', {
+        signedUp: 'signedUp'
+      })
     },
     methods: {
       loginUser() {
-        if (this.username === 'magic@yahoo.se' && this.password === '123') {
+        if (
+          this.username === this.storageEmail &&
+          this.password === this.storagePassword
+        ) {
           localStorage.setItem('auth', this.username)
+          localStorage.setItem('Registered', 'in')
+          this.$store.state.playerData.signedUp = true
           this.showError = false
-          this.$router.replace({ path: '/profile' })
+          // this.$router.replace({ path: '/profile' })
         } else {
           this.showError = true
         }
