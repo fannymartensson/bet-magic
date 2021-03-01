@@ -15,8 +15,8 @@
       </audio>
     </div>
     <section class="scores">
-      <h1 v-if="snakeHighscore">Higscore: {{ snakeHighscore }}</h1>
-      <h1 v-else>Highscore: {{ localHigh }} local</h1>
+      <p v-if="snakeHighscore">Higscore: {{ snakeHighscore }}</p>
+      <p v-else>Highscore: {{ localHigh }}</p>
       <!-- <h2>Highscore: {{ latestSnakeScore }}</h2> -->
     </section>
   </div>
@@ -236,9 +236,6 @@
   }
 </script>
 <style scoped>
-  h1 {
-    font-size: 20px;
-  }
   #snake-canvas {
     border: 10px solid #1c0447;
     height: 320px;
@@ -248,7 +245,14 @@
 
   .scores {
     position: relative;
-    top: 20%;
+    left: -25%;
+    top: -30px;
+  }
+  @media only screen and (min-width: 767px) {
+    .scores {
+      top: -95%;
+      right: 2%;
+    }
   }
 
   @media screen and (min-width: 800px) and (max-width: 999px) {

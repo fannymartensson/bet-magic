@@ -12,7 +12,7 @@
     />
     <div class="text">
       <p>Score: {{ score }}</p>
-      <div class="zoom">
+      <div class="column">
         Zoom
         <input type="number" min="10" v-model.number="boardSize" />
       </div>
@@ -117,12 +117,18 @@
     align-items: baseline;
     position: absolute;
     left: 50%;
-    top: 62%;
+    top: 61%;
+    cursor: pointer;
+    @media only screen and (min-width: 767px) {
+      left: 55%;
+      top: 15%;
+    }
   }
-  .zoom {
+
+  .column {
     display: inline-block;
     width: 20%;
-    padding: 5px;
+    padding: 5px 20px;
     margin: 5px;
     color: white;
     display: flex;

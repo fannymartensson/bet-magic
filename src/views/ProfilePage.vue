@@ -68,8 +68,6 @@
     data() {
       return {
         Alias: localStorage.getItem('Alias'),
-        Förnamn: localStorage.getItem('Förnamn'),
-        Efternamn: localStorage.getItem('Efternamn'),
         userScore: localStorage.getItem('userScore')
       }
     },
