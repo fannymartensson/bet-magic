@@ -60,10 +60,9 @@
         this.$router.push('/')
       },
       cardImg(image) {
-        if (!image) {
-          return ''
+        if (image) {
+          return image.replace(/\s/g, '-')
         }
-        return image.replace(/\s/g, '-')
       }
     }
   }

@@ -5,8 +5,8 @@
       v-if="isMatched === false"
       @click="$emit('reveal-card')"
       :class="{
-        first: firstId && id === firstId,
-        second: secondId && id === secondId
+        first: id === firstId,
+        second: id === secondId
       }"
     >
       <div class="flip-card">
@@ -33,10 +33,7 @@
     name: 'CardList',
     computed: {
       toggleCardName() {
-        return (
-          (this.firstId && this.id === this.firstId) ||
-          (this.secondId && this.id === this.secondId)
-        )
+        return this.id === this.firstId || this.id === this.secondId
       }
     },
     props: {
