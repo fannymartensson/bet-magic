@@ -88,6 +88,7 @@
   .finish {
     cursor: pointer;
   }
+
   @media screen and (min-width: 547px) and (max-width: 626px) {
     .main-deck {
       grid-template-columns: repeat(4, 120px);
@@ -98,7 +99,7 @@
       grid-template-columns: repeat(4, 140px);
     }
   }
-  @media screen and (min-width: 808px) and (min-width: 899px) {
+  @media screen and (min-width: 808px) and (max-width: 899px) {
     .heading {
       font-size: 4rem;
     }

@@ -16,7 +16,7 @@
             <input
               type="email"
               class="email"
-              placeholder="email (magic@yahoo.se)"
+              placeholder="email"
               v-model="username"
             />
           </div>
@@ -24,7 +24,7 @@
             <input
               type="password"
               class="Password"
-              placeholder="password (123)"
+              placeholder="password"
               v-model="password"
             />
           </div>

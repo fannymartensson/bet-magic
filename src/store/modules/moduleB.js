@@ -153,7 +153,7 @@ export default {
     },
     async updateDeck({ dispatch, commit }) {
       await dispatch('setDeck')
-      await dispatch('shuffleCards')
+      // await dispatch('shuffleCards')
       commit('SET_LIVES')
       commit('UPDATE_STATUS', 'SUIT') //THIS COMMIT IS FOR RESTATING THE GAME
       commit('COMPLETE_GAME', false)
