@@ -14,9 +14,11 @@
         <source src="../../assets/SnakeGame/eat.wav" type="audio/wav" />
       </audio>
     </div>
-    <h1 v-if="snakeHighscore">Higscore: {{ snakeHighscore }}</h1>
-    <h1 v-else>Highscore: {{ localHigh }} local</h1>
-    <h2>Latest score: {{ latestSnakeScore }}</h2>
+    <section class="scores">
+      <h1 v-if="snakeHighscore">Higscore: {{ snakeHighscore }}</h1>
+      <h1 v-else>Highscore: {{ localHigh }} local</h1>
+      <!-- <h2>Highscore: {{ latestSnakeScore }}</h2> -->
+    </section>
   </div>
 </template>
 <script>
@@ -45,6 +47,7 @@
       },
       ...mapGetters('playerData', {
         showMe: 'showMe',
+        speed: 'speed',
         snakeHighscore: 'snakeHighscore',
         latestSnakeScore: 'latestSnakeScore',
         latestHigh: 'latestHigh'
@@ -242,6 +245,12 @@
     width: 320px;
     margin: 30px 0;
   }
+
+  .scores {
+    position: relative;
+    top: 20%;
+  }
+
   @media screen and (min-width: 800px) and (max-width: 999px) {
     #snake-canvas {
       height: 500px;

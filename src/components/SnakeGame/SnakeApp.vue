@@ -1,7 +1,6 @@
 <template>
   <div id="snake-canvas">
     <section class="header">
-      <p class="snake-text">Score: {{ score }}</p>
       <!-- <p class="snake-game">Level: {{ score }}</p> -->
       <!-- <p class="snake-game">Highest Score: {{ highestScore }}</p> -->
     </section>
@@ -11,6 +10,13 @@
       :isPlaying="isPlaying"
       :stop="stop"
     />
+    <div class="text">
+      <p>Score: {{ score }}</p>
+      <div class="zoom">
+        Zoom
+        <input type="number" min="10" v-model.number="boardSize" />
+      </div>
+    </div>
     <div class="container">
       <p class="row">
         <button class="action-buttons">
@@ -25,11 +31,7 @@
         </button>
       </p>
     </div>
-    <p number="cellSize" />
-    <div class="column">
-      Zoom
-      <input type="number" min="10" v-model.number="boardSize" />
-    </div>
+
     <!-- <input type="number" min="1" v-model.number="speed" /> -->
   </div>
 </template>
@@ -108,7 +110,16 @@
     color: white;
   }
 
-  .column {
+  .text {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: baseline;
+    position: absolute;
+    left: 50%;
+    top: 62%;
+  }
+  .zoom {
     display: inline-block;
     width: 20%;
     padding: 5px;
