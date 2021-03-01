@@ -17,9 +17,6 @@
         />
       </section>
       <Check v-bind:style="{ transform: checkButtonTranslation }" />
-      <Dialog v-if="won" status="happy" />
-
-      <Dialog v-if="lost" status="sad" />
     </main>
   </div>
 </template>
@@ -30,7 +27,6 @@
   import Board from './Board.vue'
   import Feedback from './Feedback.vue'
   import Check from './Check.vue'
-  import Dialog from './Dialog.vue'
   import Restart from './Restart.vue'
   import Return from '../return.vue'
   import CollectScore from '../collectScore.vue'
@@ -41,7 +37,6 @@
       Board,
       Feedback,
       Check,
-      Dialog,
       Restart,
       Return,
       CollectScore
@@ -87,12 +82,12 @@
     box-shadow: 0 0 6px 0 rgba(black, 0.2);
     background-color: #8034a3;
     border-radius: 0 10px 10px 0;
-    padding-bottom: 10px;
+    padding-bottom: 1px;
     position: absolute;
-    top: 120px;
+    top: 150px;
     right: 0;
     z-index: -1;
-    height: 83%;
+    height: 79.5%;
   }
 
   .bigPic {

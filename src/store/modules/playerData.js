@@ -48,7 +48,6 @@ export default {
       if (x > parseInt(localStorage.getItem('SnakeHighscore'))) {
         localStorage.setItem('SnakeHighscore', x)
         state.snakeHighscore = x
-        console.log('vi kom in')
       }
       state.latestSnakeScore = x
     }
