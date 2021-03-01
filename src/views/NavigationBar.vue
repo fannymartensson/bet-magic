@@ -15,7 +15,7 @@
           <router-link class="nav-link" to="/our-games">OUR GAMES</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="">FAQ</router-link>
+          <router-link class="nav-link" to="/faq">FAQ</router-link>
         </li>
       </ul>
     </nav>
@@ -37,7 +37,7 @@
   }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   .background-nav {
     display: flex;
     flex-direction: column;

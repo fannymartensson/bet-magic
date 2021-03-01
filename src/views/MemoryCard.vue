@@ -8,6 +8,7 @@
       class="finish"
       v-if="status !== 'SUIT'"
       @play-again="$store.dispatch('b/updateDeck')"
+      @back-home="back"
     />
     <div v-else-if="status === 'SUIT'" class="main-deck">
       <div v-for="card in cardsList" :key="card.id">
@@ -59,10 +60,9 @@
         this.$router.push('/')
       },
       cardImg(image) {
-        if (!image) {
-          return ''
+        if (image) {
+          return image.replace(/\s/g, '-')
         }
-        return image.replace(/\s/g, '-')
       }
     }
   }

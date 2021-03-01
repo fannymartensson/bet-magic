@@ -67,9 +67,6 @@ export default {
     },
     SET_LIVES(state) {
       state.lives = state.livesMax
-    },
-    UPDATE_LIVES(state, lives) {
-      state.livesMax = lives
     }
   },
   actions: {
@@ -90,6 +87,7 @@ export default {
         commit('UPDATE_CARDS', copy)
         commit('LOOSING_LIFE', false)
       }
+
       if (cardNumOne.name !== cardNumTwo.name) {
         commit('DECREASE_LIVES')
         commit('LOOSING_LIFE', true)
@@ -97,6 +95,7 @@ export default {
       // Reset selected cards
       commit('UPDATE_CARD_NUM_ONE', null)
       commit('UPDATE_CARD_NUM_TWO', null)
+
       if (getters.getUnMatchedCards && getters.getUnMatchedCards.length === 0) {
         commit('COMPLETE_GAME', true)
         commit('UPDATE_STATUS', 'WINNER')

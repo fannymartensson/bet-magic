@@ -85,7 +85,7 @@
 <script>
   import MenuBtn from '@/components/MenuBtn.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
-  import ProfilePage from './ProfilePage.vue'
+  import ProfilePage from '@/views/ProfilePage.vue'
   import { mapMutations, mapGetters } from 'vuex'
 
   export default {
