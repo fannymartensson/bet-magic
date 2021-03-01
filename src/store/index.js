@@ -1,7 +1,7 @@
 import Vuex from 'vuex'
 import moduleA from './modules/moduleA'
 import moduleB from './modules/moduleB'
-import moduleC from './modules/moduleD'
+import moduleC from './modules/moduleC'
 import moduleD from './modules/moduleD'
 import playerData from './modules/playerData'
 

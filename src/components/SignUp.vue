@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="!hasPlayers || Registered">
+    <div v-if="signedUp">
       <ProfilePage />
     </div>
     <div v-else class="Signup">
@@ -85,7 +85,7 @@
 <script>
   import MenuBtn from '@/components/MenuBtn.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
-  import ProfilePage from './ProfilePage.vue'
+  import ProfilePage from '@/views/ProfilePage.vue'
   import { mapMutations, mapGetters } from 'vuex'
 
   export default {
@@ -94,7 +94,6 @@
 
     data: function() {
       return {
-        Registered: localStorage.getItem('Registered'),
         alias: '',
         firstname: '',
         lastname: '',
@@ -113,7 +112,8 @@
     },
     computed: {
       ...mapGetters('playerData', {
-        hasPlayers: 'hasPlayers'
+        hasPlayers: 'hasPlayers',
+        signedUp: 'signedUp'
       })
     }
   }

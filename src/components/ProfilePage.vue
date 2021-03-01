@@ -1,9 +1,9 @@
 <template>
   <div>
-    <header>
+    <section class="nav">
       <logo-icon class="logo-btn" :logoIcon="true" />
       <menu-btn class="menu-btn" :menuBtn="true" />
-    </header>
+    </section>
     <div class="profile-page">
       <header>
         <h1>Your Profile</h1>
@@ -19,7 +19,9 @@
           <p>Memory: 22</p>
           <p>Snake: 88</p>
           <p>Total score: {{ userScore }}</p>
-          <button type="button" class="btn btn-secondary">Share</button>
+          <button type="button" @click="logout" class="btn btn-secondary">
+            Log Out
+          </button>
         </div>
       </section>
       <h2 class="h2-settings">Settings</h2>
@@ -64,19 +66,38 @@
         Alias: localStorage.getItem('Alias'),
         Förnamn: localStorage.getItem('Förnamn'),
         Efternamn: localStorage.getItem('Efternamn'),
-        userScore: localStorage.getItem('userScore')
+        userScore: localStorage.getItem('localScore')
+      }
+    },
+    methods: {
+      logout() {
+        localStorage.removeItem('Registered')
+        this.$store.state.playerData.signedUp = false
+        return this.$router.go(-1)
       }
     }
   }
 </script>
 
 <style scoped lang="scss">
-  /* I'll make this cleaner when we decide on a complete layout and merge our styles */
+  /* I'll make this cleaner wheen we decide on a complete layout and merge our styles */
 
   * {
     margin: 0;
   }
-
+  .nav {
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+  .logo-btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .menu-btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .btn {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     border-radius: 3px;
