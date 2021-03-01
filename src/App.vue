@@ -4,6 +4,7 @@
     <router-view />
 
     <themeSwitch />
+    <SoundBtn />
     <playerScore />
   </div>
 </template>
