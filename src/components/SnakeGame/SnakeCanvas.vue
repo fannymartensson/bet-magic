@@ -45,13 +45,9 @@
       },
       ...mapGetters('playerData', {
         showMe: 'showMe',
-<<<<<<< HEAD
         snakeHighscore: 'snakeHighscore',
         latestSnakeScore: 'latestSnakeScore',
         latestHigh: 'latestHigh'
-=======
-        speed: 'speed'
->>>>>>> 6c0765cfb3f2443ac6939124c40f95eaa8133f1e
       })
     },
     mounted() {
