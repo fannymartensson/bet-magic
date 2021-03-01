@@ -141,12 +141,6 @@
         this.ended = false
         this.health = 100
         this.points = 0
-        this.ctx.clearRect(
-          this.imgX,
-          this.imgY,
-          this.imgX + 100,
-          this.imgY + 100
-        )
       }
     },
     computed: {
