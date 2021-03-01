@@ -15,12 +15,16 @@
       </div>
       <div class="points">
         <h1>Alias {{ Alias }}</h1>
-        <p>TicTacToe</p>
-        <p>Ufo Shooter</p>
-        <p>Mastermind</p>
-        <p>Memorycards</p>
-        <p>Snake</p>
-        <p>Magic score {{ userScore }}</p>
+        <p>TicTacToe: 0</p>
+        <p>Ufo Shooter: 0</p>
+        <p>Mastermind: 0</p>
+        <p>Memorycards: 0</p>
+        <p v-if="SnakeHighscore">Snake : {{ SnakeHighscore }}</p>
+        <p v-else>Snake : 0</p>
+        <br />
+        <h3>
+          <b>Magic score {{ userScore }}</b>
+        </h3>
       </div>
     </section>
     <h2 class="h2-settings">Settings</h2>
@@ -28,6 +32,7 @@
       <div class="settings-text">
         <p>Profile</p>
         <p>Password</p>
+        <p>Logout</p>
       </div>
       <div class="settings-btns">
         <button class="btn btn-secondary">
@@ -42,11 +47,7 @@
             </label>
           </div>
         </div>
-        <button
-          type="button"
-          @click="logout"
-          class="btn btn-secondary logout-btn"
-        >
+        <button @click="logout" class="btn btn-secondary">
           Log Out
         </button>
       </div>
@@ -63,7 +64,8 @@
     data() {
       return {
         Alias: localStorage.getItem('Alias'),
-        userScore: localStorage.getItem('userScore')
+        userScore: localStorage.getItem('localScore'),
+        snakeHighscore: localStorage.getItem('SnakeHighscore')
       }
     },
     methods: {
