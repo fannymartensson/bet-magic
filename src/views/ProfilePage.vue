@@ -13,7 +13,7 @@
         />
       </div>
       <div class="points">
-        <h2>Alias {{ Alias }}</h2>
+        <h2>{{ Alias }}</h2>
         <p>Förnamn {{ Förnamn }}</p>
         <p>Efternamn {{ Efternamn }}</p>
         <p>Magic score {{ userScore }}</p>
@@ -25,6 +25,7 @@
       <div class="settings-text">
         <p>Profile</p>
         <p>Password</p>
+        <p>Logout</p>
         <p>Sound</p>
       </div>
       <div class="settings-btns">
@@ -33,6 +34,9 @@
         </button>
         <button class="btn btn-secondary">
           Edit
+        </button>
+        <button type="button" @click="logout" class="btn btn-secondary">
+          Log Out
         </button>
         <div class="radio">
           <div class="radio-container">
@@ -53,13 +57,19 @@
   export default {
     name: 'ProfilePage',
     components: { MenuBtn, ShareBtn },
-
+    methods: {
+      logout() {
+        localStorage.removeItem('Registered')
+        this.$store.state.playerData.signedUp = false
+        return this.$router.go(-1)
+      }
+    },
     data() {
       return {
         Alias: localStorage.getItem('Alias'),
         Förnamn: localStorage.getItem('Förnamn'),
         Efternamn: localStorage.getItem('Efternamn'),
-        userScore: localStorage.getItem('userScore')
+        userScore: localStorage.getItem('localScore')
       }
     }
   }

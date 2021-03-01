@@ -56,7 +56,7 @@
 <script>
   import MenuBtn from '@/components/MenuBtn.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
-  import ProfilePage from '../components/ProfilePage.vue'
+  import ProfilePage from '../views/ProfilePage.vue'
   import { mapGetters } from 'vuex'
 
   export default {
