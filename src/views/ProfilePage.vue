@@ -13,7 +13,6 @@
         />
         <share-btn />
       </div>
-
       <div class="points">
         <h1>Alias {{ Alias }}</h1>
         <p>TicTacToe</p>
@@ -62,39 +61,26 @@
   </div>
 </template>
 <script>
-    import MenuBtn from '@/components/MenuBtn.vue'
-    import ShareBtn from '@/components/ProfilePage/ShareBtn.vue'
+  import MenuBtn from '@/components/MenuBtn.vue'
+  import ShareBtn from '@/components/ProfilePage/ShareBtn.vue'
 
-    export default {
-      name: 'ProfilePage',
-      components: { MenuBtn, ShareBtn },
-      methods: {
-        logout() {
-          localStorage.removeItem('Registered')
-          this.$store.state.playerData.signedUp = false
-          return this.$router.go(-1)
-        }
-      },
-      data() {
-        return {
-          Alias: localStorage.getItem('Alias'),
-  <<<<<<< HEAD
-          userScore: localStorage.getItem('userScore')
-  =======
-          Förnamn: localStorage.getItem('Förnamn'),
-          Efternamn: localStorage.getItem('Efternamn'),
-          userScore: localStorage.getItem('localScore')
-  >>>>>>> 413ee8e837c2be41e683aab2d80f1642427f9856
-        }
-      },
-      methods: {
-        logout() {
-          localStorage.removeItem('Registered')
-          this.$store.state.playerData.signedUp = false
-          return this.$router.go(-1)
-        }
+  export default {
+    name: 'ProfilePage',
+    components: { MenuBtn, ShareBtn },
+    data() {
+      return {
+        Alias: localStorage.getItem('Alias'),
+        userScore: localStorage.getItem('userScore')
+      }
+    },
+    methods: {
+      logout() {
+        localStorage.removeItem('Registered')
+        this.$store.state.playerData.signedUp = false
+        return this.$router.go(-1)
       }
     }
+  }
 </script>
 
 <style scoped lang="scss">
