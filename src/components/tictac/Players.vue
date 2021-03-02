@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="players">
-      <h1>Skriv in spelarnamn</h1>
+      <h1>Enter player names</h1>
       <div class="player">
         <input
           v-model="playerX"
           class="form__input"
           id="player-x"
           type="text"
-          placeholder="Spelare X"
+          placeholder="Player X"
         />
       </div>
       <div class="player">
@@ -17,7 +17,7 @@
           class="form__input"
           id="player-o"
           type="text"
-          placeholder="Spelare O"
+          placeholder="Player O"
         />
       </div>
       <div class="next text--center">

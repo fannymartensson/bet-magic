@@ -14,7 +14,7 @@
         <share-btn />
       </div>
       <div class="points">
-        <h1>Alias {{ Alias }}</h1>
+        <h1>{{ Alias }}</h1>
         <p>TicTacToe: 0</p>
         <p>Ufo Shooter: 0</p>
         <p>Mastermind: 0</p>
