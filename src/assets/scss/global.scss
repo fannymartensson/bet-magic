@@ -231,19 +231,5 @@ form {
   border: 1px solid var(--dynamic-border-color);
   color: var(--dynamic-title-color);
 }
-
-/* 7.THEME SWITCH
+/* END
 ------------------------------------------------------------*/
-
-input.theme-switch + label {
-  cursor: pointer;
-}
-
-input.theme-switch:not(:checked) + label:hover {
-  cursor: pointer;
-}
-
-input.theme-switch + label:active,
-input.theme-switch:checked + label {
-  cursor: pointer;
-}
