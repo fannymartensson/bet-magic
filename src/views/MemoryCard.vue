@@ -83,7 +83,7 @@
     justify-content: center;
     text-align: center;
     box-sizing: border-box;
-    background: hsla(0, 0%, 2%, 0.039);
+    background: transparent;
   }
   .finish {
     cursor: pointer;

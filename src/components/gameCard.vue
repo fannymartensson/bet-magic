@@ -76,7 +76,6 @@
       margin-right: auto;
       border-radius: 6px;
     }
-
     a {
       text-decoration: none;
     }
@@ -87,7 +86,6 @@
       text-align: left;
     }
   }
-
   @media screen and (min-width: 900px) {
     .container {
       display: flex;

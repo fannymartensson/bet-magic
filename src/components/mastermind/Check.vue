@@ -51,7 +51,7 @@
       @media only screen and (max-width: 767px) {
         content: '✓';
       }
-      content: 'Skicka';
+      content: 'Correct';
     }
 
     &:disabled {

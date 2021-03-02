@@ -50,7 +50,7 @@
         x: '',
         y: '',
         points: 0,
-        health: 10,
+        health: 100,
         started: false,
         ended: false,
         collectScores: false
@@ -141,8 +141,15 @@
         this.ended = false
         this.health = 100
         this.points = 0
+        this.ctx.clearRect(
+          this.imgX,
+          this.imgY,
+          this.imgX + 100,
+          this.imgY + 100
+        )
       }
     },
+
     computed: {
       ...mapGetters('playerData', {
         showMe: 'showMe'
@@ -161,7 +168,6 @@
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     font-weight: bolder;
   }
-
   #myCanvas {
     width: 100%;
     height: 250px;
@@ -169,13 +175,11 @@
     margin: 0 auto;
     border: 2px solid #e6e6e6;
   }
-
   #health {
     width: 300px;
     border: 2px solid #e6e6e6;
     margin: 20px auto 20px auto;
   }
-
   #health div {
     height: 20px;
     background: linear-gradient(
@@ -186,13 +190,11 @@
       rgba(189, 125, 232, 0) 100%
     );
   }
-
   #controls {
     width: 100%;
     margin: 20px auto;
     text-align: center;
   }
-
   #hidden-items {
     display: none;
   }

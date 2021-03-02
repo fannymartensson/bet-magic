@@ -129,7 +129,6 @@
     font-size: 40px;
     text-align: center;
   }
-  .login-form,
   .signup-form {
     padding: 2rem;
     height: auto;
@@ -137,13 +136,12 @@
     margin-left: 6px;
     border-radius: 6px;
   }
-  .textbox,
-  .submit-btn,
+
   .textgroup {
     overflow: hidden;
     padding: 17px 9px;
   }
-  .textbox input,
+
   .textgroup input {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     background: transparent;
@@ -164,9 +162,6 @@
     margin: 0px;
     border-radius: 6px;
   }
-  .check-box {
-    margin: 0 9px;
-  }
 
   /** Form Settings for desktop
 ------------------------------------------------------------*/
@@ -174,15 +169,12 @@
     header {
       justify-content: space-evenly;
     }
-    .login-form,
     .signup-form {
       width: 36rem;
     }
-    .login-title,
     .signup-title {
       margin: 3rem;
     }
-    .textbox input,
     .textgroup input {
       min-width: 31rem;
     }

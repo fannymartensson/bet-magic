@@ -25,27 +25,26 @@ export default new Vuex.Store({
       {
         title: 'Tic tac toe',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
+          'Play with your friend and see which gets three of their sign vertical or horizontal ',
         img: '/tictactoe.png',
         routerlink: 'tictac'
       },
       {
         title: 'Alien Shooter',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et ju',
+          'This Game makes you work on your aiming skills, try shoot as many aliens as possible on the given time. ',
         img: '/space-invadors.png',
         routerlink: 'alien-shooting'
       },
       {
         title: 'Mastermind',
-        description: 'Lorem ipsum dolor sit amet, consetetur sadipscing e',
+        description: ' Find the right color combination with the given clues. ',
         img: '/mastermind.png',
         routerlink: 'Mastermind'
       },
       {
         title: 'Memory',
-        description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, ',
+        description: 'Find all the matching pairs before your lives is out ',
         img: '/cardBack.jpg',
         routerlink: 'Memory-card'
       },

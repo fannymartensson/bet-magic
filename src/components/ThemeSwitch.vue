@@ -55,5 +55,6 @@
     margin-left: 10px;
     position: fixed;
     bottom: 10px;
+    z-index: 1000;
   }
 </style>

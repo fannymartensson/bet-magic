@@ -21,6 +21,9 @@
 <script>
   import gameCard from './gameCard.vue'
   export default {
+    components: {
+      gameCard
+    },
     data: () => {
       return {
         touch: {
@@ -42,9 +45,6 @@
       listPosition() {
         return { transform: 'translateX(-' + this.currentIndex * 100 + '%)' }
       }
-    },
-    components: {
-      gameCard
     },
     methods: {
       touchstart(event) {
