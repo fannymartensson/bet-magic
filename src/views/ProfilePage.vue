@@ -11,13 +11,20 @@
           width="200"
           height="100"
         />
+        <share-btn />
       </div>
       <div class="points">
-        <h2>Alias {{ Alias }}</h2>
-        <p>Förnamn {{ Förnamn }}</p>
-        <p>Efternamn {{ Efternamn }}</p>
-        <p>Magic score {{ userScore }}</p>
-        <share-btn />
+        <h1>Alias {{ Alias }}</h1>
+        <p>TicTacToe: 0</p>
+        <p>Ufo Shooter: 0</p>
+        <p>Mastermind: 0</p>
+        <p>Memorycards: 0</p>
+        <p v-if="SnakeHighscore">Snake : {{ SnakeHighscore }}</p>
+        <p v-else>Snake : 0</p>
+        <br />
+        <h3>
+          <b>Magic score {{ userScore }}</b>
+        </h3>
       </div>
     </section>
     <h2 class="h2-settings">Settings</h2>
@@ -25,15 +32,13 @@
       <div class="settings-text">
         <p>Profile</p>
         <p>Password</p>
-        <p>Sound</p>
+        <p>Logout</p>
       </div>
       <div class="settings-btns">
         <button class="btn btn-secondary">
           Edit
         </button>
-        <button class="btn btn-secondary">
-          Edit
-        </button>
+
         <div class="radio">
           <div class="radio-container">
             <label class="switch">
@@ -42,6 +47,9 @@
             </label>
           </div>
         </div>
+        <button @click="logout" class="btn btn-secondary">
+          Log Out
+        </button>
       </div>
     </section>
   </div>
@@ -53,13 +61,18 @@
   export default {
     name: 'ProfilePage',
     components: { MenuBtn, ShareBtn },
-
     data() {
       return {
         Alias: localStorage.getItem('Alias'),
-        Förnamn: localStorage.getItem('Förnamn'),
-        Efternamn: localStorage.getItem('Efternamn'),
-        userScore: localStorage.getItem('userScore')
+        userScore: localStorage.getItem('localScore'),
+        snakeHighscore: localStorage.getItem('SnakeHighscore')
+      }
+    },
+    methods: {
+      logout() {
+        localStorage.removeItem('Registered')
+        this.$store.state.playerData.signedUp = false
+        return this.$router.go(-1)
       }
     }
   }
@@ -71,9 +84,9 @@
   }
 
   .menu-btn {
-    display: flex;
     position: absolute;
-    left: 70%;
+    left: 76%;
+    top: 1%;
   }
 
   .btn {
@@ -89,12 +102,22 @@
     color: black;
   }
 
+  .logout-btn {
+    margin-top: 40%;
+  }
+
+  h1 {
+    position: absolute;
+    top: -40%;
+    left: -55%;
+  }
+
   h1,
   h2 {
     font-size: 1.8rem;
   }
   .h2-settings {
-    margin-top: 4rem;
+    margin-top: 6rem;
   }
   .profile-page {
     margin-top: 0;
@@ -112,11 +135,13 @@
   .points {
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: -20%;
   }
   .settings {
     display: flex;
     flex-direction: row;
-    margin-top: 2.5em;
+    margin-top: 1em;
   }
   .settings-btns {
     display: flex;

@@ -16,7 +16,7 @@
             <input
               type="email"
               class="email"
-              placeholder="email (magic@yahoo.se)"
+              placeholder="email"
               v-model="username"
             />
           </div>
@@ -24,7 +24,7 @@
             <input
               type="password"
               class="Password"
-              placeholder="password (123)"
+              placeholder="password"
               v-model="password"
             />
           </div>
@@ -56,7 +56,7 @@
 <script>
   import MenuBtn from '@/components/MenuBtn.vue'
   import LogoIcon from '@/components/LogoIcon.vue'
-  import ProfilePage from '../components/ProfilePage.vue'
+  import ProfilePage from '../views/ProfilePage.vue'
   import { mapGetters } from 'vuex'
 
   export default {

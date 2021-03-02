@@ -26,4 +26,16 @@
     margin: 0;
     padding: 0;
   }
+
+  h1 {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+  }
+
+  .menu-btn {
+    position: absolute;
+    left: 76%;
+    top: 1%;
+  }
 </style>

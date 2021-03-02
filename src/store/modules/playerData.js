@@ -48,7 +48,6 @@ export default {
       if (x > parseInt(localStorage.getItem('SnakeHighscore'))) {
         localStorage.setItem('SnakeHighscore', x)
         state.snakeHighscore = x
-        console.log('vi kom in')
       }
       state.latestSnakeScore = x
     }
@@ -58,6 +57,7 @@ export default {
     showMe: state => state.show,
     snakeHighscore: state => state.snakeHighscore,
     latestSnakeScore: state => state.latestSnakeScore,
-    signedUp: state => state.signedUp
+    signedUp: state => state.signedUp,
+    speed: state => Math.ceil(state.score / 5) || 15
   }
 }

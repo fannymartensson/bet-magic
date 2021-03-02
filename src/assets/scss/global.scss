@@ -32,6 +32,12 @@ html {
   color: var(--dynamic-title-color);
 }
 
+.btn-menu {
+  background-color: var(--app-background-color);
+  color: var(--dynamic-title-color);
+  border: 1px solid var(--dynamic-border-color);
+}
+
 /* END
 ------------------------------------------------------------*/
 /** 2. Theme switch button
@@ -175,8 +181,8 @@ a {
 .playerScore {
   color: var(--dynamic-title-color);
 }
-button {
-  background-color: var(--app-background-color);
+.btn.btn--secondary {
+  background-color: var(--app-background-color-second);
   border-color: var(--dynamic-border-color);
   color: var(--dynamic-title-color);
 }
@@ -188,11 +194,22 @@ button {
   color: var(--dynamic-title-color);
 }
 /**Snakegame*/
+.text,
+.scores,
+.column,
+.column input,
 .snake-game {
   color: var(--dynamic-title-color);
 }
 /**Memory*/
-
+.btn-return-back,
+.win,
+.play-again,
+.back-home {
+  background-color: var(--app-background-color);
+  border-color: var(--dynamic-border-color);
+  color: var(--dynamic-title-color);
+}
 .lives input {
   color: var(--dynamic-title-color);
 }

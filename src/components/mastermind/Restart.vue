@@ -1,15 +1,19 @@
 <template>
-  <button @click="RESET_GAME" class="btn-return">
+  <button @click="startNewGame" class="btn-return">
     Restart
   </button>
 </template>
 
 <script>
-  import { mapMutations } from 'vuex'
+  import { mapActions } from 'vuex'
 
   export default {
     name: 'restart',
-    methods: { ...mapMutations('c', { RESET_GAME: 'RESET_GAME' }) }
+    methods: {
+      ...mapActions('d', {
+        startNewGame: 'startNewGame'
+      })
+    }
   }
 </script>
 

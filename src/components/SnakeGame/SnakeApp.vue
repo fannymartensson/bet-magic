@@ -1,7 +1,6 @@
 <template>
   <div id="snake-canvas">
     <section class="header">
-      <p class="snake-text">Score: {{ score }}</p>
       <!-- <p class="snake-game">Level: {{ score }}</p> -->
       <!-- <p class="snake-game">Highest Score: {{ highestScore }}</p> -->
     </section>
@@ -11,6 +10,13 @@
       :isPlaying="isPlaying"
       :stop="stop"
     />
+    <div class="text">
+      <p>Score: {{ score }}</p>
+      <div class="column">
+        Zoom
+        <input type="number" min="10" v-model.number="boardSize" />
+      </div>
+    </div>
     <div class="container">
       <p class="row">
         <button class="action-buttons">
@@ -25,11 +31,7 @@
         </button>
       </p>
     </div>
-    <p number="cellSize" />
-    <div class="column">
-      Zoom
-      <input type="number" min="10" v-model.number="boardSize" />
-    </div>
+
     <!-- <input type="number" min="1" v-model.number="speed" /> -->
   </div>
 </template>
@@ -108,26 +110,41 @@
     color: white;
   }
 
+  .text {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: baseline;
+    position: absolute;
+    left: 50%;
+    top: 61%;
+    cursor: pointer;
+    @media only screen and (min-width: 767px) {
+      left: 55%;
+      top: 15%;
+    }
+  }
+
   .column {
     display: inline-block;
     width: 20%;
-    padding: 5px;
+    padding: 5px 20px;
     margin: 5px;
-    color: white;
     display: flex;
     flex-direction: flex-start;
   }
   .column input {
-    width: 30px;
+    margin-left: 2px;
+    width: 38px;
     border: none;
     background: transparent;
     line-height: 20px;
-    color: white;
     font-size: 17px;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
 
   #play-btn {
+    color: white;
     font-size: 20px;
     cursor: pointer;
     margin-top: 0.9em;

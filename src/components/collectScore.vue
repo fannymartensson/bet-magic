@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import { mapMutations } from 'vuex'
+  import { mapMutations, mapActions } from 'vuex'
 
   export default {
     data() {
@@ -20,6 +20,9 @@
     methods: {
       ...mapMutations('playerData', {
         increaseScore: 'increaseScore'
+      }),
+      ...mapActions('d', {
+        startNewGame: 'startNewGame'
       }),
       increaseAndClose() {
         if (localStorage.getItem('localScore')) {
@@ -33,6 +36,7 @@
         this.toNum.toString()
         localStorage.setItem('localScore', this.toNum)
         this.$store.state.playerData.show = false
+        this.startNewGame()
       }
     }
   }
