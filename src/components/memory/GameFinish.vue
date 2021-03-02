@@ -4,6 +4,7 @@
       <span class="fail" v-if="status === 'GAMEOVER'">
         GAME OVER!
       </span>
+
       <span class="win" v-else-if="status === 'WINNER'">
         winner!
       </span>
@@ -31,15 +32,16 @@
   .player-choices,
   .game-finish {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     flex-direction: column;
+    margin-top: 2rem;
   }
   .game-finish {
     background: transparent;
     width: 100vw;
-    height: 63vh;
+    height: 60vh;
     z-index: 3;
+    animation: messageComingIn 5s ease-out;
   }
   .finish-btns {
     padding: 2rem;
@@ -47,7 +49,8 @@
   .play-again,
   .back-home {
     cursor: pointer;
-    margin: 20px;
+    background: transparent;
+    margin: 15px;
     border-radius: 4px;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
@@ -62,21 +65,39 @@
     font-size: 1.4rem;
   }
   .back-home {
-    padding: 0.7rem 3.6rem;
+    padding: 0.7rem 3.9rem;
     font-size: 1.7rem;
   }
-
   .win,
   .fail {
-    font-size: 7rem;
+    font-size: 5rem;
   }
   .fail {
     color: red;
     margin-left: 30px;
-    font-size: 8rem;
   }
   .win {
-    color: white;
-    margin-left: 3rem;
+    color: hsl(118, 95%, 32%);
+    margin-left: 25px;
+  }
+  @keyframes messageComingIn {
+    0% {
+      transform: translateY(200px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @media (min-width: 900px) {
+    .player-choices,
+    .game-finish {
+      margin-top: 3rem;
+    }
+    .win,
+    .fail {
+      font-size: 8rem;
+    }
   }
 </style>

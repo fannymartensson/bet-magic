@@ -4,7 +4,6 @@
     <router-view />
 
     <themeSwitch />
-    <SoundBtn />
     <playerScore />
   </div>
 </template>
@@ -12,7 +11,6 @@
 <script>
   import playerScore from '@/components/playerScore.vue'
   import ThemeSwitch from '@/components/ThemeSwitch.vue'
-  import SoundBtn from '@/components/SoundBtn.vue'
   import OnlineOffline from '@/components/online-offline/OnlineOffline.vue'
 
   export default {
@@ -20,7 +18,6 @@
     components: {
       playerScore,
       ThemeSwitch,
-      SoundBtn,
       OnlineOffline
     }
   }

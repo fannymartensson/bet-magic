@@ -130,21 +130,21 @@
     width: 20%;
     padding: 5px 20px;
     margin: 5px;
-    color: white;
     display: flex;
     flex-direction: flex-start;
   }
   .column input {
-    width: 30px;
+    margin-left: 2px;
+    width: 38px;
     border: none;
     background: transparent;
     line-height: 20px;
-    color: white;
     font-size: 17px;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
 
   #play-btn {
+    color: white;
     font-size: 20px;
     cursor: pointer;
     margin-top: 0.9em;

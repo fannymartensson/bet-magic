@@ -87,7 +87,6 @@ export default {
         commit('UPDATE_CARDS', copy)
         commit('LOOSING_LIFE', false)
       }
-
       if (cardNumOne.name !== cardNumTwo.name) {
         commit('DECREASE_LIVES')
         commit('LOOSING_LIFE', true)
@@ -95,7 +94,6 @@ export default {
       // Reset selected cards
       commit('UPDATE_CARD_NUM_ONE', null)
       commit('UPDATE_CARD_NUM_TWO', null)
-
       if (getters.getUnMatchedCards && getters.getUnMatchedCards.length === 0) {
         commit('COMPLETE_GAME', true)
         commit('UPDATE_STATUS', 'WINNER')
@@ -104,7 +102,7 @@ export default {
         commit('UPDATE_STATUS', 'GAMEOVER')
       } else {
         commit('UPDATE_STATUS', 'SUIT')
-      } // TO SEE THE GAME FINISH
+      } // TO SEE THE GAME FINISHES
     },
     setDeck(context) {
       //TO SHUFFLE WE NEED THE PROMISE
@@ -135,7 +133,8 @@ export default {
 
         setTimeout(() => {
           dispatch('checkCards')
-        }, 600)
+          commit('COMPLETE_GAME', true)
+        }, 800)
       }
     },
     shuffleCards({ commit, state }) {

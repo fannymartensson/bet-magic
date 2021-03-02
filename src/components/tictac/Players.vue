@@ -74,7 +74,6 @@
 </script>
 
 <style scoped lang="scss">
-  @import '@/assets/scss/global.scss';
   #Return {
     margin-left: 5%;
   }
