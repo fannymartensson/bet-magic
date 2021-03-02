@@ -51,11 +51,7 @@
       @media only screen and (max-width: 767px) {
         content: '✓';
       }
-<<<<<<< HEAD
       content: 'Send';
-=======
-      content: 'Correct';
->>>>>>> 1d5d734ec1709632079d2225dc445e3f30bea12e
     }
 
     &:disabled {
