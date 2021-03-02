@@ -50,7 +50,7 @@
         x: '',
         y: '',
         points: 0,
-        health: 10,
+        health: 100,
         started: false,
         ended: false,
         collectScores: false
@@ -141,8 +141,15 @@
         this.ended = false
         this.health = 100
         this.points = 0
+        this.ctx.clearRect(
+          this.imgX,
+          this.imgY,
+          this.imgX + 100,
+          this.imgY + 100
+        )
       }
     },
+
     computed: {
       ...mapGetters('playerData', {
         showMe: 'showMe'

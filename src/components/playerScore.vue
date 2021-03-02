@@ -27,15 +27,15 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   #playerScore {
-    margin-top: 4vh;
+    position: fixed;
+    bottom: 10px;
     display: flex;
     justify-content: flex-end;
     align-items: right;
     font-size: 2.5vh;
-    padding-right: 4vw;
-    color: rgb(255, 255, 255);
+    right: 10px;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
 </style>

@@ -106,8 +106,7 @@
     font-size: $h1;
     text-align: center;
   }
-  .login-form,
-  .signup-form {
+  .login-form {
     padding: 2rem;
     height: auto;
     width: 19rem;
@@ -115,13 +114,11 @@
     border-radius: 6px;
   }
   .textbox,
-  .submit-btn,
-  .textgroup {
+  .submit-btn {
     overflow: hidden;
     padding: 17px 9px;
   }
-  .textbox input,
-  .textgroup input {
+  .textbox input {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     font-size: 15px;
     border-radius: 6px;
