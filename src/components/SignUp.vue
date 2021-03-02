@@ -1,6 +1,7 @@
 <template>
   <div>
     <div v-if="signedUp">
+      <!-- OM användaren är inloggad, eller BLIR inloggad så får din instruktioner från Vuex att Profilepage ska visas ist för SignUp -->
       <ProfilePage />
     </div>
     <div v-else class="Signup">
@@ -67,7 +68,7 @@
                   Email: emailid,
                   Password: password,
                   Alias: alias
-                })
+                }) // Här tar setUser-funktionen emot ett objekt som den skickar vidare till playerData-modulen i Vuex.
               "
               type="button"
               value="Sign Up"
@@ -113,6 +114,7 @@
     },
     computed: {
       ...mapGetters('playerData', {
+        // mapGetters är responsiva datavärden som här ligger i kontakt med playerData-modulen i Vuex
         hasPlayers: 'hasPlayers',
         signedUp: 'signedUp'
       })

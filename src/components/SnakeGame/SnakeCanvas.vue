@@ -130,9 +130,9 @@
           this.stop()
           this.gameover = 'Game over!'
           if (Store.state.score > 2) {
+            // Ifall man samlat ihop mer än 2 poäng så dyker en popup upp som ger användaren poäng genom att playerData.show blir 'true'.
             this.$store.state.playerData.show = true
-            this.newSnakeScore(Store.state.score)
-            console.log(this.localHighscore)
+            this.newSnakeScore(Store.state.score) // Här skickas data från vuex-modulen moduleC(Store.state.score) till en funktion i vuex-modulen playerData.
           }
           this.resetScores()
         }

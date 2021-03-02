@@ -8,7 +8,7 @@
   export default {
     methods: {
       backa() {
-        return this.$router.go(-1)
+        return this.$router.go(-1) // Eftersom Returnkomponenten används på samtliga sidor i appen så valde jag att göra funktionen universell med go.(-1) istället för att anpassa komponenten till varje sida.
       }
     }
   }

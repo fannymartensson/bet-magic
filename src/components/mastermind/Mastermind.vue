@@ -5,6 +5,7 @@
         <Restart />
         <Return />
         <CollectScore v-if="won" />
+        <!-- Här importeras en popup-ruta som ger spelaren poäng om den klarat av spelet -->
       </div>
       <h1>Mastermind</h1>
       <Board />

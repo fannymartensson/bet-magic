@@ -73,15 +73,20 @@
       logout() {
         localStorage.removeItem('Registered')
         this.$store.state.playerData.signedUp = false
-        return this.$router.go(-1)
+        return this.$router.go(
+          -1
+        ) /* Vid utloggning så försvinner Registered från Localstorage, detta för att ta bort komponenten playerScore från nedre högra hörnet (utan att ta bort spelarens uppgifter från localstorage).
+        
+        Därefter sätter jag signedUp till false, det datavärdet används för att smidigt flytta användaren från sidan "signUp" till "profile", något Localstorage inte kunde göra lika bra. 
+
+        Sist av allt gör jag router.go(-1) som tar användaren ut ifrån profilsidan.
+*/
       }
     }
   }
 </script>
 
 <style scoped lang="scss">
-  /* I'll make this cleaner wheen we decide on a complete layout and merge our styles */
-
   * {
     margin: 0;
   }

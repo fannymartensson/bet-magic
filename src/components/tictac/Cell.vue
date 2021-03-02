@@ -10,6 +10,7 @@
     </transition>
     <audio id="enter" ref="enter" volume="1" preload="auto">
       <source src="../../assets/TicTac/enter.wav" type="audio/wav" />
+      <!-- Här importerar jag en ljudfil som nu finns på varje cell i tictac. -->
     </audio>
   </div>
 </template>
@@ -74,7 +75,7 @@
 
       toggleCell(index) {
         if (!this.isDisabled) {
-          this.$refs.enter.play()
+          this.$refs.enter.play() // Här aktiveras ljudet då en spelare klickar på just den rutan
           this.$refs.enter.currentTime = 0
 
           this.addMarker({ index })

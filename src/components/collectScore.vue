@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import { mapMutations, mapActions } from 'vuex'
+  import { mapMutations, mapActions } from 'vuex' // Här importerar jag funktioner från två olika moduler i Vuex, en specifik modul för spelet, en från modulen som håller spelardata, som namn och poäng.
 
   export default {
     data() {
@@ -19,24 +19,25 @@
     },
     methods: {
       ...mapMutations('playerData', {
-        increaseScore: 'increaseScore'
+        increaseScore: 'closeCollect'
       }),
       ...mapActions('d', {
         startNewGame: 'startNewGame'
       }),
       increaseAndClose() {
+        localStorage.setItem('Registered', 'true')
         if (localStorage.getItem('localScore')) {
+          // Om spelaren har ett score i Localstorage så adderas poängen till den.
           this.current = localStorage.getItem('localScore')
-          this.toNum = parseInt(this.current)
+          this.toNum = parseInt(this.current) // I localstorage sparas datan som sträng, här gör jag om den till number
         } else {
-          this.toNum = 0
+          this.toNum = 0 // Finns inget värde i Localstorage så börjar spelaren på 0.
         }
         this.toNum += 100
-        this.increaseScore(this.toNum)
         this.toNum.toString()
-        localStorage.setItem('localScore', this.toNum)
-        this.$store.state.playerData.show = false
-        this.startNewGame()
+        localStorage.setItem('localScore', this.toNum) // Nu är värdet en sträng igen så den kan sparas i Localstorage
+        this.$store.state.playerData.show = false //Här blir denna komponent osynlig igen
+        this.startNewGame() // Spelet startas om ifall man spelar Mastermind, på de andra spelen finns en knapp där man väljer att starta nytt spel.
       }
     }
   }

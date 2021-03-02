@@ -39,11 +39,8 @@ export default {
       localStorage.setItem('Registered', 'true')
       localStorage.setItem('SnakeHighscore', '1')
     },
-    increaseScore(state, payload) {
-      state.userScore = localStorage.setItem('localScore', payload)
-      this.show = false
-    },
     newSnakeScore(state, x) {
+      // Denna funktion tar reda på om den nya poängen från snake är personligt rekord för spelaren, isf sparar den det som Highscore. Annars lägger den bara in det som "latestScore" så att användaren kan se sin senaste poäng i efterhand.
       console.log(x)
       if (x > parseInt(localStorage.getItem('SnakeHighscore'))) {
         localStorage.setItem('SnakeHighscore', x)

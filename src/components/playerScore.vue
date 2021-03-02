@@ -1,5 +1,6 @@
 <template>
   <span v-if="Registered">
+    <!-- IF spelaren är inloggad så visas denna komponent nere i höger hörn på vår apps alla sidor. -->
     <h1 id="playerScore">
       {{ localAlias }}
       {{ localScore }}
@@ -14,7 +15,7 @@
         this.localAlias = localStorage.getItem('Alias')
         this.localScore = localStorage.getItem('localScore')
         this.Registered = localStorage.getItem('Registered')
-        this.$forceUpdate()
+        this.$forceUpdate() // Då komponenten skapas hämtar den data från Localstorage, och för att bli något sånär responsiv så uppdateras den varje sekund och kollar i lokalstorage igen.
       }, 1000)
     },
     data() {
