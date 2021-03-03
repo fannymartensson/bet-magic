@@ -6,11 +6,6 @@ Vue.use(Vuex)
 export default {
   namespaced: true,
   state: {
-    Alias: null,
-    Förnamn: null,
-    Efternamn: null,
-    Email: null,
-    Password: null,
     userScore: localStorage.getItem('localScore'),
     players: true,
     Mastermind: 0,
@@ -23,11 +18,6 @@ export default {
 
   mutations: {
     setUser(state, payload) {
-      state.Alias = payload.Alias
-      state.Förnamn = payload.Förnamn
-      state.Efternamn = payload.Efternamn
-      state.Email = payload.Email
-      state.Password = payload.password
       state.players = false
       state.signedUp = true
       localStorage.setItem('Alias', payload.Alias)

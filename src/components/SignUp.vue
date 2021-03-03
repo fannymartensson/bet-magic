@@ -68,7 +68,7 @@
                   Email: emailid,
                   Password: password,
                   Alias: alias
-                }) // Här tar setUser-funktionen emot ett objekt som den skickar vidare till playerData-modulen i Vuex.
+                }) /* Här tar setUser-funktionen emot ett objekt som den skickar vidare till playerData-modulen i Vuex */
               "
               type="button"
               value="Sign Up"

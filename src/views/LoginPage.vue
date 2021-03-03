@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="signedUp">
+    <div v-if="signedUp || signedUp2">
       <ProfilePage />
     </div>
     <div v-else class="login">
@@ -68,7 +68,8 @@
         password: '',
         showError: false,
         storageEmail: localStorage.getItem('Email'),
-        storagePassword: localStorage.getItem('Password')
+        storagePassword: localStorage.getItem('Password'),
+        signedUp2: localStorage.getItem('Registered')
       }
     },
     computed: {

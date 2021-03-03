@@ -15,6 +15,8 @@
       </div>
       <div class="points">
         <h1>{{ Alias }}</h1>
+        <h4>{{ Förnamn }}</h4>
+        <h4>{{ Efternamn }}</h4>
         <p>TicTacToe: 0</p>
         <p>Ufo Shooter: 0</p>
         <p>Mastermind: 0</p>
@@ -23,7 +25,7 @@
         <p v-else>Snake : 0</p>
         <br />
         <h3>
-          <b>Magic score {{ userScore }}</b>
+          <b>Magic score: {{ userScore }}</b>
         </h3>
       </div>
     </section>
@@ -64,6 +66,8 @@
     data() {
       return {
         Alias: localStorage.getItem('Alias'),
+        Förnamn: localStorage.getItem('Förnamn'),
+        Efternamn: localStorage.getItem('Efternamn'),
         userScore: localStorage.getItem('localScore'),
         snakeHighscore: localStorage.getItem('SnakeHighscore')
       }

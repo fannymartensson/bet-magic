@@ -4,7 +4,7 @@
     <nav>
       <ul class="menu-items">
         <li class="nav-item" v-if="loggedIn">
-          <router-link class="nav-link" to="/signup">PROFILE</router-link>
+          <router-link class="nav-link" to="/login">PROFILE</router-link>
         </li>
 
         <li class="nav-item" v-else>
