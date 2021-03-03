@@ -45,6 +45,6 @@ export default {
     snakeHighscore: state => state.snakeHighscore,
     latestSnakeScore: state => state.latestSnakeScore,
     signedUp: state => state.signedUp,
-    speed: state => Math.ceil(state.score / 5) || 15
+    speed: state => Math.ceil(state.score / 22) || 12
   }
 }

@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <online-offline />
     <router-view />
-
     <themeSwitch />
+    <online-offline />
     <playerScore />
   </div>
 </template>

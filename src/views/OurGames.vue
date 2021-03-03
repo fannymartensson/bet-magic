@@ -36,6 +36,7 @@
     margin: 0;
     padding: 0;
   }
+
   #app {
     position: relative;
     padding: 20px 0;

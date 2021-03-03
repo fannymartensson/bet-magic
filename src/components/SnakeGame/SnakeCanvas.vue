@@ -7,17 +7,35 @@
       :width="boardSizePx"
       :height="boardSizePx"
     />
+    <p class="note" v-if="this.score === 5">You got it!</p>
+    <p class="note" v-if="this.score === 20">Good job!</p>
     <constants />
-    <h1 class="snake-game">{{ gameover }}</h1>
+    <h1>{{ gameover }}</h1>
     <div id="hidden-items">
       <audio ref="audio">
         <source src="../../assets/SnakeGame/eat.wav" type="audio/wav" />
       </audio>
     </div>
+    <div class="container">
+      <button class="action-buttons">
+        <button @click="handleClick('top')" id="U">▲</button>
+        <button @click="handleClick('bottom')" id="D">▼</button>
+        <button @click="handleClick('right')" id="R">►</button>
+        <button @click="handleClick('left')" id="L">◄</button>
+        <button id="play-btn" @click="isPlaying ? stop() : start()">
+          {{ isPlaying ? 'Pause' : 'Play' }}
+        </button>
+      </button>
+    </div>
     <section class="scores">
-      <p v-if="snakeHighscore">Higscore: {{ snakeHighscore }}</p>
+      <p>Score: {{ score }}</p>
+      <p v-if="snakeHighscore">Highscore: {{ snakeHighscore }}</p>
       <p v-else>Highscore: {{ localHigh }}</p>
-      <!-- <h2>Highscore: {{ latestSnakeScore }}</h2> -->
+      <h2>Latest game: {{ latestSnakeScore }}</h2>
+      <div class="zoom-text">
+        Zoom
+        <input type="number" min="10" v-model.number="boardSize" />
+      </div>
     </section>
   </div>
 </template>
@@ -38,10 +56,15 @@
     props: {
       cellSize: Number,
       boardSize: Number,
-      isPlaying: Boolean,
-      stop: Function
+      isPlaying: Boolean
     },
     computed: {
+      score() {
+        return Store.state.score
+      },
+      speed() {
+        return Store.state.getters.speed
+      },
       boardSizePx() {
         return this.cellSize * this.boardSize
       },
@@ -73,6 +96,12 @@
       }
     },
     methods: {
+      start() {
+        this.isPlaying = true
+      },
+      stop() {
+        this.isPlaying = false
+      },
       // To make the snake move in directions
       resetSnake() {
         this.gameover = ''
@@ -244,9 +273,8 @@
   }
 
   .scores {
-    position: relative;
-    left: -25%;
-    top: -30px;
+    display: flex;
+    flex-direction: column;
   }
   @media only screen and (min-width: 767px) {
     .scores {
@@ -266,5 +294,148 @@
       height: 500px;
       width: 500px;
     }
+  }
+
+  .zoom-text input {
+    width: 38px;
+    border: none;
+    background: transparent;
+    line-height: 20px;
+    font-size: 17px;
+    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
+  }
+
+  #play-btn {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
+    display: inline-block;
+    background: rgb(50, 7, 99);
+    cursor: pointer;
+    border-radius: 90%;
+    width: 80px;
+    height: 50px;
+    border-radius: 20%;
+    border: 2px solid rgb(21, 5, 43);
+    position: relative;
+    top: -16px;
+  }
+
+  #play-btn:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .action-buttons {
+    width: 180px;
+    height: 180px;
+    border-radius: 90%;
+    border: none;
+    background: transparent;
+    position: relative;
+    top: -25%;
+  }
+
+  #U {
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 20%;
+    background: rgb(50, 7, 99);
+    cursor: pointer;
+    border: 2px solid rgb(21, 5, 43);
+  }
+
+  #U:hover {
+    background-color: white;
+    color: black;
+  }
+
+  #R {
+    top: 40%;
+    right: -18px;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 20%;
+    background: rgb(50, 7, 99);
+    cursor: pointer;
+    border: 2px solid rgb(21, 5, 43);
+  }
+
+  #R:hover {
+    background-color: white;
+    color: black;
+  }
+
+  #D {
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 20%;
+    background: rgb(50, 7, 99);
+    cursor: pointer;
+    border: 2px solid rgb(21, 5, 43);
+  }
+
+  #D:hover {
+    background-color: white;
+    color: black;
+  }
+
+  #L {
+    top: 40%;
+    left: -18px;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 20%;
+    background: rgb(50, 7, 99);
+    cursor: pointer;
+    font-size: 30px;
+    border: 2px solid rgb(21, 5, 43);
+  }
+
+  #L:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .note {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    top: -180px;
   }
 </style>

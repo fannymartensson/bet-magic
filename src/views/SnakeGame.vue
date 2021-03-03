@@ -28,9 +28,8 @@
   }
 
   h1 {
-    position: absolute;
-    top: 10%;
-    left: 35%;
+    display: flex;
+    justify-content: center;
   }
 
   .menu-btn {
