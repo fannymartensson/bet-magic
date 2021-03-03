@@ -69,7 +69,7 @@
         Förnamn: localStorage.getItem('Förnamn'),
         Efternamn: localStorage.getItem('Efternamn'),
         userScore: localStorage.getItem('localScore'),
-        snakeHighscore: localStorage.getItem('SnakeHighscore')
+        SnakeHighscore: localStorage.getItem('SnakeHighscore')
       }
     },
     methods: {
