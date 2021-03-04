@@ -4,54 +4,51 @@
       <menu-btn class="menu-btn" :menuBtn="true" />
     </header>
     <section class="profile-overview">
-      <div class="profile-left">
+      <div class="left">
+        <h1>{{ Alias }}</h1>
+        <h4>{{ Förnamn }}</h4>
+        <h4>{{ Efternamn }}</h4>
         <img
-          src="https://avatars.dicebear.com/api/identicon/yellow.svg"
+          src="https://avatars.dicebear.com/api/identicon/blue.svg"
           alt="Avatar"
           width="200"
           height="100"
+          style="margin-top:18px"
         />
         <share-btn />
       </div>
       <div class="points">
-        <h1>{{ Alias }}</h1>
-        <h4>{{ Förnamn }}</h4>
-        <h4>{{ Efternamn }}</h4>
         <p>TicTacToe: 0</p>
         <p>Ufo Shooter: 0</p>
         <p>Mastermind: 0</p>
         <p>Memorycards: 0</p>
-        <p v-if="SnakeHighscore">Snake : {{ SnakeHighscore }}</p>
-        <p v-else>Snake : 0</p>
+        <p v-if="SnakeHighscore">Snake: {{ SnakeHighscore }}</p>
+        <p v-else>Snake: 0</p>
         <br />
         <h3>
           <b>Magic score: {{ userScore }}</b>
         </h3>
       </div>
     </section>
-    <h2 class="h2-settings">Settings</h2>
+    <h2>Settings</h2>
     <section class="settings">
       <div class="settings-text">
         <p>Profile</p>
         <p>Password</p>
-        <p>Logout</p>
       </div>
       <div class="settings-btns">
         <button class="btn btn-secondary">
           Edit
         </button>
-
-        <div class="radio">
-          <div class="radio-container">
-            <label class="switch">
-              <input type="checkbox" class="switch-input" />
-              <span class="switch-label" data-on="Off" data-off="On" />
-            </label>
-          </div>
-        </div>
-        <button @click="logout" class="btn btn-secondary">
-          Log Out
-        </button>
+        <label class="switch">
+          <input type="checkbox" class="switch-input" />
+          <span class="switch-label" data-on="Off" data-off="On" />
+        </label>
+        <section class="logout">
+          <button @click="logout" class="btn btn-secondary">
+            Log Out
+          </button>
+        </section>
       </div>
     </section>
   </div>
@@ -86,51 +83,54 @@
   * {
     margin: 0;
   }
-
   .menu-btn {
     position: absolute;
     left: 76%;
     top: 1%;
   }
-
   .btn {
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     border-radius: 3px;
     padding: 0.2em;
+    margin-bottom: 0.2em;
     border-radius: 4px;
     cursor: pointer;
   }
-
   .btn:hover {
     background: white;
     color: black;
   }
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-  .logout-btn {
-    margin-top: 40%;
+  .logout {
+    margin-top: 30px;
   }
 
   h1 {
     position: absolute;
-    top: -40%;
-    left: -55%;
+    left: 50%;
+    top: -30%;
   }
 
   h1,
   h2 {
     font-size: 1.8rem;
   }
-  .h2-settings {
+  h2 {
     margin-top: 6rem;
   }
   .profile-page {
-    margin-top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .profile-overview {
-    margin-top: 1em;
+    margin-top: 1.5em;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -140,7 +140,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    top: -20%;
+    top: 20%;
   }
   .settings {
     display: flex;
@@ -153,15 +153,12 @@
     justify-content: space-between;
     margin-left: 3em;
   }
-
   p {
-    margin-top: 0.6em;
+    margin-top: 0.3em;
   }
 
-  .profile-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  h3 {
+    margin-top: 1em;
   }
 
   .switch:hover {

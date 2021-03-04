@@ -55,11 +55,9 @@
     clear: both;
     margin: 10px;
   }
-
   .tab {
     margin-top: 30px;
   }
-
   .tab label {
     padding: 10px 30px;
     cursor: pointer;
@@ -67,7 +65,6 @@
     display: row;
     position: relative;
   }
-
   .tab [type='radio'] {
     position: absolute;
     top: 0;
@@ -99,14 +96,12 @@
     z-index: 1;
     opacity: 1;
   }
-
   .close-tab {
     position: absolute;
     z-index: -1;
     top: 0;
     left: 0;
   }
-
   .close-tab label {
     border: 1px solid black;
     border-radius: 3px;
@@ -116,7 +111,6 @@
     background: white;
     color: black;
   }
-
   [type='radio']:checked ~ label ~ .close-tab {
     z-index: 3;
   }

@@ -10,23 +10,20 @@
     <p class="note" v-if="this.score === 5">You got it!</p>
     <p class="note" v-if="this.score === 20">Good job!</p>
     <constants />
-    <h1>{{ gameover }}</h1>
     <div id="hidden-items">
       <audio ref="audio">
         <source src="../../assets/SnakeGame/eat.wav" type="audio/wav" />
       </audio>
     </div>
-    <div class="container">
-      <button class="action-buttons">
-        <button @click="handleClick('top')" id="U">▲</button>
-        <button @click="handleClick('bottom')" id="D">▼</button>
-        <button @click="handleClick('right')" id="R">►</button>
-        <button @click="handleClick('left')" id="L">◄</button>
-        <button id="play-btn" @click="isPlaying ? stop() : start()">
-          {{ isPlaying ? 'Pause' : 'Play' }}
-        </button>
+    <button class="action-buttons">
+      <button @click="handleClick('top')" id="U">▲</button>
+      <button @click="handleClick('bottom')" id="D">▼</button>
+      <button @click="handleClick('right')" id="R">►</button>
+      <button @click="handleClick('left')" id="L">◄</button>
+      <button id="play-btn" @click="isPlaying ? stop() : start()">
+        {{ isPlaying ? 'Pause' : 'Play' }}
       </button>
-    </div>
+    </button>
     <section class="scores">
       <p>Score: {{ score }}</p>
       <p v-if="snakeHighscore">Highscore: {{ snakeHighscore }}</p>
@@ -37,6 +34,7 @@
         <input type="number" min="10" v-model.number="boardSize" />
       </div>
     </section>
+    <h1>{{ gameover }}</h1>
   </div>
 </template>
 <script>
@@ -276,26 +274,6 @@
     display: flex;
     flex-direction: column;
   }
-  @media only screen and (min-width: 767px) {
-    .scores {
-      top: -95%;
-      right: 2%;
-    }
-  }
-
-  @media screen and (min-width: 800px) and (max-width: 999px) {
-    #snake-canvas {
-      height: 500px;
-      width: 500px;
-    }
-  }
-  @media (min-width: 1000px) {
-    #snake-canvas {
-      height: 500px;
-      width: 500px;
-    }
-  }
-
   .zoom-text input {
     width: 38px;
     border: none;
@@ -304,7 +282,6 @@
     font-size: 17px;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
   }
-
   #play-btn {
     color: white;
     font-size: 20px;
@@ -321,21 +298,10 @@
     position: relative;
     top: -16px;
   }
-
   #play-btn:hover {
     background-color: white;
     color: black;
   }
-
-  .container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
   .action-buttons {
     width: 180px;
     height: 180px;
@@ -345,7 +311,13 @@
     position: relative;
     top: -25%;
   }
-
+  h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    top: -60%;
+  }
   #U {
     top: -10px;
     left: 50%;
@@ -361,12 +333,10 @@
     cursor: pointer;
     border: 2px solid rgb(21, 5, 43);
   }
-
   #U:hover {
     background-color: white;
     color: black;
   }
-
   #R {
     top: 40%;
     right: -18px;
@@ -437,5 +407,12 @@
     justify-content: center;
     position: relative;
     top: -180px;
+  }
+
+  @media screen and (min-width: 800px) and (max-width: 999px) {
+    #snake-canvas {
+      height: 500px;
+      width: 500px;
+    }
   }
 </style>

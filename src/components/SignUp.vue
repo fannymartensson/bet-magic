@@ -73,8 +73,8 @@
               type="button"
               value="Sign Up"
             />
-            Already have an account?<router-link to="/login"
-              >Login here?</router-link
+            Already have an account?<router-link to="/login">
+              Login here</router-link
             >
           </div>
         </form>
