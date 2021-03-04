@@ -8,7 +8,7 @@
       :height="boardSizePx"
     />
     <p class="note" v-if="this.score === 5">You got it!</p>
-    <p class="note" v-if="this.score === 20">Good job!</p>
+    <p class="note" v-if="this.score === 10">Good job!</p>
     <constants />
     <div id="hidden-items">
       <audio ref="audio">
@@ -31,7 +31,7 @@
       <h2>Latest game: {{ latestSnakeScore }}</h2>
       <div class="zoom-text">
         Zoom
-        <input type="number" min="10" v-model.number="boardSize" />
+        <input type="number" min="12" v-model.number="boardSize" />
       </div>
     </section>
     <h1>{{ gameover }}</h1>
@@ -47,14 +47,14 @@
     components: { Constants, collectScore },
     data() {
       return {
-        gameover: ''
+        gameover: '',
+        isPlaying: false
       }
     },
     name: 'SnakeCanvas',
     props: {
       cellSize: Number,
-      boardSize: Number,
-      isPlaying: Boolean
+      boardSize: Number
     },
     computed: {
       score() {
@@ -127,7 +127,6 @@
         newSnakeScore: 'newSnakeScore'
       }),
       // To make the snake move
-
       move() {
         if (!this.isPlaying) {
           return
@@ -141,7 +140,7 @@
         }
         // level2
         if (Store.state.score === 10) {
-          this.drawCell({ x: 9, y: 7, color: 'purple' })
+          this.drawCell({ x: 9, y: 7, color: 'yellow' })
         }
         // To create newhead and also direction
 
@@ -238,7 +237,7 @@
           this.cellSize,
           this.cellSize
         )
-        this.boardContext.fillStyle = 'purple'
+        this.boardContext.fillStyle = 'blue'
         this.boardContext.fill()
         this.boardContext.closePath()
       },
@@ -264,7 +263,7 @@
 </script>
 <style scoped>
   #snake-canvas {
-    border: 10px solid #1c0447;
+    border: 10px solid rgb(51, 76, 156);
     height: 320px;
     width: 320px;
     margin: 30px 0;
@@ -288,7 +287,7 @@
     cursor: pointer;
     font-family: 'Arcade', Avenir, Helvetica, Arial, sans-serif;
     display: inline-block;
-    background: rgb(50, 7, 99);
+    background: rgb(51, 76, 156);
     cursor: pointer;
     border-radius: 90%;
     width: 80px;
@@ -329,7 +328,7 @@
     align-items: center;
     position: absolute;
     border-radius: 20%;
-    background: rgb(50, 7, 99);
+    background: rgb(51, 76, 156);
     cursor: pointer;
     border: 2px solid rgb(21, 5, 43);
   }
@@ -348,7 +347,7 @@
     align-items: center;
     position: absolute;
     border-radius: 20%;
-    background: rgb(50, 7, 99);
+    background: rgb(51, 76, 156);
     cursor: pointer;
     border: 2px solid rgb(21, 5, 43);
   }
@@ -369,7 +368,7 @@
     align-items: center;
     position: absolute;
     border-radius: 20%;
-    background: rgb(50, 7, 99);
+    background: rgb(51, 76, 156);
     cursor: pointer;
     border: 2px solid rgb(21, 5, 43);
   }
@@ -390,7 +389,7 @@
     align-items: center;
     position: absolute;
     border-radius: 20%;
-    background: rgb(50, 7, 99);
+    background: rgb(51, 76, 156);
     cursor: pointer;
     font-size: 30px;
     border: 2px solid rgb(21, 5, 43);

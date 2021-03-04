@@ -53,10 +53,10 @@
   .tabs {
     position: relative;
     clear: both;
-    margin: 10px;
+    margin: 8px;
   }
   .tab {
-    margin-top: 30px;
+    margin-top: 20px;
   }
   .tab label {
     padding: 10px 30px;

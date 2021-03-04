@@ -5,9 +5,6 @@
     </header>
     <section class="profile-overview">
       <div class="left">
-        <h1>{{ Alias }}</h1>
-        <h4>{{ Förnamn }}</h4>
-        <h4>{{ Efternamn }}</h4>
         <img
           src="https://avatars.dicebear.com/api/identicon/blue.svg"
           alt="Avatar"
@@ -15,9 +12,17 @@
           height="100"
           style="margin-top:18px"
         />
+        <h3>
+          <b
+            >Magic score:
+            <h5>{{ userScore }}</h5></b
+          >
+        </h3>
         <share-btn />
       </div>
       <div class="points">
+        <h1>{{ Alias }}</h1>
+        <h4>{{ Förnamn }} {{ Efternamn }}</h4>
         <p>TicTacToe: 0</p>
         <p>Ufo Shooter: 0</p>
         <p>Mastermind: 0</p>
@@ -25,9 +30,6 @@
         <p v-if="SnakeHighscore">Snake: {{ SnakeHighscore }}</p>
         <p v-else>Snake: 0</p>
         <br />
-        <h3>
-          <b>Magic score: {{ userScore }}</b>
-        </h3>
       </div>
     </section>
     <h2>Settings</h2>
@@ -111,9 +113,9 @@
   }
 
   h1 {
-    position: absolute;
-    left: 50%;
-    top: -30%;
+    position: relative;
+    top: -20%;
+    left: -50%;
   }
 
   h1,
@@ -123,6 +125,17 @@
   h2 {
     margin-top: 6rem;
   }
+  h3 {
+    margin-top: 0.8em;
+  }
+
+  h5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5em;
+  }
+
   .profile-page {
     display: flex;
     flex-direction: column;
@@ -155,10 +168,6 @@
   }
   p {
     margin-top: 0.3em;
-  }
-
-  h3 {
-    margin-top: 1em;
   }
 
   .switch:hover {

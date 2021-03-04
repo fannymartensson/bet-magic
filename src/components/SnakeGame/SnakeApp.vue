@@ -1,15 +1,10 @@
 <template>
   <div id="snake-canvas">
-    <snake-canvas
-      :cellSize="cellSize"
-      :boardSize="boardSize"
-      :isPlaying="isPlaying"
-    />
+    <snake-canvas :cellSize="cellSize" :boardSize="boardSize" />
   </div>
 </template>
 <script>
   import SnakeCanvas from './SnakeCanvas.vue'
-  // import Store from '../../store/modules/moduleC.js'
 
   export default {
     name: 'SnakeApp',
@@ -20,7 +15,7 @@
     data() {
       return {
         cellSize: 25,
-        boardSize: 20,
+        boardSize: 15,
         isPlaying: false
       }
     },

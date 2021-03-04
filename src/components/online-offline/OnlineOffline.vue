@@ -28,7 +28,13 @@
 </script>
 <style scoped>
   .online-offline {
-    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    position: fixed;
+    left: 45%;
+    bottom: 10px;
   }
   li {
     list-style-type: none;
