@@ -37,6 +37,7 @@
       <div class="settings-text">
         <p>Profile</p>
         <p>Password</p>
+        <p>Logout</p>
       </div>
       <div class="settings-btns">
         <button class="btn btn-secondary">
@@ -46,11 +47,9 @@
           <input type="checkbox" class="switch-input" />
           <span class="switch-label" data-on="Off" data-off="On" />
         </label>
-        <section class="logout">
-          <button @click="logout" class="btn btn-secondary">
-            Log Out
-          </button>
-        </section>
+        <button @click="logout" class="btn btn-secondary">
+          Log Out
+        </button>
       </div>
     </section>
   </div>
@@ -68,12 +67,13 @@
         Förnamn: localStorage.getItem('Förnamn'),
         Efternamn: localStorage.getItem('Efternamn'),
         userScore: localStorage.getItem('localScore'),
-        SnakeHighscore: localStorage.getItem('SnakeHighscore')
+        SnakeHighscore: localStorage.getItem('snakeHighscore')
       }
     },
     methods: {
       logout() {
         localStorage.removeItem('Registered')
+        localStorage.removeItem('Temporary')
         this.$store.state.playerData.signedUp = false
         return this.$router.go(-1)
       }

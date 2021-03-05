@@ -12,7 +12,7 @@ export default {
     signedUp: false,
     show: false,
     latestSnakeScore: '',
-    snakeHighscore: null,
+    snakeHighscore: '0',
     Registered: false
   },
 
@@ -27,13 +27,15 @@ export default {
       localStorage.setItem('Password', payload.Password)
       localStorage.setItem('localScore', '1000')
       localStorage.setItem('Registered', 'true')
-      localStorage.setItem('SnakeHighscore', '1')
+      localStorage.setItem('snakeHighscore', '1')
     },
     newSnakeScore(state, x) {
       // Denna funktion tar reda på om den nya poängen från snake är personligt rekord för spelaren, isf sparar den det som Highscore. Annars lägger den bara in det som "latestScore" så att användaren kan se sin senaste poäng i efterhand.
-      console.log(x)
-      if (x > parseInt(localStorage.getItem('SnakeHighscore'))) {
-        localStorage.setItem('SnakeHighscore', x)
+      if (!localStorage.getItem('snakeHighscore')) {
+        localStorage.setItem('snakeHighscore', '1')
+      }
+      if (x > parseInt(localStorage.getItem('snakeHighscore'))) {
+        localStorage.setItem('snakeHighscore', x)
         state.snakeHighscore = x
       }
       state.latestSnakeScore = x

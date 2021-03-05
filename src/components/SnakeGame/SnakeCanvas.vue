@@ -26,8 +26,7 @@
     </button>
     <section class="scores">
       <p>Score: {{ score }}</p>
-      <p v-if="snakeHighscore">Highscore: {{ snakeHighscore }}</p>
-      <p v-else>Highscore: {{ localHigh }}</p>
+      <p>Highscore: {{ snakeHighscore }}</p>
       <h2>Latest game: {{ latestSnakeScore }}</h2>
       <div class="zoom-text">
         Zoom

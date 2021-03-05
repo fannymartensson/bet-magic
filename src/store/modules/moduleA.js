@@ -89,7 +89,6 @@ export default {
         } else {
           state.scoreO++
         }
-        console.log(state.players)
         state.gameHistory.push(
           Object.freeze({
             winner: state.winner,

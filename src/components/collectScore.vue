@@ -25,7 +25,7 @@
         startNewGame: 'startNewGame'
       }),
       increaseAndClose() {
-        localStorage.setItem('Registered', 'true')
+        localStorage.setItem('Temporary', 'true')
         if (localStorage.getItem('localScore')) {
           // Om spelaren har ett score i Localstorage så adderas poängen till den.
           this.current = localStorage.getItem('localScore')
